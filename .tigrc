@@ -1,0 +1,1 @@
+bind generic xf +sh -c "echo -n %(file) | xclip -sel c && echo File Clipped"
