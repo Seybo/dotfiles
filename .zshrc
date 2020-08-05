@@ -154,7 +154,8 @@ export YVM_DIR=/home/glaux/.yvm
 [ -r $YVM_DIR/yvm.sh ] && . $YVM_DIR/yvm.sh
 
 # autojump
-source /usr/share/autojump/autojump.zsh
+[[ -s /home/glaux/.autojump/etc/profile.d/autojump.sh ]] && source /home/glaux/.autojump/etc/profile.d/autojump.sh
+autoload -U compinit && compinit -u
 
 # disable history sharing between panes
 # setopt noincappendhistory
