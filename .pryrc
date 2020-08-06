@@ -43,7 +43,7 @@ if defined?(PryByebug)
 
   # Shortcut for calling pry_debug
   def pd # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
-    Pry.commands.alias_command 't', 'show-stack'
+    Pry.commands.alias_command 'ss', 'show-stack'
     Pry.commands.alias_command 's', 'step'
     Pry.commands.alias_command 'n', 'next'
     Pry.commands.alias_command 'c', 'continue'
@@ -60,7 +60,7 @@ if defined?(PryByebug)
     puts 'c  :  continue'
     puts 'f  :  finish'
     puts 'Stack movement'
-    puts 't  :  show-stack'
+    puts 'ss  :  show-stack'
     puts 'ff :  frame'
     puts 'u  :  up'
     puts 'd  :  down'
