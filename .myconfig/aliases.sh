@@ -95,6 +95,13 @@ alias gls='glances'
 # alacritty doesn't go fullscreen with F11
 alias alf='wmctrl -r '0:1:zsh' -b toggle,fullscreen'
 
+# restic
+alias resticr='restic -r ./'
+alias restics='resticr snapshots'
+alias resticmm='resticr mount ~/mountbkp'
+alias resticf='resticr forget'
+alias resticssudo='sudo restic -r ./ snapshots'
+
 
 ####### system ########
 alias uninstall='sudo apt purge --auto-remove'
@@ -108,3 +115,5 @@ alias syslogclear="sudo sh -c 'cat /dev/null > /var/log/syslog'\n: 1557288145:0;
 alias lc='colorls'
 alias lca='colorls -a'
 alias lcr='colorls -lA --sd'
+
+source ~/.myconfig/secure/aliases.sh
