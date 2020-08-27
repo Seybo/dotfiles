@@ -102,6 +102,19 @@ alias resticmm='resticr mount ~/mountbkp'
 alias resticf='resticr forget'
 alias resticssudo='sudo restic -r ./ snapshots'
 
+# rclone
+alias mailrumusicsync='rclone sync /media/glaux/stuff/music mailru:sounds -P --log-level INFO | tee /home/glaux/.myconfig/rclone/sounds.log'
+alias mailrubkpsync='rclone sync /media/glaux/stuff/bkp mailru:bkp -P --log-level INFO | tee /home/glaux/.myconfig/rclone/bkp.log'
+alias mailrupicssync='rclone sync /media/glaux/slim/pics mailru:pics -P --log-level INFO | tee /home/glaux/.myconfig/rclone/pics.log'
+alias mailrumusicsyncdry='rclone sync /media/glaux/stuff/music mailru:sounds -P --log-level INFO --dry-run | tee /home/glaux/.myconfig/rclone/sounds.log'
+alias mailrubkpsyncdry='rclone sync /media/glaux/stuff/bkp mailru:bkp -P --log-level INFO --dry-run | tee /home/glaux/.myconfig/rclone/bkp.log'
+alias mailrupicssyncdry='rclone sync /media/glaux/slim/pics mailru:pics -P --log-level INFO --dry-run | tee /home/glaux/.myconfig/rclone/pics.log'
+mailruls() {
+  rclone ls mailru:"$1"
+}
+mailrusync() {
+  rclone sync "$1" "$2" -P
+}
 
 ####### system ########
 alias uninstall='sudo apt purge --auto-remove'
