@@ -128,5 +128,7 @@ alias syslogclear="sudo sh -c 'cat /dev/null > /var/log/syslog'\n: 1557288145:0;
 alias lc='colorls'
 alias lca='colorls -a'
 alias lcr='colorls -lA --sd'
+alias lcr='colorls -lA --sd'
+alias lcd='colorls -d'
 
 source ~/.myconfig/secure/aliases.sh
