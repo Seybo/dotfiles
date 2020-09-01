@@ -111,7 +111,6 @@ fancy-ctrl-z () {
 zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
 source ~/.myconfig/aliases.sh
-source ~/.myconfig/secure/secure.sh
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
