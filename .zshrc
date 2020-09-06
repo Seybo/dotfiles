@@ -166,9 +166,6 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 # linuxbrew
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 
-# autorun in fullscreen (using aliases module)
-alf
-
 # show dotfiles status on start
 echo "========== dotfiles status ==========="
 dst
