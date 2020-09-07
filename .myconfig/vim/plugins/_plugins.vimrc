@@ -1,5 +1,6 @@
 call plug#begin('~/.vim/plugged')
 
+source $HOME/.myconfig/vim/plugins/startify.vimrc
 source $HOME/.myconfig/vim/plugins/gundo.vimrc
 source $HOME/.myconfig/vim/plugins/fugitive.vimrc
 source $HOME/.myconfig/vim/plugins/localvimrc.vimrc
@@ -23,7 +24,7 @@ source $HOME/.myconfig/vim/plugins/slim.vimrc
 " source $HOME/.myconfig/vim/plugins/easymotion.vimrc
 source $HOME/.myconfig/vim/plugins/sneak.vimrc
 source $HOME/.myconfig/vim/plugins/quick_scope.vimrc
-source $HOME/.myconfig/vim/plugins/session.vimrc
+" source $HOME/.myconfig/vim/plugins/session.vimrc
 source $HOME/.myconfig/vim/plugins/test.vimrc
 source $HOME/.myconfig/vim/plugins/signature.vimrc
 source $HOME/.myconfig/vim/plugins/indentline.vimrc

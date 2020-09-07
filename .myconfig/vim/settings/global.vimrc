@@ -1,13 +1,15 @@
 let mapleader = "\<Space>"
-set nocompatible      " we're running Vim, not Vi!
-" syntax on             " enable syntax highlighting
+syntax enable                                " enable syntax highlighting
+set nocompatible                             " we're running Vim, not Vi!
+set hidden                                   " disable not saved changes warning
+set nowrap                                   " disable wrapping long lines
+set mouse=a                                  " enable mouse
+set cursorline                               " highlight current line
 " filetype on           " enable filetype detection
 " filetype indent on    " enable filetype-specific indenting
 " filetype plugin on    " enable filetype-specific plugins
 " set encoding=utf-8
 set number relativenumber
-set hidden            " disable not saved changes warning
-" set mouse=a
 
 " indentation settings
 " set autoindent
