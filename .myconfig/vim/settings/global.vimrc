@@ -1,0 +1,42 @@
+let mapleader = "\<Space>"
+set nocompatible      " we're running Vim, not Vi!
+" syntax on             " enable syntax highlighting
+" filetype on           " enable filetype detection
+" filetype indent on    " enable filetype-specific indenting
+" filetype plugin on    " enable filetype-specific plugins
+" set encoding=utf-8
+set number relativenumber
+set hidden            " disable not saved changes warning
+" set mouse=a
+
+" indentation settings
+" set autoindent
+set expandtab
+" set softtabstop=2
+set shiftwidth=2
+
+" stop swap files
+set nobackup
+set nowritebackup
+set noswapfile
+
+" use system clipboard
+set clipboard=unnamedplus
+
+" folding
+set foldlevelstart=99
+set foldmethod=syntax "syntax highlighting items specify folds
+" set foldcolumn=1 "defines 1 col at window left, to indicate folding
+" adds some lagging to buffers change
+" augroup remember_folds
+"   autocmd!
+"   autocmd BufWinLeave * mkview
+"   autocmd BufWinEnter * silent! loadview
+" augroup END
+
+" keep undo history across sessions, by storing in file.
+if has('persistent_undo')
+silent !mkdir ~/.config/nvim/undodir > /dev/null 2>&1
+set undodir=~/.config/nvim/undodir
+set undofile
+endif
