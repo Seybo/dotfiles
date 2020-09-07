@@ -20,7 +20,9 @@ source $HOME/.myconfig/vim/plugins/javascript.vimrc
 source $HOME/.myconfig/vim/plugins/jsx_pretty.vimrc
 source $HOME/.myconfig/vim/plugins/vim_ruby.vimrc
 source $HOME/.myconfig/vim/plugins/slim.vimrc
-source $HOME/.myconfig/vim/plugins/easymotion.vimrc
+" source $HOME/.myconfig/vim/plugins/easymotion.vimrc
+source $HOME/.myconfig/vim/plugins/sneak.vimrc
+source $HOME/.myconfig/vim/plugins/quick_scope.vimrc
 source $HOME/.myconfig/vim/plugins/session.vimrc
 source $HOME/.myconfig/vim/plugins/test.vimrc
 source $HOME/.myconfig/vim/plugins/signature.vimrc

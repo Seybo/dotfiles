@@ -27,3 +27,7 @@ colorscheme ayu
 highlight CocErrorHighlight ctermfg=Yellow guifg=#ffff00
 highlight CocErrorVirtualText ctermfg=Yellow guifg=#ffff00
 highlight CocErrorFloat ctermfg=Yellow guifg=#ffff00
+
+" Change the Sneak colors
+highlight Sneak guifg=#262626 guibg=#afff5f ctermfg=red ctermbg=yellow
+highlight SneakScope guifg=#262626 guibg=#afff5f ctermfg=red ctermbg=yellow

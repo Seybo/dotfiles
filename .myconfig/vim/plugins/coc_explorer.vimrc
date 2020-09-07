@@ -38,3 +38,7 @@ let g:coc_explorer_global_presets = {
 nmap <silent><C-n><C-n> :CocCommand explorer --preset floatingTop<CR>
 " nmap <C-n><C-f> :CocCommand explorer --toggle getcwd()<CR>
 " nmap <space>el :CocList explPresets
+" floating window bg color
+" hi CocExplorerNormalFloat guibg=#ff0000 
+autocmd FileType coc-explorer set winblend=5
+autocmd FileType coc-explorer-border set winblend=5
