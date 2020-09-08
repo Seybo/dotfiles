@@ -84,3 +84,8 @@ nnoremap <A-y> :b#<CR>
 
 " refresh file
 nnoremap <silent> <Leader>rf :e!<CR>
+
+" buffers
+nnoremap <silent><A-i> :bn<cr>
+nnoremap <silent><A-o> :bp<cr>
+nnoremap <silent><A-u> :b#<CR>

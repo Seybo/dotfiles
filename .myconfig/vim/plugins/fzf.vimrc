@@ -23,8 +23,10 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " map <leader>fcb :BCommits<cr>
 
 Plug 'yuki-ycino/fzf-preview.vim', { 'branch': 'release', 'do': ':UpdateRemotePlugins' }
+let g:fzf_preview_directory_files_command = 'fd --type f --hidden --follow'
+let g:fzf_preview_filelist_command = 'fd --type f --hidden --follow'
 nmap <C-l><C-l> :FzfPreviewBuffers<cr>
-nmap <Leader>ff :FzfPreviewGitFiles<cr>
+nmap <Leader>ff :FzfPreviewProjectFiles<cr>
 nmap <Leader>fl :FzfPreviewMruFiles<cr>
 vmap <Leader>fs "sy:FzfPreviewProjectGrep<Space>-F<Space>"<C-r>=substitute(substitute(@s, '\n', '', 'g'), '/', '\\/', 'g')<cr>"<cr>
 map  <Leader>fw viw"sy:FzfPreviewProjectGrep<Space>-F<Space>"<C-r>=substitute(substitute(@s, '\n', '', 'g'), '/', '\\/', 'g')<cr>"<cr>
