@@ -4,7 +4,7 @@ set nocompatible                             " we're running Vim, not Vi!
 set hidden                                   " disable not saved changes warning
 set nowrap                                   " disable wrapping long lines
 set mouse=a                                  " enable mouse
-set cursorline                               " highlight current line
+" set cursorline                               " highlight current line
 " filetype on           " enable filetype detection
 " filetype indent on    " enable filetype-specific indenting
 " filetype plugin on    " enable filetype-specific plugins
@@ -28,7 +28,7 @@ set clipboard=unnamedplus
 " folding
 set foldlevelstart=99
 set foldmethod=syntax "syntax highlighting items specify folds
-" set foldcolumn=1 "defines 1 col at window left, to indicate folding
+set foldcolumn=0 "remove folding indication col at window left
 " adds some lagging to buffers change
 " augroup remember_folds
 "   autocmd!
