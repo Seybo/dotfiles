@@ -20,8 +20,10 @@ syntax enable
 
 " goes nice with indent line plugin. See the theme repo
 let ayucolor="mirage"
+
 " i've updated bg color here .vim/plugged/ayu-vim/colors/ayu.vim to match alacrity theme with #262626
 colorscheme ayu
+" colorscheme palenight
 let g:airline_theme="minimalist"
 let g:airline_section_a = airline#section#create(['crypt', 'paste', 'spell', 'iminsert'])
 let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'

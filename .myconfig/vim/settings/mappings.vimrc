@@ -89,3 +89,6 @@ nnoremap <silent> <Leader>rf :e!<CR>
 nnoremap <silent><A-i> :bn<cr>
 nnoremap <silent><A-o> :bp<cr>
 nnoremap <silent><A-u> :b#<CR>
+
+" copy-paste visual selection
+map <silent><leader>d :t'><cr>
