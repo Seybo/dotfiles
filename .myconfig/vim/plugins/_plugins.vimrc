@@ -16,6 +16,7 @@ source $HOME/.myconfig/vim/plugins/neosnippet.vimrc
 source $HOME/.myconfig/vim/plugins/surround.vimrc
 source $HOME/.myconfig/vim/plugins/autopairs.vimrc
 source $HOME/.myconfig/vim/plugins/nerdtree.vimrc
+source $HOME/.myconfig/vim/plugins/ctrlsf.vimrc
 source $HOME/.myconfig/vim/plugins/fzf.vimrc
 " source $HOME/.myconfig/vim/plugins/buffergator.vimrc
 source $HOME/.myconfig/vim/plugins/commentary.vimrc
@@ -26,6 +27,7 @@ source $HOME/.myconfig/vim/plugins/reason.vimrc
 source $HOME/.myconfig/vim/plugins/javascript.vimrc
 source $HOME/.myconfig/vim/plugins/jsx_pretty.vimrc
 source $HOME/.myconfig/vim/plugins/vim_ruby.vimrc
+source $HOME/.myconfig/vim/plugins/rails.vimrc
 source $HOME/.myconfig/vim/plugins/slim.vimrc
 source $HOME/.myconfig/vim/plugins/sneak.vimrc
 source $HOME/.myconfig/vim/plugins/quick_scope.vimrc

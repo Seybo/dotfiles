@@ -92,3 +92,15 @@ nnoremap <silent><A-u> :b#<CR>
 
 " copy-paste visual selection
 map <silent><leader>d :t'><cr>
+
+" replace
+map <leader>rr :%s/
+
+" save/load view (folds, etc)
+map <S-F2> :mkview<cr>
+map <S-F3> :loadview<cr>
+
+" copy/paste from retigster
+map <silent><leader>y "kyy
+map <silent><leader>p "kp
+map <silent><leader>d "kd

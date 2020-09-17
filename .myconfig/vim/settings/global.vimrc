@@ -2,7 +2,7 @@ let mapleader = "\<Space>"
 syntax enable                                " enable syntax highlighting
 set nocompatible                             " we're running Vim, not Vi!
 set hidden                                   " disable not saved changes warning
-set nowrap                                   " disable wrapping long lines
+" set nowrap                                   " disable wrapping long lines
 set mouse=a                                  " enable mouse
 " set cursorline                               " highlight current line
 " filetype on           " enable filetype detection

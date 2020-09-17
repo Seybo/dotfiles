@@ -1,10 +1,7 @@
 Plug 'janko-m/vim-test'
 let test#strategy = "tslime"
-nnoremap <Leader>sf  :w <bar> :TestFile<CR>
-nnoremap <Leader>ss  :w <bar> :TestNearest<CR>
-nnoremap <Leader>sl  :w <bar> :TestLast<CR>
-nnoremap <Leader>sa  :w <bar> :TestSuite<CR>
-nnoremap <Leader>su  :w <bar> :TestSuite -u<CR>
+nnoremap <Leader>tf  :w <bar> :TestFile<CR>
+nnoremap <Leader>ts  :w <bar> :TestNearest<CR>
 
 let test#javascript#jest#file_pattern = '\v^.*spec\.(js|jsx|coffee)$'
 let test#javasctipt#project_root = "client"
