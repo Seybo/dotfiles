@@ -25,6 +25,7 @@ source $HOME/.myconfig/vim/plugins/coc_bookmark.vimrc
 source $HOME/.myconfig/vim/plugins/coc_explorer.vimrc
 source $HOME/.myconfig/vim/plugins/reason.vimrc
 source $HOME/.myconfig/vim/plugins/javascript.vimrc
+source $HOME/.myconfig/vim/plugins/typescript.vimrc
 source $HOME/.myconfig/vim/plugins/jsx_pretty.vimrc
 source $HOME/.myconfig/vim/plugins/vim_ruby.vimrc
 source $HOME/.myconfig/vim/plugins/rails.vimrc

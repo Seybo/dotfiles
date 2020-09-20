@@ -43,11 +43,26 @@ endif
   " inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " endif
 
+" plugins that we add to g:cocglobalextensions will be automatically installed and updated
+let g:coc_global_extensions = [
+  \ 'coc-tsserver'
+  \ ]
+
+if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
+  let g:coc_global_extensions += ['coc-prettier']
+endif
+
+if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
+  let g:coc_global_extensions += ['coc-eslint']
+endif
+
 " Remap keys for gotos
 nmap <silent>gd <Plug>(coc-definition)
 nmap <silent>gy <Plug>(coc-type-definition)
 nmap <silent>gi <Plug>(coc-implementation)
 nmap <silent>gr <Plug>(coc-references)
+nmap <silent><Leader>com <Plug>(coc-rename)
+nmap <silent><Leader>coa <Plug>(coc-codeaction)
 nmap <silent><Leader>coc :CocConfig<CR>
 nmap <silent><Leader>col :CocLocalConfig<CR>
 nmap <silent><Leader>cog :CocOpenLog<CR>
@@ -55,6 +70,7 @@ nmap <silent><Leader>coi :CocInfo<CR>
 nmap <silent><Leader>cor :CocRestart<CR>
 nmap <silent><Leader>coe :CocList extensions<CR>
 nmap <silent><Leader>cod :CocDisable<CR>
+nmap <silent><Leader>coh :call CocAction('doHover')<CR>
 
 " Use K to show documentation in preview window
 " nnoremap <silent>K :call <SID>show_documentation()<CR>

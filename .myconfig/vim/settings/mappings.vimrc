@@ -91,7 +91,7 @@ nnoremap <silent><A-o> :bp<cr>
 nnoremap <silent><A-u> :b#<CR>
 
 " copy-paste visual selection
-map <silent><leader>d :t'><cr>
+vmap <silent><leader>. :t'><cr>
 
 " replace
 map <leader>rr :%s/

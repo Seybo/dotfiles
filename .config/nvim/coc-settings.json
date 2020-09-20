@@ -1,0 +1,31 @@
+{
+  "diagnostic.virtualText": true,
+  "eslint.autoFixOnSave": true,
+  "eslint.filetypes": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "prettier.disableSuccessMessage": true,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "reason",
+    "css",
+    "json",
+    "js",
+    "scss",
+    "ruby",
+    "typescript",
+    "typescriptreact"
+  ],
+  "solargraph.diagnostics": true,
+  "solargraph.autoformat": false,
+  "solargraph.formatting": true,
+  "solargraph.definitions": true,
+  "solargraph.references": true,
+  "solargraph.folding": true,
+  "solargraph.hover": false,
+  "explorer.icon.enableNerdfont": true,
+  "explorer.floating.border.enable": true,
+  "explorer.floating.border.chars": [" ", " ", " ", " ", " ", " ", " ", " "]
+}
