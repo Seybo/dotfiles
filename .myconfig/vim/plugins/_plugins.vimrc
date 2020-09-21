@@ -18,7 +18,7 @@ source $HOME/.myconfig/vim/plugins/autopairs.vimrc
 source $HOME/.myconfig/vim/plugins/nerdtree.vimrc
 source $HOME/.myconfig/vim/plugins/ctrlsf.vimrc
 source $HOME/.myconfig/vim/plugins/fzf.vimrc
-" source $HOME/.myconfig/vim/plugins/buffergator.vimrc
+source $HOME/.myconfig/vim/plugins/buffergator.vimrc
 source $HOME/.myconfig/vim/plugins/commentary.vimrc
 source $HOME/.myconfig/vim/plugins/coc.vimrc
 source $HOME/.myconfig/vim/plugins/coc_bookmark.vimrc

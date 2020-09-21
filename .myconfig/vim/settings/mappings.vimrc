@@ -85,10 +85,10 @@ nnoremap <A-y> :b#<CR>
 " refresh file
 nnoremap <silent> <Leader>rf :e!<CR>
 
-" buffers
-nnoremap <silent><A-i> :bn<cr>
-nnoremap <silent><A-o> :bp<cr>
-nnoremap <silent><A-u> :b#<CR>
+" buffers implemented in buffergator config
+" nnoremap <silent><A-i> :bn<cr>
+" nnoremap <silent><A-o> :bp<cr>
+" nnoremap <silent><A-u> :b#<CR>
 
 " copy-paste visual selection
 vmap <silent><leader>. :t'><cr>

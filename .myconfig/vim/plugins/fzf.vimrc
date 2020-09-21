@@ -25,7 +25,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'yuki-ycino/fzf-preview.vim', { 'branch': 'release', 'do': ':UpdateRemotePlugins' }
 let g:fzf_preview_directory_files_command = 'fd --type f --hidden --follow'
 let g:fzf_preview_filelist_command = 'fd --type f --hidden --follow'
-nmap <C-l><C-l> :FzfPreviewBuffers<cr>
+" atm it is messing up buffers order so using buffergator mostly
+nmap <C-l><C-b> :FzfPreviewBuffers<cr> 
 nmap <Leader>ff :FzfPreviewProjectFiles<cr>
 nmap <Leader>fd :FzfPreviewFromResources directory<cr>
 nmap <Leader>fl :FzfPreviewMruFiles<cr>

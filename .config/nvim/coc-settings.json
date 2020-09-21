@@ -24,7 +24,7 @@
   "solargraph.definitions": true,
   "solargraph.references": true,
   "solargraph.folding": true,
-  "solargraph.hover": false,
+  "solargraph.hover": true,
   "explorer.icon.enableNerdfont": true,
   "explorer.floating.border.enable": true,
   "explorer.floating.border.chars": [" ", " ", " ", " ", " ", " ", " ", " "]
