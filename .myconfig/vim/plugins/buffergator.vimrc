@@ -8,3 +8,7 @@ nnoremap <silent><A-i>      :BuffergatorMruCycleNext<cr>
 nnoremap <silent><A-o>      :BuffergatorMruCyclePrev<cr>
 "two recent buffers toggle
 nnoremap <silent><A-u>      :b#<CR>
+
+"===== HELP =====
+" mappings
+" cd - cycle through the view modes
