@@ -31,7 +31,7 @@ nmap <Leader>ff :FzfPreviewProjectFiles<cr>
 nmap <Leader>fd :FzfPreviewFromResources directory<cr>
 nmap <Leader>fl :FzfPreviewMruFiles<cr>
 vmap <Leader>fs "sy:FzfPreviewProjectGrep<Space>-F<Space>"<C-r>=substitute(substitute(@s, '\n', '', 'g'), '/', '\\/', 'g')<cr>"<cr>
-map  <Leader>fw viw"sy:FzfPreviewProjectGrep<Space>-F<Space>"<C-r>=substitute(substitute(@s, '\n', '', 'g'), '/', '\\/', 'g')<cr>"<cr>
+nmap <Leader>fw viw"sy:FzfPreviewProjectGrep<Space>-F<Space>"<C-r>=substitute(substitute(@s, '\n', '', 'g'), '/', '\\/', 'g')<cr>"<cr>
 map  <Leader>fm :FzfPreviewProjectGrep
 nmap <Leader>fc :FzfPreviewChanges<cr>
 nmap <Leader>ga :FzfPreviewGitActions<cr>

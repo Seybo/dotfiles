@@ -104,3 +104,5 @@ map <S-F3> :loadview<cr>
 map <silent><leader>y "kyy
 map <silent><leader>p "kp
 map <silent><leader>d "kd
+
+nnoremap <silent><leader>l i <Esc>
