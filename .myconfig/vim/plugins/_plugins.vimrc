@@ -34,7 +34,6 @@ source $HOME/.myconfig/vim/plugins/sneak.vimrc
 source $HOME/.myconfig/vim/plugins/quick_scope.vimrc
 source $HOME/.myconfig/vim/plugins/test.vimrc
 source $HOME/.myconfig/vim/plugins/signature.vimrc
-source $HOME/.myconfig/vim/plugins/tagbar.vimrc
 source $HOME/.myconfig/vim/plugins/ui.vimrc
 
 call plug#end()
