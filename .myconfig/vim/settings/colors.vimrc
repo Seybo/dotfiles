@@ -35,6 +35,7 @@ let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
 " let g:airline_section_gutter  (csv)
 " let g:airline_section_x       (tagbar, filetype, virtualenv)
 " let g:airline_section_y       (fileencoding, fileformat)
+"
 " let g:airline_section_z       (percentage, line number, column number)
 " let g:airline_section_error   (ycm_error_count, syntastic-err, eclim, languageclient_error_count)
 " let g:airline_section_warning (ycm_warning_count, syntastic-warn, languageclient_warning_count, whitespace)
