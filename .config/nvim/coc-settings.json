@@ -1,4 +1,7 @@
 {
+  "diagnostic.errorSign": "•",
+  "diagnostic.warningSign": "•",
+  "diagnostic.infoSign": "•",
   "diagnostic.virtualText": true,
   "eslint.autoFixOnSave": true,
   "eslint.filetypes": [
