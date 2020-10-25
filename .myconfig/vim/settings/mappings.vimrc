@@ -2,8 +2,7 @@
 inoremap jk <Esc>
 inoremap <C-l> <Esc>
 vnoremap <C-l> <Esc>
-inoremap <C-л> <Esc>
-inoremap ол <Esc>
+" inoremap ол <Esc>
 
 nnoremap <silent><leader>vv :e ~/.myconfig/vim/init_new.vim<CR>
 nnoremap <silent><Leader>vs :source ~/.myconfig/vim/init_new.vim<CR>
