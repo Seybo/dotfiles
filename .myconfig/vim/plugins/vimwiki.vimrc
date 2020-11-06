@@ -15,9 +15,13 @@ let nvim = {}
 let nvim.path = '/mnt/dev/other/wiki/nvim/'
 let nvim.syntax = 'markdown'
 let nvim.ext = '.md'
+let design = {}
+let design.path = '/mnt/dev/other/wiki/design/'
+let design.syntax = 'markdown'
+let design.ext = '.md'
 let other = {}
 let other.path = '/mnt/dev/other/wiki/other/'
 let other.syntax = 'markdown'
 let other.ext = '.md'
 
-let g:vimwiki_list = [dev, ubuntu, nvim, other]
+let g:vimwiki_list = [dev, ubuntu, nvim, design, other]
