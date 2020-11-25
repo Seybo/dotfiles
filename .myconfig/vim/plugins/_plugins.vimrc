@@ -7,8 +7,9 @@ call plug#begin('~/.vim/plugged')
 source $HOME/.myconfig/vim/plugins/startify.vimrc
 source $HOME/.myconfig/vim/plugins/rooter.vimrc
 source $HOME/.myconfig/vim/plugins/airline.vimrc
-source $HOME/.myconfig/vim/plugins/gundo.vimrc
 source $HOME/.myconfig/vim/plugins/fugitive.vimrc
+source $HOME/.myconfig/vim/plugins/gundo.vimrc
+source $HOME/.myconfig/vim/plugins/gql.vimrc
 source $HOME/.myconfig/vim/plugins/localvimrc.vimrc
 source $HOME/.myconfig/vim/plugins/gutentags.vimrc
 source $HOME/.myconfig/vim/plugins/vimwiki.vimrc

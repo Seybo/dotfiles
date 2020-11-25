@@ -105,3 +105,7 @@ map <silent><leader>p "kp
 map <silent><leader>d "kd
 
 nnoremap <silent><leader>l i <Esc>
+
+" set foldmethod for markdown files for example
+nmap <leader>fi :setlocal foldmethod=indent<cr>
+nmap <leader>fe :setlocal foldmethod=expr<cr>
