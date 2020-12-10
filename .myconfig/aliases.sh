@@ -86,6 +86,7 @@ alias jst="TZ=UTC BABEL_ENV=jest yarn jest"
 alias v='vim'
 alias rr='ranger'
 alias gls='glances'
+alias gsm='gnome-system-monitor'
 
 # alacritty doesn't go fullscreen with F11
 alias alf='wmctrl -r '0:1:zsh' -b toggle,fullscreen'

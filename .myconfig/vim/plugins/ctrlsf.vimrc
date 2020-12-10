@@ -8,8 +8,8 @@ let g:ctrlsf_auto_focus = {
 let g:ctrlsf_auto_preview = 1
 
 nnoremap <silent><leader>st :CtrlSFToggle<cr>
-nmap     <silent><leader>sm :CtrlSF -W -S 
-nmap     <silent><leader>sr :CtrlSF -R 
+nmap     <silent><leader>sm :CtrlSF -W -S
+nmap     <silent><leader>sr :CtrlSF -R
 nmap     <silent><leader>sw <Plug>CtrlSFCwordPath
 vmap     <silent><leader>ss <Plug>CtrlSFVwordPath
 " vmap <C-F><C-F> <Plug>CtrlSFVwordExec
