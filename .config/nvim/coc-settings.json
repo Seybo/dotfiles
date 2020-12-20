@@ -17,7 +17,6 @@
     "json",
     "js",
     "scss",
-    "ruby",
     "typescript",
     "typescriptreact"
   ],
@@ -30,5 +29,14 @@
   "solargraph.hover": true,
   "explorer.icon.enableNerdfont": true,
   "explorer.floating.border.enable": true,
-  "explorer.floating.border.chars": [" ", " ", " ", " ", " ", " ", " ", " "]
+  "explorer.floating.border.chars": [
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " "
+  ]
 }
