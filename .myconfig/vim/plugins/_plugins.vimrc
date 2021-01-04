@@ -30,6 +30,7 @@ source $HOME/.myconfig/vim/plugins/typescript.vimrc
 source $HOME/.myconfig/vim/plugins/jsx_pretty.vimrc
 source $HOME/.myconfig/vim/plugins/vim_ruby.vimrc
 source $HOME/.myconfig/vim/plugins/rails.vimrc
+source $HOME/.myconfig/vim/plugins/rubocop.vimrc
 source $HOME/.myconfig/vim/plugins/slim.vimrc
 source $HOME/.myconfig/vim/plugins/sneak.vimrc
 source $HOME/.myconfig/vim/plugins/quick_scope.vimrc

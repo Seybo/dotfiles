@@ -1,5 +1,21 @@
 # frozen_string_literal: true
 
+if defined?(::Bundler)
+  current_gemset = ENV['GEM_HOME']
+  $LOAD_PATH.concat(Dir.glob("#{current_gemset}/gems/*/lib")) if current_gemset
+end
+require 'pry-stack_explorer'
+
+# for fzf in console
+# but this breaks vi-mode atm :(
+# require 'rb-readline'
+# require 'readline'
+# if defined?(RbReadline)
+#   def RbReadline.rl_reverse_search_history(_sign, _key)
+#     rl_insert_text `cat ~/.pry_history | fzf --tac |  tr '\n' ' '`
+#   end
+# end
+
 Pry::Commands.block_command 'noconflict', 'Rename step to sstep and next to nnext' do
   Pry::Commands.rename_command('nnext', 'next')
   Pry::Commands.rename_command('bbreak', 'break')
@@ -97,16 +113,6 @@ end
 
 pry_debug if defined?(::Rails) && Rails.env && Rails.env.test? && ENV['PRY_LONG'].blank?
 
-begin
-  # Not it can be used in any project
-  $LOAD_PATH.unshift '/home/glaux/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/awesome_print-1.8.0/lib'
-  require 'awesome_print'
-  # Pry.config.print = proc { |output, value| output.puts value.ai }
-  AwesomePrint.pry!
-rescue LoadError => _e
-  puts 'no awesome_print :('
-end
-
 my_hook = Pry::Hooks.new.add_hook(:before_session, :add_dirs_to_load_path) do
   # adds the directories /spec and /test directories to the path if they exist and not already included
   dir = `pwd`.chomp
@@ -121,9 +127,9 @@ my_hook = Pry::Hooks.new.add_hook(:before_session, :add_dirs_to_load_path) do
 end
 
 # Hit Enter to repeat last command
-Pry::Commands.command(/^$/, 'repeat last command') do
-  _pry_.run_command Pry.history.to_a.last
-end
+# Pry::Commands.command(/^$/, 'repeat last command') do
+#   _pry_.run_command Pry.history.to_a.last
+# end
 
 my_hook.exec_hook(:before_session)
 
