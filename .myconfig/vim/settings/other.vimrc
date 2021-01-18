@@ -7,6 +7,7 @@ set ignorecase
 set smartcase
 " Highlight searches
 set hlsearch
-
-"" Automatically removing all trailing whitespace
+" Automatically removing all trailing whitespace
 autocmd! BufWritePre * %s/\s\+$//e
+" Check spell for markdown files
+autocmd FileType markdown,vimwiki setlocal spell
