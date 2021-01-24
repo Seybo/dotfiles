@@ -166,6 +166,9 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 # linuxbrew
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 
+# BAT theme in vim fzf-preview
+export FZF_PREVIEW_PREVIEW_BAT_THEME='Nord'
+
 # show dotfiles status on start
 echo "========== dotfiles status ==========="
 dst
