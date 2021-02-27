@@ -68,6 +68,9 @@ vmap <C-p> y'>p
 " select all
 nnoremap <leader>aa ggVG<CR>
 
+" replace word under cursor
+nnoremap <leader>rw :%s/<C-r><C-w>/
+
 " copy filename
 " full path
 map <silent><leader>fpf :let @+ = expand("%:p")<cr>
