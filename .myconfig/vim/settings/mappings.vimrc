@@ -70,6 +70,7 @@ nnoremap <leader>aa ggVG<CR>
 
 " replace word under cursor
 nnoremap <leader>rw :%s/<C-r><C-w>/
+vnoremap <leader>rw y:%s/
 
 " copy filename
 " full path
@@ -112,3 +113,6 @@ nnoremap <silent><leader>l i <Esc>
 " set foldmethod for markdown files for example
 nmap <leader>fi :setlocal foldmethod=indent<cr>
 nmap <leader>fe :setlocal foldmethod=expr<cr>
+
+" search by filename the word under cursor
+nmap <Leader>fq viwy :CocCommand fzf-preview.ProjectFiles<cr>

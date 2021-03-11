@@ -16,7 +16,7 @@ nmap <Leader>fl :CocCommand fzf-preview.ProjectMruFiles<cr>
 " vmap <Leader>fs \"sy:FzfPreviewProjectGrep<Space>-F<Space>"<C-r>=substitute(substitute(@s, '\n', '', 'g'), '/', '\\/', 'g')<cr>"<cr>
 vmap <Leader>fs "sy:CocCommand fzf-preview.ProjectGrep<Space>-F<Space>"<C-r>=substitute(substitute(@s, '\n', '', 'g'), '/', '\\/', 'g')<cr>"<cr>
 " nmap <Leader>fw viw"sy:FzfPreviewProjectGrep<Space>-F<Space>"<C-r>=substitute(substitute(@s, '\n', '', 'g'), '/', '\\/', 'g')<cr>"<cr>
-nmap <Leader>fw viw"sy:CocCommand fzf-preview.ProjectGrep<Space>-F<Space>"<C-r>=substitute(substitute(@s, '\n', '', 'g'), '/', '\\/', 'g')<cr>"<cr>
+nmap <Leader>fs viw"sy:CocCommand fzf-preview.ProjectGrep<Space>-F<Space>"<C-r>=substitute(substitute(@s, '\n', '', 'g'), '/', '\\/', 'g')<cr>"<cr>
 " map  <Leader>fm :FzfPreviewProjectGrep
 map  <Leader>fm :CocCommand fzf-preview.ProjectGrep
 " nmap <Leader>fc :FzfPreviewChanges<cr>
