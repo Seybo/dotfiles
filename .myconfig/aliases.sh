@@ -24,9 +24,9 @@ alias rp="realpath"
 
 ####### git ########
 alias gpf='git push --force-with-lease'
-alias gca='git commit --amend --no-edit'
-alias gcae='git commit --amend'
-alias gitc='git commit -v -m "'
+alias gca='git commit -n --amend --no-edit'
+alias gcae='git commit -n --amend'
+alias gitc='git commit -n -v -m "'
 alias gbD='git branch -D'
 alias gc-='git checkout -'
 alias gaf='gaa && gca && gpf'

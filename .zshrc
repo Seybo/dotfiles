@@ -173,3 +173,5 @@ export FZF_PREVIEW_PREVIEW_BAT_THEME='Nord'
 echo "========== dotfiles status ==========="
 dst
 echo "========== dotfiles status ==========="
+
+eval "$(direnv hook zsh)"
