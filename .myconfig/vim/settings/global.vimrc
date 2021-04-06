@@ -23,7 +23,7 @@ set nowritebackup
 set noswapfile
 
 " use system clipboard
-set clipboard=unnamedplus
+" set clipboard=unnamedplus
 
 " folding
 set foldlevelstart=99

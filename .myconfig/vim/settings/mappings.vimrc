@@ -5,6 +5,7 @@ vnoremap <C-l> <Esc>
 " inoremap ол <Esc>
 
 nnoremap <silent><leader>vv :e ~/.myconfig/vim/init_new.vim<CR>
+nnoremap <silent><leader>ft :e ./_mydev/temp.md<CR>
 nnoremap <silent><Leader>vs :source ~/.myconfig/vim/init_new.vim<CR>
 nnoremap <silent><Leader>vpi :PlugInstall<CR>
 nnoremap <silent><Leader>vpu :PlugUpdate<CR>
@@ -18,12 +19,11 @@ nnoremap Q :quit<CR>
 
 " Copy & paste to system clipboard
 " if not used set clipboard=unnamedplus
-" vmap <Leader>y "+y
-" vmap <Leader>dd "+d
-" vmap <Leader>p "+p
-" nmap <Leader>p "+p
-" nmap <Leader>p <C-j>j"+p
-" nmap <Leader>P "+P
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+vmap <Leader>p "+p
+nmap <Leader>p "+p
+nmap <Leader>P o<Esc>"+p
 
 " moving lines
 nnoremap <A-j> :m .+1<CR>==
@@ -104,9 +104,9 @@ map <S-F2> :mkview<cr>
 map <S-F3> :loadview<cr>
 
 " copy/paste from retigster
-map <silent><leader>y "kyy
-map <silent><leader>p "kp
-map <silent><leader>d "kd
+" map <silent><leader>y "kyy
+" map <silent><leader>p "kp
+" map <silent><leader>d "kd
 
 nnoremap <silent><leader>l i <Esc>
 
@@ -115,4 +115,4 @@ nmap <leader>fi :setlocal foldmethod=indent<cr>
 nmap <leader>fe :setlocal foldmethod=expr<cr>
 
 " search by filename the word under cursor
-nmap <Leader>fq viwy :CocCommand fzf-preview.ProjectFiles<cr>
+nmap <Leader>fq viw<Leader>y :CocCommand fzf-preview.ProjectFiles<cr>
