@@ -6,7 +6,7 @@ nmap <leader>gm     :Gmove
 nmap <leader>gr     :Gread<CR>
 nmap <leader>gw     :Gwrite<CR>
 nmap <leader>gdh    :Gdiff<CR>
-nmap <leader>gbl    :Gblame<CR>
+nmap <leader>gbl    :Git blame<CR>
 nmap <leader>gdv    :Gvdiff<CR>
 " next two has nothing to do with the plugin but put here for consistency
 nmap <leader>ggl    :diffget //2<CR>

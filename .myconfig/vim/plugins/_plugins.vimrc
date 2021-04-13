@@ -18,6 +18,7 @@ source $HOME/.myconfig/vim/plugins/surround.vimrc
 source $HOME/.myconfig/vim/plugins/autopairs.vimrc
 source $HOME/.myconfig/vim/plugins/nerdtree.vimrc
 source $HOME/.myconfig/vim/plugins/ctrlsf.vimrc
+source $HOME/.myconfig/vim/plugins/fzf-mru.vimrc
 source $HOME/.myconfig/vim/plugins/fzf.vimrc
 source $HOME/.myconfig/vim/plugins/buffergator.vimrc
 source $HOME/.myconfig/vim/plugins/commentary.vimrc

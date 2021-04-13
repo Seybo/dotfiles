@@ -21,6 +21,12 @@ alias rboot="sudo reboot"
 alias pwoff="sudo poweroff"
 alias rp="realpath"
 
+# wifi
+alias wfl="nmcli d wifi list"
+wfup() {
+  # $1 - name of the network
+  nmcli c up "$1"
+}
 
 ####### git ########
 alias gpf='git push --force-with-lease'
