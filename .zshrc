@@ -160,6 +160,9 @@ autoload -U compinit && compinit -u
 # setopt noincappendhistory
 # setopt nosharehistory
 
+# ruby
+export GEM_HOME="$HOME/.rbenv/versions/2.7.3/lib/ruby/gems/2.7.0"
+
 # elixir
 export ERL_AFLAGS="-kernel shell_history enabled"
 
