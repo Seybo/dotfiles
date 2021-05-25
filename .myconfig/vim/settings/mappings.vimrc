@@ -116,3 +116,6 @@ nmap <leader>fe :setlocal foldmethod=expr<cr>
 
 " search by filename the word under cursor
 nmap <Leader>fq viw<Leader>y :CocCommand fzf-preview.ProjectFiles<cr>
+
+" mapping for coc-yank
+" nnoremap <silent> <Leader>y  :<C-u>CocList -A --normal yank<cr>

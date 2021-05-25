@@ -38,5 +38,6 @@
     " ",
     " ",
     " "
-  ]
+  ],
+  "explorer.file.showHiddenFiles": true
 }

@@ -17,3 +17,5 @@ nmap <leader>gbb    :Gbrowse<CR>
 vmap <leader>gbb    :Gbrowse<CR>
 nmap <leader>gbo    :Gbrowse origin:%<CR>
 vmap <leader>gbo    :Gbrowse origin:%<CR>
+
+Plug 'junegunn/gv.vim'
