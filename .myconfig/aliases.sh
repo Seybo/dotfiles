@@ -43,6 +43,7 @@ alias gsta='git stash save' # overwriting oh-my-zsh that uses git stash push
 alias gcms='gsta && gcm && gstp' # checkout master with stash
 alias gc-s='gsta && gc- && gstp' # checkout last branch with stash
 alias gstk='git stash --keep-index --include-untracked'
+alias gau='git reset HEAD --' # unstage
 
 
 ####### dotfiles ########

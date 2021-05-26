@@ -1,7 +1,7 @@
 Plug 'tpope/vim-rhubarb' " needed for fugitive code on gh open
 
 Plug 'tpope/vim-fugitive'
-nmap <leader>gs     :Gstatus<CR>
+nmap <leader>gt     :Gstatus<CR>
 nmap <leader>gm     :Gmove
 nmap <leader>gr     :Gread<CR>
 nmap <leader>gw     :Gwrite<CR>

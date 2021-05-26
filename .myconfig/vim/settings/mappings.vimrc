@@ -15,7 +15,7 @@ nnoremap <silent><Leader>w :w<CR>
 " close current buffer
 nnoremap <silent><Leader>q :bd<CR>
 " quit vim
-nnoremap Q :quit<CR>
+nnoremap Q :qa<CR>
 
 " Copy & paste to system clipboard
 " if not used set clipboard=unnamedplus
@@ -119,3 +119,8 @@ nmap <Leader>fq viw<Leader>y :CocCommand fzf-preview.ProjectFiles<cr>
 
 " mapping for coc-yank
 " nnoremap <silent> <Leader>y  :<C-u>CocList -A --normal yank<cr>
+
+" tabs
+nnoremap <leader>tn :tab new<CR>
+nnoremap <silent><c-i> :tabp<CR>
+nnoremap <silent><c-o> :tabn<CR>
