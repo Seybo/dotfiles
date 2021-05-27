@@ -15,14 +15,15 @@ source $HOME/.myconfig/vim/plugins/airline.vimrc
 source $HOME/.myconfig/vim/plugins/autopairs.vimrc
 source $HOME/.myconfig/vim/plugins/bookmarks.vimrc
 source $HOME/.myconfig/vim/plugins/buffergator.vimrc
+source $HOME/.myconfig/vim/plugins/bundler.vimrc
 source $HOME/.myconfig/vim/plugins/ctrlsf.vimrc
 source $HOME/.myconfig/vim/plugins/commentary.vimrc
 source $HOME/.myconfig/vim/plugins/coc.vimrc
 source $HOME/.myconfig/vim/plugins/coc_explorer.vimrc
+source $HOME/.myconfig/vim/plugins/dispatch.vimrc
 source $HOME/.myconfig/vim/plugins/editorconfig.vimrc
 source $HOME/.myconfig/vim/plugins/fugitive.vimrc
 source $HOME/.myconfig/vim/plugins/fzf-mru.vimrc
-" START
 source $HOME/.myconfig/vim/plugins/fzf.vimrc
 source $HOME/.myconfig/vim/plugins/gql.vimrc
 source $HOME/.myconfig/vim/plugins/gutentags.vimrc
