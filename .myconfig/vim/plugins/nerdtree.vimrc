@@ -1,5 +1,5 @@
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeFind' }
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeFind' }
 " let NERDTreeShowHidden=1
 let NERDTreeQuitOnOpen=1
 let NERDTreeWinSize=50

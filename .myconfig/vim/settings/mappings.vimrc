@@ -52,6 +52,9 @@ noremap <leader>wj <C-w>j " move to down window
 noremap <leader>wk <C-w>k " move to up window
 noremap <leader>ww <c-w><c-w> " swith between last
 
+noremap <leader>wmj <C-w>j<C-w>_<CR>
+noremap <leader>wmk <C-w>k<C-w>_<CR>
+
 " resizing
 map <left>  :3wincmd <<cr>
 nmap <right> :3wincmd ><cr>
@@ -122,5 +125,6 @@ nmap <Leader>fq viw<Leader>y :CocCommand fzf-preview.ProjectFiles<cr>
 
 " tabs
 nnoremap <leader>tn :tab new<CR>
-nnoremap <silent><c-i> :tabp<CR>
-nnoremap <silent><c-o> :tabn<CR>
+nnoremap <C-p> <C-o>
+nnoremap <silent><C-i> :tabp<CR>
+nnoremap <silent><C-o> :tabn<CR>

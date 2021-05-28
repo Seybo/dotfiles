@@ -73,6 +73,7 @@ alias rdbr2='rails db:rollback STEP=2 && RAILS_ENV=test rails db:reset'
 alias rdbr3='rails db:rollback STEP=3 && RAILS_ENV=test rails db:reset'
 alias wai='whereami'
 alias rlc='rails log:clear'
+alias rc='rails c'
 # alias redisrepair= 'sudo /etc/init.d/redis_6379 stop && sudo rm /var/redis/6379/dump.rdb && sudo rm /var/run/redis_6379.pid && sudo /etc/init.d/redis_6379 start'
 
 
