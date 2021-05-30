@@ -24,3 +24,10 @@ augroup suffixes
     execute "autocmd FileType " . ft[0] . " setlocal suffixesadd=" . ft[1]
   endfor
 augroup END
+
+augroup neovim_terminal
+  autocmd!
+
+  " Disables number lines on terminal buffers
+  autocmd TermOpen * :set nonumber norelativenumber
+augroup END

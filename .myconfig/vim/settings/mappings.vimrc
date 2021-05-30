@@ -28,8 +28,8 @@ nmap <Leader>P o<Esc>"+p
 " moving lines
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
-inoremap <A-j> <Esc>:m .+1<CR>==gi
-inoremap <A-k> <Esc>:m .-2<CR>==gi
+" inoremap <A-j> <Esc>:m .+1<CR>==gi
+" inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 
@@ -46,14 +46,22 @@ vnoremap <A-h> <gv
 " Windows
 " map <leader>wq :wincmd q<cr> " close window
 map <leader>wo :only <cr> " leave only current window
-noremap <leader>wh <C-w>h " move to left window
-noremap <leader>wl <C-w>l " move to right window
-noremap <leader>wj <C-w>j " move to down window
-noremap <leader>wk <C-w>k " move to up window
-noremap <leader>ww <c-w><c-w> " swith between last
+noremap <leader>wh <C-w>h " switch to left window
+noremap <leader>wl <C-w>l " switch to right window
+noremap <leader>wj <C-w>j " switch to down window
+noremap <leader>wk <C-w>k " switch to up window
+noremap <leader>ww <c-w><c-w> " switch between last
+tnoremap <leader>wh <C-\><C-N><C-w>h
+tnoremap <leader>wj <C-\><C-N><C-w>j
+tnoremap <leader>wk <C-\><C-N><C-w>k
+tnoremap <leader>wl <C-\><C-N><C-w>l
 
+" maximize windows
+noremap <leader>wmj <C-w>j<C-w>_<CR>
+noremap <leader>wml <C-w>l<C-w>_<CR>
 noremap <leader>wmj <C-w>j<C-w>_<CR>
 noremap <leader>wmk <C-w>k<C-w>_<CR>
+noremap <leader>wmd <C-w>=<CR>
 
 " resizing
 map <left>  :3wincmd <<cr>
@@ -128,3 +136,18 @@ nnoremap <leader>tn :tab new<CR>
 nnoremap <C-p> <C-o>
 nnoremap <silent><C-i> :tabp<CR>
 nnoremap <silent><C-o> :tabn<CR>
+
+" help
+nnoremap <leader>ht :nvim_terminal_emulator
+
+" terminal
+" create a new terminal tab
+tnoremap <Leader>tt <C-\><C-n>:tab new<CR>:term<CR>
+noremap  <Leader>tt :tab new<CR>:term<CR>
+tnoremap jk <C-\><C-n>
+
+" buffers
+nnoremap <c-l><c-l> :ls<CR>:b *
+nnoremap <leader>bd :bd <C-h>
+nnoremap <silent><a-i> :bp<CR>
+nnoremap <silent><a-o> :bn<CR>

@@ -12,5 +12,3 @@ map <C-n><C-f> :NERDTreeFind %<CR>
 " let NERDTreeMinimalUI = 1
 " let NERDTreeIgnore = []
 " let NERDTreeStatusline = ''
-
-Plug 'ryanoasis/vim-devicons'
