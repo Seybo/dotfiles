@@ -4,7 +4,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " fzf-preview installed into coc
 let g:fzf_preview_directory_files_command = 'fd --type f --hidden --follow'
 let g:fzf_preview_filelist_command = 'fd --type f --hidden --follow'
-nmap <C-l><C-b> :CocCommand fzf-preview.Buffers<cr>
+nmap <C-l><C-l> :CocCommand fzf-preview.Buffers<cr>
 nmap <Leader>ff :CocCommand fzf-preview.ProjectFiles<cr>
 nmap <Leader>fd :FzfPreviewFromResources directory<cr>
 nmap <Leader>fl :CocCommand fzf-preview.ProjectMruFiles<cr>

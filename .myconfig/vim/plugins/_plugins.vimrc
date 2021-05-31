@@ -12,6 +12,7 @@
 call plug#begin('~/.vim/plugged')
 
 source $HOME/.myconfig/vim/plugins/airline.vimrc
+source $HOME/.myconfig/vim/plugins/bufstop.vimrc
 source $HOME/.myconfig/vim/plugins/autopairs.vimrc
 source $HOME/.myconfig/vim/plugins/bookmarks.vimrc
 source $HOME/.myconfig/vim/plugins/bundler.vimrc

@@ -45,5 +45,3 @@ endif
 
 " now we can pass <C-h> to mappings as a tab
 set wildcharm=<C-h>
-" let g:netrw_altfile = 1
-let loaded_netrwPlugin = 1

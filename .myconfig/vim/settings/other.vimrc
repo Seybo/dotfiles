@@ -27,7 +27,6 @@ augroup END
 
 augroup neovim_terminal
   autocmd!
-
   " Disables number lines on terminal buffers
   autocmd TermOpen * :set nonumber norelativenumber
 augroup END

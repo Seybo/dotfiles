@@ -99,11 +99,6 @@ nnoremap <A-y> :b#<CR>
 " refresh file
 nnoremap <silent> <Leader>rf :e!<CR>
 
-" buffers implemented in buffergator config
-" nnoremap <silent><A-i> :bn<cr>
-" nnoremap <silent><A-o> :bp<cr>
-nnoremap <silent><A-u> :b#<CR>
-
 " copy-paste visual selection
 vmap <silent><leader>. :t'><cr>
 
@@ -142,12 +137,17 @@ nnoremap <leader>ht :nvim_terminal_emulator
 
 " terminal
 " create a new terminal tab
-tnoremap <Leader>tt <C-\><C-n>:tab new<CR>:term<CR>
-noremap  <Leader>tt :tab new<CR>:term<CR>
-tnoremap jk <C-\><C-n>
+" tnoremap <Leader>tt <C-\><C-n>:tab new<CR>:term<CR>
+" noremap  <Leader>tt :tab new<CR>:term<CR>
+" tnoremap jk <C-\><C-n>
 
 " buffers
-nnoremap <c-l><c-l> :ls<CR>:b *
-nnoremap <leader>bd :bd <C-h>
-nnoremap <silent><a-i> :bp<CR>
-nnoremap <silent><a-o> :bn<CR>
+nnoremap <leader>bl :ls<CR>:b *
+" bd removes the file from your buffer list and not much else
+" bw wipes out everything about that buffer. It's entries in the jump list, it's marks, etc
+nnoremap <leader>bd :ls<CR>:bd *
+nnoremap <leader>bw :ls<CR>:bw *
+nnoremap <silent><a-u> :b#<CR>
+" implemented by buffers management plugin because it works on MRU buffers
+" nnoremap <silent><a-i> :bp<CR>
+" nnoremap <silent><a-o> :bn<CR>
