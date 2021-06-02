@@ -293,7 +293,7 @@ set -g history-limit 12288
 set-option -g mouse on
 
 # set repeat wating time
-set-option -g repeat-time 400
+set-option -g repeat-time 300
 
 # force Vi mode
 #   really you should export VISUAL or EDITOR environment variable, see manual
