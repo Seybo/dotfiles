@@ -5,15 +5,25 @@ vnoremap <C-l> <Esc>
 " inoremap ол <Esc>
 
 nnoremap <silent><leader>vv :e ~/.myconfig/vim/init_new.vim<CR>
-nnoremap <silent><leader>ft :e ./_mydev/temp.md<CR>
+nnoremap <silent><leader>fot :e ./_mydev/temp.md<CR>
+nnoremap <silent><leader>fom :e ./_mydev/marks.md<CR>
 nnoremap <silent><Leader>vs :source ~/.myconfig/vim/init_new.vim<CR>
 nnoremap <silent><Leader>vpi :PlugInstall<CR>
 nnoremap <silent><Leader>vpu :PlugUpdate<CR>
 
-" save current buffer
+" buffers
+" implemented by buffers management plugin because it works on MRU buffers
+" nnoremap <silent><a-i> :bp<CR>
+" nnoremap <silent><a-o> :bn<CR>
+" save
 nnoremap <silent><Leader>w :w<CR>
-" close current buffer
+" close
 nnoremap <silent><Leader>q :bd<CR>
+" list
+nnoremap <leader>bl :ls<CR>:b *
+" jump between two recent
+nnoremap <silent><a-u> :b#<CR>
+
 " quit vim
 nnoremap Q :qa<CR>
 
@@ -132,22 +142,8 @@ nnoremap <C-p> <C-o>
 nnoremap <silent><C-i> :tabp<CR>
 nnoremap <silent><C-o> :tabn<CR>
 
-" help
-nnoremap <leader>ht :nvim_terminal_emulator
-
 " terminal
 " create a new terminal tab
 " tnoremap <Leader>tt <C-\><C-n>:tab new<CR>:term<CR>
 " noremap  <Leader>tt :tab new<CR>:term<CR>
 " tnoremap jk <C-\><C-n>
-
-" buffers
-nnoremap <leader>bl :ls<CR>:b *
-" bd removes the file from your buffer list and not much else
-" bw wipes out everything about that buffer. It's entries in the jump list, it's marks, etc
-nnoremap <leader>bd :ls<CR>:bd *
-nnoremap <leader>bw :ls<CR>:bw *
-nnoremap <silent><a-u> :b#<CR>
-" implemented by buffers management plugin because it works on MRU buffers
-" nnoremap <silent><a-i> :bp<CR>
-" nnoremap <silent><a-o> :bn<CR>
