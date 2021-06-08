@@ -4,48 +4,54 @@ inoremap <C-l> <Esc>
 vnoremap <C-l> <Esc>
 " inoremap ол <Esc>
 
-nnoremap <silent><leader>vv :e ~/.myconfig/vim/init_new.vim<CR>
-nnoremap <silent><leader>fot :e ./_mydev/temp.md<CR>
-nnoremap <silent><leader>fom :e ./_mydev/marks.md<CR>
-nnoremap <silent><Leader>vs :source ~/.myconfig/vim/init_new.vim<CR>
-nnoremap <silent><Leader>vpi :PlugInstall<CR>
-nnoremap <silent><Leader>vpu :PlugUpdate<CR>
+nnoremap <silent><leader>vv :e ~/.myconfig/vim/init_new.vim<cr>
+nnoremap <silent><leader>fot :e ./_mydev/temp.md<cr>
+nnoremap <silent><leader>fom :e ./_mydev/marks.md<cr>
+nnoremap <silent><Leader>vs :source ~/.myconfig/vim/init_new.vim<cr>
+nnoremap <silent><Leader>vpi :PlugInstall<cr>
+nnoremap <silent><Leader>vpu :PlugUpdate<cr>
 
 " buffers
 " implemented by buffers management plugin because it works on MRU buffers
-" nnoremap <silent><a-i> :bp<CR>
-" nnoremap <silent><a-o> :bn<CR>
+" nnoremap <silent><a-i> :bp<cr>
+" nnoremap <silent><a-o> :bn<cr>
 " save
-nnoremap <silent><Leader>w :w<CR>
-" close
-nnoremap <silent><Leader>q :bd<CR>
+nnoremap <silent><Leader>w :w<cr>
+" close is managed by bufkill in order to not to close tabs with buffers
+" nnoremap <silent><Leader>q :bd<cr>
 " list
-nnoremap <leader>bl :ls<CR>:b *
+nnoremap <leader>bl :ls<cr>:b *
 " jump between two recent
-nnoremap <silent><a-u> :b#<CR>
+nnoremap <silent><a-u> :b#<cr>
 
 " quit vim
-nnoremap Q :qa<CR>
+nnoremap Q :qa<cr>
 
 " Copy & paste to system clipboard
 " if not used set clipboard=unnamedplus
 vmap <Leader>y "+y
 vmap <Leader>d "+d
 vmap <Leader>p "+p
+" coc-yank
+" nnoremap <silent> <leader>0  :<C-u>CocList -A --normal yank<cr>
+nmap <silent><leader>y :<C-u>CocList yank<cr>
 nmap <Leader>p "+p
-nmap <Leader>P o<Esc>"+p
+nmap <Leader>P o<ESC>"+p
+" Copy & paste to custom register
+" vmap yfy "fy
+" nmap yfp "fP
 
 " moving lines
-nnoremap <A-j> :m .+1<CR>==
-nnoremap <A-k> :m .-2<CR>==
-" inoremap <A-j> <Esc>:m .+1<CR>==gi
-" inoremap <A-k> <Esc>:m .-2<CR>==gi
-vnoremap <A-j> :m '>+1<CR>gv=gv
-vnoremap <A-k> :m '<-2<CR>gv=gv
+nnoremap <A-j> :m .+1<cr>==
+nnoremap <A-k> :m .-2<cr>==
+" inoremap <A-j> <Esc>:m .+1<cr>==gi
+" inoremap <A-k> <Esc>:m .-2<cr>==gi
+vnoremap <A-j> :m '>+1<cr>gv=gv
+vnoremap <A-k> :m '<-2<cr>gv=gv
 
 " adding empty lines
-nnoremap <C-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
-nnoremap <C-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
+nnoremap <C-j> :set paste<cr>m`o<Esc>``:set nopaste<cr>
+nnoremap <C-k> :set paste<cr>m`O<Esc>``:set nopaste<cr>
 
 " Indentation
 noremap <A-l> >>
@@ -53,28 +59,32 @@ noremap <A-h> <<
 vnoremap <A-l> >gv
 vnoremap <A-h> <gv
 
-" Windows
+" Splits
 " map <leader>wq :wincmd q<cr> " close window
-map <leader>wo :only <cr> " leave only current window
-noremap <leader>wh <C-w>h " switch to left window
-noremap <leader>wl <C-w>l " switch to right window
-noremap <leader>wj <C-w>j " switch to down window
-noremap <leader>wk <C-w>k " switch to up window
-noremap <leader>ww <c-w><c-w> " switch between last
-tnoremap <leader>wh <C-\><C-N><C-w>h
-tnoremap <leader>wj <C-\><C-N><C-w>j
-tnoremap <leader>wk <C-\><C-N><C-w>k
-tnoremap <leader>wl <C-\><C-N><C-w>l
+noremap  so :only <cr> " leave only current window
+noremap  sq :close<cr>
+noremap  sx :BD!<cr> " completely delete the buffer as well
+noremap  sh <C-w>h " switch to left window
+noremap  sl <C-w>l " switch to right window
+noremap  sj <C-w>j " switch to down window
+noremap  sk <C-w>k " switch to up window
+noremap  st <c-w><c-w> " switch between last
+noremap  sp :sp<cr> " split horizontal
+noremap  sv :vsp<cr> " split vertical
+" tnoremap <leader>sh <C-\><C-N><C-w>h
+" tnoremap <leader>sj <C-\><C-N><C-w>j
+" tnoremap <leader>sk <C-\><C-N><C-w>k
+" tnoremap <leader>sl <C-\><C-N><C-w>l
+
 
 " maximize windows
-noremap <leader>wmj <C-w>j<C-w>_<CR>
-noremap <leader>wml <C-w>l<C-w>_<CR>
-noremap <leader>wmj <C-w>j<C-w>_<CR>
-noremap <leader>wmk <C-w>k<C-w>_<CR>
-noremap <leader>wmd <C-w>=<CR>
+" noremap <leader>wmj <C-w>j<C-w>_<cr>
+" noremap <leader>wml <C-w>l<C-w>_<cr>
+" noremap <leader>wmj <C-w>j<C-w>_<cr>
+" noremap <leader>wmk <C-w>k<C-w>_<cr>
+" noremap <leader>wmd <C-w>=<cr>
 
 " resizing
-map <left>  :3wincmd <<cr>
 nmap <right> :3wincmd ><cr>
 nmap <up>    :3wincmd -<cr>
 nmap <down>  :3wincmd +<cr>
@@ -83,11 +93,8 @@ nmap <down>  :3wincmd +<cr>
 nnoremap j gj
 nnoremap k gk
 
-" duplicate selected block
-vmap <C-p> y'>p
-
 " select all
-nnoremap <leader>aa ggVG<CR>
+nnoremap <leader>aa ggVG<cr>
 
 " replace word under cursor
 nnoremap <leader>rw :%s/<C-r><C-w>/
@@ -102,12 +109,11 @@ map <silent><leader>fpr :let @+ = expand("%")<cr>
 map <silent><leader>fpp :let @+ = expand("%:t")<cr>
 
 " remove all the search highlights on press enter
-" nnoremap <silent> <CR> :nohlsearch<CR><CR>|
-nnoremap <CR> :noh<CR><CR>
-nnoremap <A-y> :b#<CR>
+nnoremap <cr> :noh<cr><cr>
+nnoremap <A-t> :b#<cr>
 
 " refresh file
-nnoremap <silent> <Leader>rf :e!<CR>
+nnoremap <silent> <Leader>rf :e!<cr>
 
 " copy-paste visual selection
 vmap <silent><leader>. :t'><cr>
@@ -133,17 +139,19 @@ nmap <leader>fe :setlocal foldmethod=expr<cr>
 " search by filename the word under cursor
 nmap <Leader>fq viw<Leader>y :CocCommand fzf-preview.ProjectFiles<cr>
 
-" mapping for coc-yank
-" nnoremap <silent> <Leader>y  :<C-u>CocList -A --normal yank<cr>
-
 " tabs
-nnoremap <leader>tn :tab new<CR>
-nnoremap <C-p> <C-o>
-nnoremap <silent><C-i> :tabp<CR>
-nnoremap <silent><C-o> :tabn<CR>
+nnoremap to :tab new<cr>
+nnoremap tx :tab close<cr>
+nnoremap tp :tabp<cr>
+nnoremap tn :tabn<cr>
+nnoremap tl :tabl<cr>
+nnoremap ta 1gt
+nnoremap ts 2gt
+nnoremap td 3gt
+nnoremap tf 4gt
+nnoremap tg 5gt
 
 " terminal
 " create a new terminal tab
-" tnoremap <Leader>tt <C-\><C-n>:tab new<CR>:term<CR>
-" noremap  <Leader>tt :tab new<CR>:term<CR>
-" tnoremap jk <C-\><C-n>
+nnoremap tt :tab new<cr>:term<cr>
+tnoremap jk <C-\><C-n>

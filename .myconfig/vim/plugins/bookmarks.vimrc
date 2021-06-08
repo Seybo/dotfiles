@@ -14,7 +14,7 @@ let g:bookmark_auto_save = 1
 
 nmap <Leader>bb <Plug>BookmarkToggle
 nmap <Leader>ba <Plug>BookmarkAnnotate
-nmap <Leader>bl <Plug>BookmarkShowAll
+nmap <Leader>bs <Plug>BookmarkShowAll
 nmap <Leader>bc <Plug>BookmarkClearAll
 
 " colors are set in colors.vimrc

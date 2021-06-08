@@ -1,7 +1,7 @@
 # copy filename on xf
 bind generic xf +sh -c "echo -n %(file) | xclip -sel c && echo File Clipped"
 bind status D !@?rm %(file)
-bind status U !?git checkout -- %(file)
+bind status U status-revert
 
 # vim: set expandtab sw=4 tabstop=4:
 # *color* 'area' 'fgcolor' 'bgcolor' '[attributes]'

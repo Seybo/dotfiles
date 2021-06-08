@@ -41,9 +41,9 @@ let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
 " let g:airline_section_warning (ycm_warning_count, syntastic-warn, languageclient_warning_count, whitespace)
 
 " should go after colorscheme
-highlight CocErrorHighlight ctermfg=Yellow guifg=#ffff00
-highlight CocErrorVirtualText ctermfg=Yellow guifg=#ffff00
-highlight CocErrorFloat ctermfg=Yellow guifg=#ffff00
+highlight CocErrorHighlight guifg=#BBE67E
+highlight CocErrorVirtualText guifg=#BBE67E
+highlight CocErrorFloat guifg=#ffff00
 
 " Sneak colors
 highlight Sneak guifg=#262626 guibg=#BBE67E

@@ -301,7 +301,7 @@ set -g status-keys vi
 set -g mode-keys vi
 
 # replace C-b by C-a instead of using both prefixes
-# set -gu prefix2
+set -gu prefix2
 unbind C-a
 set-option -g prefix C-Space
 

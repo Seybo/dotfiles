@@ -45,3 +45,10 @@ endif
 
 " now we can pass <C-h> to mappings as a tab
 set wildcharm=<C-h>
+
+" testing
+set autowrite
+set updatetime=100
+
+" disable Ex mode
+map Q <Nop>

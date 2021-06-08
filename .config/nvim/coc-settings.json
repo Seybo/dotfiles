@@ -1,10 +1,4 @@
 {
-  "diagnostic.errorSign": "•",
-  "diagnostic.warningSign": "•",
-  "diagnostic.infoSign": "•",
-  "diagnostic.virtualText": true,
-  "eslint.autoFixOnSave": true,
-  "prettier.disableSuccessMessage": true,
   "coc.preferences.formatOnSaveFiletypes": [
     "reason",
     "css",
@@ -14,26 +8,13 @@
     "typescript",
     "typescriptreact"
   ],
-  "solargraph.diagnostics": true,
-  "solargraph.autoformat": false,
-  "solargraph.formatting": true,
-  "solargraph.definitions": true,
-  "solargraph.references": true,
-  "solargraph.folding": true,
-  "solargraph.hover": true,
-  "explorer.icon.enableNerdfont": true,
-  "explorer.floating.border.enable": true,
-  "explorer.floating.border.chars": [
-    " ",
-    " ",
-    " ",
-    " ",
-    " ",
-    " ",
-    " ",
-    " "
-  ],
+  "diagnostic.errorSign": "•",
+  "diagnostic.warningSign": "•",
+  "diagnostic.infoSign": "•",
+  "diagnostic.virtualText": true,
+  "eslint.autoFixOnSave": true,
   "explorer.file.showHiddenFiles": true,
+  "explorer.icon.enableNerdfont": true,
   "explorer.root.customRules": {
     "vcs": {
       "patterns": [
@@ -55,5 +36,25 @@
     "workspace",
     "custom:vcs",
     "custom:vcs-r"
-  ]
+  ],
+  "prettier.disableSuccessMessage": true,
+  "solargraph.diagnostics": true,
+  "solargraph.autoformat": false,
+  "solargraph.formatting": true,
+  "solargraph.definitions": true,
+  "solargraph.references": true,
+  "solargraph.folding": true,
+  "solargraph.hover": true,
+  "explorer.floating.border.enable": true,
+  "explorer.floating.border.chars": [
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " "
+  ],
+  "yank.highlight.enable": false
 }

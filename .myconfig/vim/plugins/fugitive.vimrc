@@ -17,4 +17,5 @@ vmap <leader>gbb    :GBrowse<CR>
 nmap <leader>gbo    :GBrowse origin:%<CR>
 vmap <leader>gbo    :GBrowse origin:%<CR>
 
+" A git commit browser requires fugitive
 Plug 'junegunn/gv.vim'
