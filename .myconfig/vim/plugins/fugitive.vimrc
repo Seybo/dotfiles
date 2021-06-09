@@ -1,21 +1,22 @@
 Plug 'tpope/vim-rhubarb' " needed for fugitive code on gh open
 Plug 'tpope/vim-fugitive'
-" nmap <leader>gt     :Gstatus<CR>
-" nmap <leader>gm     :Gmove
-" nmap <leader>gr     :Gread<CR>
-" nmap <leader>gw     :Gwrite<CR>
-" nmap <leader>gdh    :Gdiff<CR>
-nmap <leader>gbl    :Git blame<CR>
-" nmap <leader>gdv    :Gvdiff<CR>
-" next two has nothing to do with the plugin but put here for consistency
-" nmap <leader>ggl    :diffget //2<CR>
-" nmap <leader>ggr    :diffget //3<CR>
-" nmap <leader>gp     :diffput
-" nmap <leader>gu     :diffupdate<CR>
-nmap <leader>gbb    :GBrowse<CR>
-vmap <leader>gbb    :GBrowse<CR>
-nmap <leader>gbo    :GBrowse origin:%<CR>
-vmap <leader>gbo    :GBrowse origin:%<CR>
+nnoremap <leader>gt   :tab new<cr>:Git<cr><C-w>j:q<CR>
+nnoremap <leader>gm   :Gmove
+nnoremap <leader>ge   :Gedit
+nnoremap <leader>gr   :Gread<cr>
+nnoremap <leader>gw   :Gwrite<cr>
+nnoremap <leader>gbl  :Git blame<cr>
+" next get/put ones has nothing to do with the plugin but put here for consistency
+nnoremap <leader>gdp  :diffput<cr>
+nnoremap <leader>gdg  :diffget<cr>
+" nmap <leader>ggl    :diffget //2<cr>
+" nmap <leader>ggr    :diffget //3<cr>
+nnoremap <leader>gdu  :diffupdate<cr>
+nnoremap <leader>gdv  :Gvdiff<cr>
+nnoremap <leader>gbb  :GBrowse<cr>
+vnoremap <leader>gbb  :GBrowse<cr>
+nnoremap <leader>gbo  :GBrowse origin:%<cr>
+vnoremap <leader>gbo  :GBrowse origin:%<cr>
 
 " A git commit browser requires fugitive
 Plug 'junegunn/gv.vim'
