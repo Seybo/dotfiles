@@ -4,7 +4,7 @@
 " source $HOME/.myconfig/vim/plugins/indentline.vimrc " perf issues on big files
 " source $HOME/.myconfig/vim/plugins/rfactory.vimrc " https://github.com/christoomey/vim-rfactory/issues/15
 " the following two substituted by polyglot
-" source $HOME/.myconfig/vim/plugins/vim_ruby.vimrc
+" source $HOME/.myconfig/vim/plugins/ruby.vimrc
 " source $HOME/.myconfig/vim/plugins/gundo.vimrc
 " source $HOME/.myconfig/vim/plugins/quick_scope.vimrc " probably not needed, using sneak
 " source $HOME/.myconfig/vim/plugins/buffergator.vimrc
@@ -54,6 +54,6 @@ source $HOME/.myconfig/vim/plugins/test_default.vimrc
 source $HOME/.myconfig/vim/plugins/typescript.vimrc
 source $HOME/.myconfig/vim/plugins/ui.vimrc
 source $HOME/.myconfig/vim/plugins/undotree.vimrc
-source $HOME/.myconfig/vim/plugins/vimwiki.vimrc
+source $HOME/.myconfig/vim/plugins/wiki.vimrc
 
 call plug#end()
