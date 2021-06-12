@@ -17,6 +17,20 @@ nnoremap <silent><Leader>vpu :PlugUpdate<cr>
 " nnoremap <silent><a-o> :bn<cr>
 " save
 nnoremap <silent><Leader>w :w<cr>
+function! DeleteEmptyBuffers()
+    let [i, n; empty] = [1, bufnr('$')]
+    while i <= n
+        if bufexists(i) && bufname(i) == ''
+            call add(empty, i)
+        endif
+        let i += 1
+    endwhile
+    if len(empty) > 0
+        exe 'bdelete' join(empty)
+    endif
+endfunction
+nnoremap <leader>bde :call DeleteEmptyBuffers()<cr>
+
 " close is managed by bufkill in order to not to close tabs with buffers
 " nnoremap <silent><Leader>q :bd<cr>
 " list
