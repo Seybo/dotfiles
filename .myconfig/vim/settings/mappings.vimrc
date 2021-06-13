@@ -166,6 +166,5 @@ nnoremap tf 4gt
 nnoremap tg 5gt
 
 " terminal
-" create a new terminal tab
-nnoremap tt :tab new<cr>:term<cr>
+nnoremap tt :term<cr>
 tnoremap jk <C-\><C-n>
