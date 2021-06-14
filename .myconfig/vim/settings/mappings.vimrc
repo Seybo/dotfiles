@@ -126,8 +126,8 @@ map <silent><leader>fpp :let @+ = expand("%:t")<cr>
 nnoremap <cr> :noh<cr><cr>
 nnoremap <A-t> :b#<cr>
 
-" refresh file
-nnoremap <silent> <Leader>rf :e!<cr>
+" refresh/revert file's unsaved changes
+nnoremap <silent> <Leader>fr :e!<cr>
 
 " copy-paste visual selection
 vmap <silent><leader>. :t'><cr>

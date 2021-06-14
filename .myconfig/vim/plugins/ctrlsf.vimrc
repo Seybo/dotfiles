@@ -5,10 +5,10 @@ let g:ctrlsf_auto_focus = {
     \ "at": "done",
     \ "duration_less_than": 5000
     \ }
-let g:ctrlsf_auto_preview = 1
+" let g:ctrlsf_auto_preview = 1
 
 nnoremap <silent><leader>st :CtrlSFToggle<cr>
-nmap     <silent><leader>sm :CtrlSF -W -S
+nmap     <silent><leader>sm :CtrlSF -W
 nmap     <silent><leader>sr :CtrlSF -R
 nmap     <silent><leader>sw <Plug>CtrlSFCwordPath<cr>
 vmap     <silent><leader>ss <Plug>CtrlSFVwordPath<cr>

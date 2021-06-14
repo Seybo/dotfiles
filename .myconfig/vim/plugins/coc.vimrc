@@ -76,5 +76,5 @@ nmap <silent><Leader>coh :call CocAction('doHover')<CR>
 " Use K to show documentation in preview window
 " nnoremap <silent>K :call <SID>show_documentation()<CR>
 
-nnoremap <leader>fr :call CocAction('format')<CR>
+nnoremap <leader>cof :call CocAction('format')<CR>
 autocmd! BufWritePre *.jsx :call CocAction('format')

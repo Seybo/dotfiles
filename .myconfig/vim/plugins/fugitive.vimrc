@@ -21,3 +21,6 @@ vnoremap <leader>gbo  :GBrowse origin:%<cr>
 
 " A git commit browser requires fugitive
 Plug 'junegunn/gv.vim'
+
+" HELP
+" < and > - fold/unfold diffs for the selected file. If done on HEAD works for all the files
