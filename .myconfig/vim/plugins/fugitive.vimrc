@@ -12,7 +12,7 @@ nnoremap <leader>gbl  :Git blame<cr>
 " nmap <leader>ggl    :diffget //2<cr>
 " nmap <leader>ggr    :diffget //3<cr>
 " nnoremap <leader>gdu  :diffupdate<cr>
-" nnoremap <leader>gdv  :Gvdiff<cr>
+nnoremap <leader>gdv  :Gvdiff<cr>
 " nnoremap <leader>gds  :Gdiffsplit<cr>
 nnoremap <leader>gbb  :GBrowse<cr>
 vnoremap <leader>gbb  :GBrowse<cr>

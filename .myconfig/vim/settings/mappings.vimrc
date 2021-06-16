@@ -4,7 +4,7 @@ inoremap <C-l> <Esc>
 vnoremap <C-l> <Esc>
 " inoremap ол <Esc>
 
-nnoremap <silent><leader>vv :e ~/.myconfig/vim/init_new.vim<cr>
+nnoremap <silent><leader>fov :e ~/.myconfig/vim/plugins/_plugins.vimrc<cr>
 nnoremap <silent><leader>fot :e ./_mydev/temp.md<cr>
 nnoremap <silent><leader>fom :e ./_mydev/marks.md<cr>
 nnoremap <silent><Leader>vs :source ~/.myconfig/vim/init_new.vim<cr>
@@ -30,6 +30,20 @@ function! DeleteEmptyBuffers()
     endif
 endfunction
 nnoremap <leader>bde :call DeleteEmptyBuffers()<cr>
+
+function! DeleteTerminalBuffers()
+    let [i, n; terminal] = [1, bufnr('$')]
+    while i <= n
+        if bufexists(i) && match(bufname(i), 'term') != -1
+            call add(terminal, i)
+        endif
+        let i += 1
+    endwhile
+    if len(terminal) > 0
+        exe 'bdelete' join(terminal)
+    endif
+endfunction
+nnoremap <leader>bdt :call DeleteTerminalBuffers()<cr>
 
 " close is managed by bufkill in order to not to close tabs with buffers
 " nnoremap <silent><Leader>q :bd<cr>
