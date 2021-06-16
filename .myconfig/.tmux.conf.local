@@ -306,7 +306,10 @@ unbind C-a
 set-option -g prefix C-Space
 
 # move status line to top
-#set -g status-position top
+# set -g status-position top
+
+# disable status line
+set -g status off
 
 # copy-mode
 unbind [
