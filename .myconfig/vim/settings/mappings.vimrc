@@ -45,6 +45,27 @@ function! DeleteTerminalBuffers()
 endfunction
 nnoremap <leader>bdt :call DeleteTerminalBuffers()<cr>
 
+function! DeleteInactiveBuffers()
+    "From tabpagebuflist() help, get a list of all buffers in all tabs
+    let tablist = []
+    for i in range(tabpagenr('$'))
+        call extend(tablist, tabpagebuflist(i + 1))
+    endfor
+
+    "Below originally inspired by Hara Krishna Dara and Keith Roberts
+    "http://tech.groups.yahoo.com/group/vim/message/56425
+    let nDeletes = 0
+    for i in range(1, bufnr('$'))
+        if bufexists(i) && !getbufvar(i,"&mod") && index(tablist, i) == -1
+        "bufno exists AND isn't modified AND isn't in the list of buffers open in windows and tabs
+            silent exec 'bdelete' i
+            let nDeletes = nDeletes + 1
+        endif
+    endfor
+    echomsg nDeletes . ' buffer(s) deleted'
+endfunction
+nnoremap <leader>bdi :call DeleteInactiveBuffers()<cr>
+
 " close is managed by bufkill in order to not to close tabs with buffers
 " nnoremap <silent><Leader>q :bd<cr>
 " list
