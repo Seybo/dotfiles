@@ -198,7 +198,7 @@ nnoremap ta 1gt
 nnoremap ts 2gt
 nnoremap td 3gt
 nnoremap tf 4gt
-nnoremap tg 5gt
+nnoremap th 5gt
 
 " terminal
 nnoremap tt :term<cr>

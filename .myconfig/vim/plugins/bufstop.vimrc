@@ -1,5 +1,6 @@
 Plug 'mihaifm/bufstop'
-nnoremap <silent><leader>bf :Bufstop<cr>
+" using it for buffer deletion is not a good idea because it wipes buffers (i.e. with marks etc)
+" nnoremap <silent><leader>bf :Bufstop<cr>
 nnoremap <silent><a-i>      :BufstopBack<cr>
 nnoremap <silent><a-o>      :BufstopForward<cr>
 
