@@ -55,5 +55,6 @@ source $HOME/.myconfig/vim/plugins/typescript.vimrc
 source $HOME/.myconfig/vim/plugins/ui.vimrc
 source $HOME/.myconfig/vim/plugins/undotree.vimrc
 source $HOME/.myconfig/vim/plugins/wiki.vimrc
+" source $HOME/.myconfig/vim/plugins/xkbswitch.vimrc
 
 call plug#end()

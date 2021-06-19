@@ -13,6 +13,12 @@ tsave() {
 }
 alias tshow='xopen ~/tmux.html &> /dev/null &'
 
+undupe_history() {
+  nl "$1" | sort -k 2  -k 1,1nr| uniq -f 1 | sort -n | cut -f 2 > unduped_history
+  rm "$1"
+  mv unduped_history "$1"
+}
+
 ####### zsh ########
 alias szsh="source ~/.zshrc"
 alias k9="kill -9"
@@ -92,7 +98,9 @@ alias jst="TZ=UTC BABEL_ENV=jest yarn jest"
 
 
 ####### apps ########
-alias v='vim'
+alias v='nvim'
+alias vi='nvim'
+alias vim='nvim'
 alias rr='ranger'
 alias gls='glances'
 alias gsm='gnome-system-monitor'
@@ -102,7 +110,6 @@ alias alf='wmctrl -r '0:1:zsh' -b toggle,fullscreen'
 
 
 ####### system ########
-alias uninstall='sudo apt purge --auto-remove'
 alias xopen='xdg-open'
 alias syslog="vim /var/log/syslog"
 alias syslogclear="sudo sh -c 'cat /dev/null > /var/log/syslog'\n: 1557288145:0;sudo sh -c 'cat /dev/null > /var/log/syslog'"
@@ -115,5 +122,9 @@ alias lca='colorls -a'
 alias lcr='colorls -lA --sd'
 alias lcr='colorls -lA --sd'
 alias lcd='colorls -d'
+
+alias aptu='sudo apt update'
+alias apti='sudo apt install'
+alias aptp='sudo apt purge --auto-remove'
 
 source ~/.myconfig/secure/aliases.sh
