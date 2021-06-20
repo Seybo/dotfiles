@@ -59,3 +59,8 @@ map Q <Nop>
 " set imsearch=0
 " highlight lCursor guifg=NONE guibg=Cyan
 " setlocal spell spelllang=ru_yo,en_us
+"
+" TESTING
+set switchbuf=useopen,usetab
+" this will focus the tab with the already opened file under cursor
+nnoremap go :sb <C-r>=expand('<cfile>')<CR><CR>
