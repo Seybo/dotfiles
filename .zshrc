@@ -178,6 +178,8 @@ export GEM_HOME="$HOME/.rbenv/versions/2.7.3/lib/ruby/gems/2.7.0"
 eval "$(pyenv init -)"
 
 eval "$(direnv hook zsh)"
+# silence direnv output
+export DIRENV_LOG_FORMAT=
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
