@@ -5,23 +5,14 @@ if defined?(::Bundler)
 end
 
 require 'pry-stack_explorer'
-require 'rb-readline'
-require 'readline'
 
 # fzf in pry
-if defined?(RbReadline)
-  def RbReadline.rl_reverse_search_history(sign, key)
-    rl_insert_text  `cat ~/.pry_history | fzf --tac |  tr '\n' ' '`
-  end
-end
-
-# for fzf in console
-# but this breaks vi-mode atm :(
+# breaks vi-mode :(
 # require 'rb-readline'
 # require 'readline'
 # if defined?(RbReadline)
-#   def RbReadline.rl_reverse_search_history(_sign, _key)
-#     rl_insert_text `cat ~/.pry_history | fzf --tac |  tr '\n' ' '`
+#   def RbReadline.rl_reverse_search_history(sign, key)
+#     rl_insert_text  `cat ~/.pry_history | fzf --tac |  tr '\n' ' '`
 #   end
 # end
 
