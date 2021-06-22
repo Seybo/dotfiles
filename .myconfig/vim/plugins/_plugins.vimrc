@@ -33,6 +33,7 @@ source $HOME/.myconfig/vim/plugins/fzf.vimrc
 source $HOME/.myconfig/vim/plugins/gql.vimrc
 source $HOME/.myconfig/vim/plugins/gitgutter.vimrc
 source $HOME/.myconfig/vim/plugins/gutentags.vimrc
+source $HOME/.myconfig/vim/plugins/indent_object.vimrc
 source $HOME/.myconfig/vim/plugins/jsx_pretty.vimrc
 source $HOME/.myconfig/vim/plugins/localvimrc.vimrc
 source $HOME/.myconfig/vim/plugins/neosnippet.vimrc

@@ -125,6 +125,7 @@ alias lcd='colorls -d'
 
 alias aptu='sudo apt update'
 alias apti='sudo apt install'
+alias aptb='sudo apt upgrade' # b - bump
 alias aptp='sudo apt purge --auto-remove'
 
 source ~/.myconfig/secure/aliases.sh
