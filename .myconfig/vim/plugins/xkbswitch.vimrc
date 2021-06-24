@@ -1,5 +1,8 @@
 Plug 'lyokha/vim-xkbswitch'
 
 let g:XkbSwitchEnabled = 1
-let g:XkbSwitchLib = '/usr/local/lib/libxkbswitch.so'
-let g:XkbSwitchIMappings = ['ru']
+" probably need to install this: https://github.com/lyokha/g3kb-switch for libg3kbswitch.so
+let g:XkbSwitchLib = '/usr/local/lib/libg3kbswitch.so'
+" let g:XkbSwitchIMappings = ['ru']
+" let g:XkbSwitchNLayout = 'us'
+

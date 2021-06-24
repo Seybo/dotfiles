@@ -14,7 +14,7 @@ set number relativenumber
 " indentation settings
 " set autoindent
 set expandtab
-" set softtabstop=2
+set softtabstop=2
 set shiftwidth=2
 
 " stop swap files
@@ -38,9 +38,9 @@ set foldcolumn=0 "remove folding indication col at window left
 
 " keep undo history across sessions, by storing in file.
 if has('persistent_undo')
-silent !mkdir ~/.config/nvim/undodir > /dev/null 2>&1
-set undodir=~/.config/nvim/undodir
-set undofile
+  silent !mkdir ~/.config/nvim/undodir > /dev/null 2>&1
+  set undodir=~/.config/nvim/undodir
+  set undofile
 endif
 
 " now we can pass <C-h> to mappings as a tab
@@ -54,13 +54,15 @@ set updatetime=100
 map Q <Nop>
 
 " russian mapping
-" set keymap=russian-jcukenwin
-" set iminsert=0
-" set imsearch=0
+set keymap=russian-jcukenwin
+set iminsert=0
+set imsearch=0
 " highlight lCursor guifg=NONE guibg=Cyan
-" setlocal spell spelllang=ru_yo,en_us
+setlocal spell spelllang=en_us,ru_yo
+
 "
 " TESTING
 set switchbuf=useopen,usetab
 " this will focus the tab with the already opened file under cursor
 nnoremap go :sb <C-r>=expand('<cfile>')<CR><CR>
+au BufReadPost,BufNewFile *_ru.md set spelllang=ru_yo

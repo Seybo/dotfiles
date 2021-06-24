@@ -2,7 +2,7 @@
 inoremap jk <Esc>
 inoremap <C-l> <Esc>
 vnoremap <C-l> <Esc>
-" inoremap ол <Esc>
+inoremap ол <Esc>
 
 nnoremap <silent><leader>fov :e ~/.myconfig/vim/plugins/_plugins.vimrc<cr>
 nnoremap <silent><leader>fot :e ./_mydev/temp.md<cr>
@@ -74,7 +74,7 @@ nnoremap <leader>bl :ls<cr>:b *
 nnoremap <silent><a-u> :b#<cr>
 
 " quit vim
-nnoremap Q :qa<cr>
+nnoremap Q :qa!<cr>
 
 " Copy & paste to system clipboard
 " if not used set clipboard=unnamedplus
@@ -179,7 +179,7 @@ map <S-F3> :loadview<cr>
 " map <silent><leader>p "kp
 " map <silent><leader>d "kd
 
-nnoremap <silent><leader>l i <Esc>
+nnoremap <silent><leader>ll i <Esc>
 
 " set foldmethod for markdown files for example
 nmap <leader>fi :setlocal foldmethod=indent<cr>
@@ -203,3 +203,7 @@ nnoremap th 5gt
 " terminal
 nnoremap tt :term<cr>
 tnoremap jk <C-\><C-n>
+
+" spell languages
+nnoremap <leader>le :set spelllang=en_us<cr>
+nnoremap <leader>lr :set spelllang=ru_yo<cr>
