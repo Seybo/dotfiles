@@ -87,8 +87,8 @@ nmap <silent><leader>y :<C-u>CocList yank<cr>
 nmap <Leader>p "+p
 nmap <Leader>P o<ESC>"+p
 " Copy & paste to custom register
-" vmap yfy "fy
-" nmap yfp "fP
+vmap yz "zy
+nmap pz "zP
 
 " moving lines
 nnoremap <A-j> :m .+1<cr>==
@@ -134,7 +134,8 @@ noremap  sv :vsp<cr> " split vertical
 " noremap <leader>wmd <C-w>=<cr>
 
 " resizing
-nmap <right> :3wincmd ><cr>
+nmap <right> :10wincmd ><cr>
+nmap <left>  :10wincmd <<cr>
 nmap <up>    :3wincmd -<cr>
 nmap <down>  :3wincmd +<cr>
 
@@ -205,5 +206,14 @@ nnoremap tt :term<cr>
 tnoremap jk <C-\><C-n>
 
 " spell languages
-nnoremap <leader>le :set spelllang=en_us<cr>
-nnoremap <leader>lr :set spelllang=ru_yo<cr>
+nnoremap <silent><leader>le :set spelllang=en_us<cr>
+nnoremap <silent><leader>lr :set spelllang=ru_yo<cr>
+function! ToggleSpellCheck()
+  set spell!
+  if &spell
+    echo "Spellcheck ON"
+  else
+    echo "Spellcheck OFF"
+  endif
+endfunction
+nnoremap <silent><leader>lc :call ToggleSpellCheck()<CR>

@@ -58,11 +58,16 @@ set keymap=russian-jcukenwin
 set iminsert=0
 set imsearch=0
 " highlight lCursor guifg=NONE guibg=Cyan
-setlocal spell spelllang=en_us,ru_yo
 
 "
 " TESTING
 set switchbuf=useopen,usetab
 " this will focus the tab with the already opened file under cursor
 nnoremap go :sb <C-r>=expand('<cfile>')<CR><CR>
+
+" SPELLCHECK
+" enable by default
+" setlocal spell spelllang=en_us
+" disable first capital letter check
+set spellcapcheck=
 au BufReadPost,BufNewFile *_ru.md set spelllang=ru_yo

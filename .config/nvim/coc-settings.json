@@ -57,5 +57,5 @@
     " "
   ],
   "yank.highlight.enable": false,
-  "yank.priority": 50
+  "yank.priority": 10
 }
