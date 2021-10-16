@@ -1,8 +1,9 @@
 " return to normal mode
 inoremap jk <Esc>
+inoremap <C-д> <Esc>
+inoremap <C-х> <Esc>
 inoremap <C-l> <Esc>
 vnoremap <C-l> <Esc>
-inoremap ол <Esc>
 
 nnoremap <silent><leader>fov :e ~/.myconfig/vim/plugins/_plugins.vimrc<cr>
 nnoremap <silent><leader>fot :e ./_mydev/temp.md<cr>
@@ -64,7 +65,7 @@ function! DeleteInactiveBuffers()
     endfor
     echomsg nDeletes . ' buffer(s) deleted'
 endfunction
-nnoremap <leader>bdi :call DeleteInactiveBuffers()<cr>
+nnoremap <leader>bdi :call DeleteInactiveBuffers() \| call DeleteEmptyBuffers()<cr>
 
 " close is managed by bufkill in order to not to close tabs with buffers
 " nnoremap <silent><Leader>q :bd<cr>
@@ -87,8 +88,8 @@ nmap <silent><leader>y :<C-u>CocList yank<cr>
 nmap <Leader>p "+p
 nmap <Leader>P o<ESC>"+p
 " Copy & paste to custom register
-vmap yz "zy
-nmap pz "zP
+vmap Yz "zy
+nmap Yz "zP
 
 " moving lines
 nnoremap <A-j> :m .+1<cr>==

@@ -33,13 +33,14 @@ wfup() {
   # $1 - name of the network
   nmcli c up "$1"
 }
+alias wfrestart="sudo service network-manager restart"
 
 ####### git ########
 alias gpf='git push --force-with-lease'
 alias gca='git commit -n --amend --no-edit'
 alias gcae='git commit -n --amend'
 alias gitc='git commit -n -v -m "'
-alias gitct='gaa && gitc temp"'
+alias gitct='gitc temp"'
 alias gbD='git branch -D'
 alias gc-='git checkout -'
 alias gaf='gaa && gca && gpf'
@@ -49,6 +50,7 @@ alias gsta='git stash save' # overwriting oh-my-zsh that uses git stash push
 alias gcms='gsta && gcm && gstp' # checkout master with stash
 alias gc-s='gsta && gc- && gstp' # checkout last branch with stash
 alias gstk='git stash --keep-index --include-untracked'
+alias gstd='git stash drop'
 alias gau='git reset HEAD --' # unstage
 
 

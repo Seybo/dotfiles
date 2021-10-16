@@ -70,4 +70,8 @@ nnoremap go :sb <C-r>=expand('<cfile>')<CR><CR>
 " setlocal spell spelllang=en_us
 " disable first capital letter check
 set spellcapcheck=
+au BufReadPost,BufNewFile * set spelllang=en_us
 au BufReadPost,BufNewFile *_ru.md set spelllang=ru_yo
+
+" fix for occasionally occurring error: 'pattern uses more memory than maxmempattern'
+set mmp=2000000
