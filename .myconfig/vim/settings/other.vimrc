@@ -31,7 +31,7 @@ augroup neovim_terminal
   autocmd TermOpen * :set nonumber norelativenumber
 augroup END
 
-let g:ruby_host_prog = '~/.rbenv/versions/2.7.3/bin/neovim-ruby-host'
+let g:ruby_host_prog = '~/.rbenv/versions/2.7.5/bin/neovim-ruby-host'
 let g:python3_host_prog = '/usr/bin/python3'
-# python 3 should be enough
+" python 3 should be enough
 " let g:python_host_prog = '/usr/bin/python2'
