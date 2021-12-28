@@ -35,3 +35,7 @@ let g:ruby_host_prog = '~/.rbenv/versions/2.7.5/bin/neovim-ruby-host'
 let g:python3_host_prog = '/usr/bin/python3'
 " python 3 should be enough
 " let g:python_host_prog = '/usr/bin/python2'
+augroup RestoreCursorShapeOnExit
+    autocmd!
+    autocmd VimLeave * set guicursor=a:hor20-blinkwait400-blinkoff400-blinkon400
+augroup END
