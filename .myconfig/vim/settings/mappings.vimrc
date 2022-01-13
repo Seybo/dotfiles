@@ -218,3 +218,7 @@ function! ToggleSpellCheck()
   endif
 endfunction
 nnoremap <silent><leader>lc :call ToggleSpellCheck()<CR>
+
+" line numbers
+nnoremap <leader>lna :set nornu<cr>
+nnoremap <leader>lnr :set rnu<cr>

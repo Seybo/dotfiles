@@ -23,7 +23,7 @@ undupe_history() {
 alias szsh="source ~/.zshrc"
 alias k9="kill -9"
 alias t="tree"
-alias rboot="sudo reboot"
+alias rboot="systemctl reboot -i"
 alias pwoff="sudo poweroff"
 alias rp="realpath"
 
