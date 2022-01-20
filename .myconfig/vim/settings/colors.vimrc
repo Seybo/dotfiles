@@ -19,12 +19,27 @@ syntax enable
 " colorscheme dracula
 
 " goes nice with indent line plugin. See the theme repo
-let ayucolor="mirage"
-
+" let ayucolor="mirage"
 " i've updated bg color here .vim/plugged/ayu-vim/colors/ayu.vim to match alacrity theme with #262626
-colorscheme ayu
 " colorscheme palenight
-let g:airline_theme="minimalist"
+" colorscheme ayu
+" let g:airline_theme="minimalist"
+
+let g:sonokai_style = 'atlantis'
+let g:sonokai_enable_italic = 1
+let g:sonokai_disable_italic_comment = 0
+let g:sonokai_diagnostic_text_highlight = 1
+let g:sonokai_diagnostic_line_highlight = 1
+" let g:sonokai_transparent_background = 1
+colorscheme sonokai
+let g:airline_theme = 'sonokai'
+
+" let g:edge_style = 'neon'
+" let g:edge_enable_italic = 1
+" let g:edge_disable_italic_comment = 1
+" colorscheme edge
+" let g:airline_theme = 'edge'
+
 let g:airline_section_a = airline#section#create(['crypt', 'paste', 'spell', 'iminsert'])
 let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
 
