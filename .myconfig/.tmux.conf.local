@@ -324,14 +324,14 @@ set -g @tpm_plugins '           \
    tmux-plugins/tpm             \
    tmux-plugins/tmux-sensible   \
    tmux-plugins/tmux-copycat    \
-   jimeh/tmux-themepack         \
    tmux-plugins/tmux-resurrect  \
    tmux-plugins/tmux-urlview    \
    jbnicolai/tmux-fpp           \
    tmux-plugins/tmux-cpu        \
    tmux-plugins/tmux-yank       \
 '
-set -g @themepack 'powerline/double/magenta'
+# jimeh/tmux-themepack         \
+# set -g @themepack 'powerline/double/magenta'
 
 # set -g @resurrect-strategy-vim 'session' # restore vim sessions
 

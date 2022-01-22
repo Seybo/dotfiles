@@ -106,6 +106,7 @@ alias vim='nvim'
 alias rr='ranger'
 alias gls='glances'
 alias gsm='gnome-system-monitor'
+alias colorscheme='~/.myconfig/colorscheme'
 
 # alacritty doesn't go fullscreen with F11
 alias alf='wmctrl -r '0:1:zsh' -b toggle,fullscreen'
