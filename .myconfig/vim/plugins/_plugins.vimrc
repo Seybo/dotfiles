@@ -11,6 +11,7 @@
 
 call plug#begin('~/.vim/plugged')
 
+source $HOME/.myconfig/vim/plugins/abolish.vimrc
 source $HOME/.myconfig/vim/plugins/airline.vimrc
 source $HOME/.myconfig/vim/plugins/bufstop.vimrc
 source $HOME/.myconfig/vim/plugins/autopairs.vimrc
@@ -48,6 +49,7 @@ source $HOME/.myconfig/vim/plugins/slim.vimrc
 source $HOME/.myconfig/vim/plugins/sneak.vimrc
 source $HOME/.myconfig/vim/plugins/startify.vimrc
 source $HOME/.myconfig/vim/plugins/surround.vimrc
+" source $HOME/.myconfig/vim/plugins/telescope.vimrc
 source $HOME/.myconfig/vim/plugins/test.vimrc
 source $HOME/.myconfig/vim/plugins/test_default.vimrc
 " source $HOME/.myconfig/vim/plugins/test_tslime.vimrc

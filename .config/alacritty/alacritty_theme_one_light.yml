@@ -14,11 +14,11 @@ colors:
     white:   '0xe7e7e7' #e7e7e7
 
   bright:
-    black:   '0x363636' #363636
-    red:     '0x786162'
-    green:   '0x617878'
-    yellow:  '0x787661'
-    blue:    '0x646178'
-    magenta: '0x786178'
-    cyan:    '0x617878'
-    white:   '0xf5f5f5'
+    black:   '0xe45649'
+    red:     '0xe45649' #e45649
+    green:   '0x50a14f' #50a14f
+    yellow:  '0xc18401' #c18401
+    blue:    '0x4078f2' #4078f2
+    magenta: '0xa626a4' #a626a4
+    cyan:    '0x0184bc' #0184bc
+    white:   '0xe7e7e7' #e7e7e7

@@ -396,6 +396,6 @@ set-option -ga terminal-overrides ',xterm-256color:Tc'
 
 # status line
 # move to top
-# set -g status-position top
+set -g status-position top
 # disable
 set -g status off
