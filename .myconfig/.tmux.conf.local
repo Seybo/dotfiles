@@ -64,7 +64,6 @@ tmux_conf_theme_pane_border_style=thin
 
 # pane borders colours:
 tmux_conf_theme_pane_border='#444444'                   # gray
-# tmux_conf_theme_pane_active_border='#00afff'            # light blue
 tmux_conf_theme_pane_active_border='#99c794'
 
 # pane indicator colours
@@ -111,7 +110,6 @@ tmux_conf_theme_terminal_title=''
 #     - #{hostname_ssh}
 #     - #{username}
 #     - #{username_ssh}
-# tmux_conf_theme_window_status_fg='#8a8a8a'              # light gray
 tmux_conf_theme_window_status_fg='#8a8a8a'              # light gray
 # tmux_conf_theme_window_status_bg='#080808'              # dark gray
 tmux_conf_theme_window_status_bg='#343d46'
@@ -300,7 +298,7 @@ set-option -g repeat-time 300
 set -g status-keys vi
 set -g mode-keys vi
 
-# replace C-b by C-a instead of using both prefixes
+# replace prefix-key with spacebar
 set -gu prefix2
 unbind C-a
 set-option -g prefix C-Space
@@ -308,16 +306,13 @@ set-option -g prefix C-Space
 # copy-mode
 unbind [
 bind i copy-mode
-bind t source-file ~/.myconfig/.tmux.conf.local
 bind -T copy-mode-vi y send-keys -X copy-selection-and-cancel
 bind -T copy-mode-vi 'v' send -X begin-selection
 bind -T copy-mode-vi 'V' send -X select-line
 bind -T copy-mode-vi 'r' send -X rectangle-toggle
-# bind -T copy-mode-vi 'y' send -X copy-selection
 bind -T copy-mode-vi 'y' send -X copy-pipe-and-cancel "xclip -in -selection clipboard"
 # swap panes
 # bind n swap-pane -U
-# bind C-Space send-prefix # probably remove (not needed)
 
 # List of plugins
 set -g @tpm_plugins '           \
@@ -330,31 +325,19 @@ set -g @tpm_plugins '           \
    tmux-plugins/tmux-cpu        \
    tmux-plugins/tmux-yank       \
 '
+
 # jimeh/tmux-themepack         \
 # set -g @themepack 'powerline/double/magenta'
-
-# set -g @resurrect-strategy-vim 'session' # restore vim sessions
-
-# Other examples:
-# set -g @plugin 'github_username/plugin_name'
-# set -g @plugin 'git@github.com/user/plugin'
 
 # Scroll 3 lines at a time instead of default 5; don't extend dragged selections.
 bind -T copy-mode-vi WheelUpPane select-pane\; send-keys -t{mouse} -X clear-selection\; send-keys -t{mouse} -X -N 3 scroll-up
 bind -T copy-mode-vi WheelDownPane select-pane\; send-keys -t{mouse} -X clear-selection\; send-keys -t{mouse} -X -N 3 scroll-down
-
-# Make double and triple click work outside of copy mode (already works inside it with default bindings).
-# bind -T root DoubleClick1Pane if-shell -Ft{mouse} '#{alternate_on}' "send-keys -M" "copy-mode -t{mouse}; send-keys -t{mouse} -X select-word"
-# bind -T root TripleClick1Pane if-shell -Ft{mouse} '#{alternate_on}' "send-keys -M" "copy-mode -t{mouse}; send-keys -t{mouse} -X select-line"
 
 # Fast toggle between current and last-used window (normally prefix-l).
 # bind m last-layout
 
 # Highlight active window.
 # set-option -w -g window-status-current-bg red
-
-# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
-run -b '~/.tmux/plugins/tpm/tpm'
 
 # Dynamically update iTerm tab and window titles.
 set-option -g set-titles on
@@ -371,16 +354,11 @@ bind H select-pane -t 1 \; resize-pane -Z
 bind J select-pane -t 2 \; resize-pane -Z
 bind L select-pane -t 2 \; resize-pane -Z
 
-#### DONT UNDERSTAND
-# Needed as on tmux 1.9 and up (defaults to off).
-# Added in tmux commit c7a121cfc0137c907b7bfb.
-set-option -g focus-events on
-
 # But don't change tmux's own window titles.
 set-option -w -g automatic-rename off
 
 # Show bells in window titles.
-set-option -g window-status-bell-style fg=yellow,bold,underscore
+# set-option -g window-status-bell-style fg=yellow,bold,underscore
 
 # Turn off distracting border highlight.
 # set-option -ga pane-active-border-style bg=default,fg=default
@@ -397,5 +375,13 @@ set-option -ga terminal-overrides ',xterm-256color:Tc'
 # status line
 # move to top
 set -g status-position top
-# disable
+# disable/enable
+bind l set -g status off
+bind L set -g status on
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run -b '~/.tmux/plugins/tpm/tpm'
+
+# generated manually in vim by plugin tmuxline (works with airline) and command :TmuxlineSnapshot
+source-file ~/.myconfig/tmuxline_colorscheme.conf
 set -g status off
