@@ -183,3 +183,108 @@ export DIRENV_LOG_FORMAT=
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# git stash broken temp fix (should be fixed in the next zsh release)
+_git-stash () {
+  local curcontext=$curcontext state line ret=1
+  declare -A opt_args
+  local -a save_arguments
+
+  save_arguments=(
+    '(-p --patch -a --all -u --include-untracked)'{-p,--patch}'[interactively select hunks from diff between HEAD and working tree to stash]'
+    '(-k --keep-index --no-keep-index)'{-k,--keep-index}'[all changes already added to the index are left intact]'
+    '(-k --keep-index)--no-keep-index[all changes already added to the index are undone]'
+    '(-q --quiet)'{-q,--quiet}'[suppress all output]'
+    '(-p --patch -a --all -u --include-untracked)'{-u,--include-untracked}'[include untracked files]'
+    '(-p --patch -a --all -u --include-untracked)'{-a,--all}'[include ignored files]'
+  )
+
+  _arguments -C \
+    '*::: :->args' \
+    '(-m --message)'{-m,--message}'[specify stash description]' \
+    ${save_arguments//#\(/(* } && ret=0
+
+  if [[ -n $state ]]; then
+    if (( CURRENT == 1 )); then
+      local -a commands
+
+      commands=(
+        {push,save}:'save your local modifications to a new stash'
+        list:'list the stashes that you currently have'
+        show:'show the changes recorded in the stash as a diff'
+        pop:'remove and apply a single stashed state from the stash list'
+        apply:'apply the changes recorded in the stash'
+        branch:'branch off at the commit at which the stash was originally created'
+        clear:'remove all the stashed states'
+        drop:'remove a single stashed state from the stash list'
+        create:'create a stash without storing it in the ref namespace'
+      )
+
+      _describe -t commands command commands && ret=0
+    else
+      curcontext=${curcontext%:*}-$line[1]:
+      compset -n 1
+
+      case $line[1] in
+        (save)
+          _arguments -S $endopt \
+            $save_arguments \
+            ':: :_guard "([^-]?#|)" message' && ret=0
+          ;;
+        (push)
+          _arguments -S $endopt \
+            $save_arguments \
+	    '(-m --message)'{-m,--message}'[specify stash description]' \
+            ':: :__git_modified_files' && ret=0
+          ;;
+        (--)
+            __git_modified_files
+          ;;
+        (list)
+          local -a log_options revision_options
+          __git_setup_log_options
+          __git_setup_revision_options
+
+          _arguments -s \
+            $log_options \
+            $revision_options && ret=0
+          ;;
+        (show)
+          local diff_options
+          __git_setup_diff_options
+
+          _arguments -S -s $endopt \
+            $diff_options \
+            ':: :__git_stashes' && ret=0
+          ;;
+        (pop|apply)
+          _arguments -S $endopt \
+            '--index[try to reinstate the changes added to the index as well]' \
+            '(-q --quiet)'{-q,--quiet}'[suppress all output]' \
+            ':: :__git_stashes' && ret=0
+          ;;
+        (branch)
+          _arguments \
+            ': :__git_guard_branch-name' \
+            ':: :__git_stashes' && ret=0
+          ;;
+        (clear)
+          _nothing
+          ;;
+        (drop)
+          _arguments -S $endopt \
+            '(-q --quiet)'{-q,--quiet}'[suppress all output]' \
+            ':: :__git_stashes' && ret=0
+          ;;
+        (create)
+          _nothing
+          ;;
+        (*)
+          _nothing
+          ;;
+      esac
+    fi
+  fi
+
+  return ret
+}

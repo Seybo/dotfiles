@@ -26,8 +26,8 @@ set-option -g repeat-time 300
 
 # force Vi mode
 #   really you should export VISUAL or EDITOR environment variable, see manual
-set -g status-keys vi
-set -g mode-keys vi
+# set -g status-keys vi
+# set -g mode-keys vi
 
 # replace prefix-key with spacebar
 set -gu prefix2
@@ -37,14 +37,15 @@ set-option -g prefix C-Space
 # copy-mode
 unbind [
 bind i copy-mode
-bind -T copy-mode-vi y send-keys -X copy-selection-and-cancel
-bind -T copy-mode-vi 'v' send -X begin-selection
-bind -T copy-mode-vi 'V' send -X select-line
-bind -T copy-mode-vi 'r' send -X rectangle-toggle
-bind -T copy-mode-vi 'y' send -X copy-pipe-and-cancel "xclip -in -selection clipboard"
+# bind -T copy-mode-vi y send-keys -X copy-selection-and-cancel
+# bind -T copy-mode-vi 'v' send -X begin-selection
+# bind -T copy-mode-vi 'V' send -X select-line
+# bind -T copy-mode-vi 'r' send -X rectangle-toggle
+# bind -T copy-mode-vi 'y' send -X copy-pipe-and-cancel "xclip -in -selection clipboard"
 # swap panes
 # bind n swap-pane -U
 
+# START: sort-out plugins
 # List of plugins
 set -g @tpm_plugins '           \
    tmux-plugins/tpm             \
@@ -71,7 +72,7 @@ bind -T copy-mode-vi WheelDownPane select-pane\; send-keys -t{mouse} -X clear-se
 # set-option -w -g window-status-current-bg red
 
 # Dynamically update iTerm tab and window titles.
-set-option -g set-titles on
+# set-option -g set-titles on
 
 # Copy text selected by mouse
 bind -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "xclip -selection clipboard -i"
@@ -100,15 +101,15 @@ bind '"' split-window -c "#{pane_current_path}"
 bind % split-window -h -c "#{pane_current_path}"
 
 # Neovim asks this
-set-option -sa terminal-overrides ',xterm-256color:RGB'
-set-option -ga terminal-overrides ',xterm-256color:Tc'
+# set-option -sa terminal-overrides ',xterm-256color:RGB'
+# set-option -ga terminal-overrides ',xterm-256color:Tc'
 
 # status line
 # move to top
 set -g status-position top
 # disable/enable
-bind l set -g status off
-bind L set -g status on
+bind b set -g status off
+bind B set -g status on
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run -b '~/.tmux/plugins/tpm/tpm'
