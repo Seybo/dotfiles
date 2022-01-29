@@ -47,19 +47,24 @@ bind i copy-mode
 
 # START: sort-out plugins
 # List of plugins
+# prefix+U to update
 set -g @tpm_plugins '           \
    tmux-plugins/tpm             \
    tmux-plugins/tmux-sensible   \
+   tmux-plugins/tmux-open       \
    tmux-plugins/tmux-copycat    \
-   tmux-plugins/tmux-resurrect  \
    tmux-plugins/tmux-urlview    \
-   jbnicolai/tmux-fpp           \
-   tmux-plugins/tmux-cpu        \
    tmux-plugins/tmux-yank       \
 '
-
+# not used rn:
+# tmux-plugins/tmux-cpu        \
+# jbnicolai/tmux-fpp           \
+# tmux-plugins/tmux-resurrect  \
 # jimeh/tmux-themepack         \
 # set -g @themepack 'powerline/double/magenta'
+
+# handy rails request search: prefix+C-r
+set -g @copycat_search_C-r '^Processing[[:space:]]by[[:space:]][^[:space:]]*'
 
 # Scroll 3 lines at a time instead of default 5; don't extend dragged selections.
 bind -T copy-mode-vi WheelUpPane select-pane\; send-keys -t{mouse} -X clear-selection\; send-keys -t{mouse} -X -N 3 scroll-up
