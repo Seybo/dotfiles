@@ -7,6 +7,8 @@ set ignorecase
 set smartcase
 " Highlight searches
 set hlsearch
+" so gitgutter doesnt override line numbers
+set signcolumn=yes
 " Automatically removing all trailing whitespace
 autocmd! BufWritePre * %s/\s\+$//e
 " Check spell for markdown files

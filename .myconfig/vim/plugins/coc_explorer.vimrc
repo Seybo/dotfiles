@@ -1,5 +1,3 @@
-" nmap <C-n><C-n> :CocCommand explorer --toggle --sources=buffer+,file+<CR>
-
 let g:coc_explorer_global_presets = {
 \   'floatingTop': {
 \     'position': 'floating',
@@ -12,17 +10,24 @@ let g:coc_explorer_global_presets = {
 \     'floating-position': 'center-top',
 \     'open-action-strategy': 'sourceWindow',
 \   },
+\   'vim': {
+\     'root-uri': '~/.myconfig/vim/',
+\     'position': 'floating',
+\     'floating-position': 'center-top',
+\     'open-action-strategy': 'sourceWindow',
+\   },
+\   'ftplugin': {
+\     'root-uri': '~/.config/nvim/ftplugin/',
+\     'position': 'floating',
+\     'floating-position': 'center-top',
+\     'open-action-strategy': 'sourceWindow',
+\   },
 \ }
 
 nmap <silent><C-n><C-n> :CocCommand explorer --preset floatingTop<CR>
 nmap <silent><C-n><C-m> :CocCommand explorer --preset myconfig<CR>
-" nmap <C-n><C-f> :CocCommand explorer --toggle getcwd()<CR>
-" nmap <space>el :CocList explPresets
-" floating window bg color
-" hi CocExplorerNormalFloat guibg=#ff0000
+nmap <silent><C-n><C-v> :CocCommand explorer --preset vim<CR>
+nmap <silent><C-n><C-f> :CocCommand explorer --preset ftplugin<CR>
+
 autocmd FileType coc-explorer set winblend=5
 autocmd FileType coc-explorer-border set winblend=5
-
-"===== HELP =====
-" mappings
-" ? - help

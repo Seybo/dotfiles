@@ -288,3 +288,4 @@ _git-stash () {
 
   return ret
 }
+export PATH="$PATH:/opt/mssql-tools/bin"

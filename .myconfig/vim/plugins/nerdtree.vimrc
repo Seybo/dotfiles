@@ -9,12 +9,8 @@ let NERDTreeDirArrowExpandable = '~'
 let NERDTreeDirArrowCollapsible = '~'
 let NERDTreeShowHidden=1
 
-" map <C-n><C-n> :NERDTreeToggle<CR>
 map <C-n><C-t> :NERDTreeToggle<CR>
 map <C-n><C-f> :NERDTreeFind %<CR>
 map <C-n><C-h> :NERDTree /home/glaux<CR>
 map <C-n><C-m> :NERDTree /home/glaux/.myconfig<CR>
 map <leader>vc :NERDTree /home/glaux/.myconfig/vim<CR>
-" let NERDTreeMinimalUI = 1
-" let NERDTreeIgnore = []
-" let NERDTreeStatusline = ''

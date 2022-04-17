@@ -66,6 +66,11 @@ set -g @tpm_plugins '           \
 # handy rails request search: prefix+C-r
 set -g @copycat_search_C-r '^Processing[[:space:]]by[[:space:]][^[:space:]]*'
 
+# send command to all windows/panes
+bind C-c command-prompt -p "Command:" \
+   "run \"tmux list-panes -a -F '##{session_name}:##{window_index}.##{pane_index}' \
+   | xargs -I PANE tmux send-keys -t PANE '%1' Enter\""
+
 # Scroll 3 lines at a time instead of default 5; don't extend dragged selections.
 bind -T copy-mode-vi WheelUpPane select-pane\; send-keys -t{mouse} -X clear-selection\; send-keys -t{mouse} -X -N 3 scroll-up
 bind -T copy-mode-vi WheelDownPane select-pane\; send-keys -t{mouse} -X clear-selection\; send-keys -t{mouse} -X -N 3 scroll-down
@@ -113,8 +118,8 @@ set-option -ga terminal-overrides ',xterm-256color:Tc'
 # move to top
 set -g status-position top
 # disable/enable
-bind b set -g status off
-bind B set -g status on
+bind t set -g status off
+bind T set -g status on
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run -b '~/.tmux/plugins/tpm/tpm'

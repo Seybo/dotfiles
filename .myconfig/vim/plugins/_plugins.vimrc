@@ -1,12 +1,10 @@
 " source $HOME/.myconfig/vim/plugins/easymotion.vimrc
-" source $HOME/.myconfig/vim/plugins/session.vimrc
+" source $HOME/.myconfig/vim/plugins/session.vimrc " using startify instead
 " source $HOME/.myconfig/vim/plugins/onestatus.vimrc
 " source $HOME/.myconfig/vim/plugins/indentline.vimrc " perf issues on big files
-" source $HOME/.myconfig/vim/plugins/rfactory.vimrc " https://github.com/christoomey/vim-rfactory/issues/15
 " the following two substituted by polyglot
 " source $HOME/.myconfig/vim/plugins/ruby.vimrc
 " source $HOME/.myconfig/vim/plugins/gundo.vimrc
-" source $HOME/.myconfig/vim/plugins/quick_scope.vimrc " probably not needed, using sneak
 " source $HOME/.myconfig/vim/plugins/buffergator.vimrc
 
 call plug#begin('~/.vim/plugged')
@@ -18,9 +16,8 @@ source $HOME/.myconfig/vim/plugins/autopairs.vimrc
 source $HOME/.myconfig/vim/plugins/bookmarks.vimrc
 source $HOME/.myconfig/vim/plugins/bundler.vimrc
 source $HOME/.myconfig/vim/plugins/bufkill.vimrc
-source $HOME/.myconfig/vim/plugins/colorthemes.vimrc
 source $HOME/.myconfig/vim/plugins/ctrlsf.vimrc
-"source $HOME/.myconfig/vim/plugins/commentary.vimrc
+" source $HOME/.myconfig/vim/plugins/commentary.vimrc
 source $HOME/.myconfig/vim/plugins/coc.vimrc
 source $HOME/.myconfig/vim/plugins/coc_explorer.vimrc
 " source $HOME/.myconfig/vim/plugins/ctrlspace.vimrc
@@ -39,8 +36,10 @@ source $HOME/.myconfig/vim/plugins/jsx_pretty.vimrc
 source $HOME/.myconfig/vim/plugins/localvimrc.vimrc
 source $HOME/.myconfig/vim/plugins/neosnippet.vimrc
 source $HOME/.myconfig/vim/plugins/nerdcommenter.vimrc
-source $HOME/.myconfig/vim/plugins/nerdtree.vimrc
+" trying to do everything with coc_explorer
+" source $HOME/.myconfig/vim/plugins/nerdtree.vimrc
 source $HOME/.myconfig/vim/plugins/polyglot.vimrc
+source $HOME/.myconfig/vim/plugins/quick_scope.vimrc
 source $HOME/.myconfig/vim/plugins/rails.vimrc
 source $HOME/.myconfig/vim/plugins/rooter.vimrc
 source $HOME/.myconfig/vim/plugins/rubocop.vimrc
