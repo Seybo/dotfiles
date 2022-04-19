@@ -1,6 +1,6 @@
 Plug 'dyng/ctrlsf.vim'
 
-let g:ctrlsf_position = 'right'
+let g:ctrlsf_position = 'bottom'
 let g:ctrlsf_auto_focus = {
     \ "at": "done",
     \ "duration_less_than": 5000
