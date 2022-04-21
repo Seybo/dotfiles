@@ -75,3 +75,6 @@ au BufReadPost,BufNewFile *_ru.md set spelllang=ru_yo
 
 " fix for occasionally occurring error: 'pattern uses more memory than maxmempattern'
 set mmp=2000000
+
+" disable WARNING: "Neovim::Ext" cpan module is not installed
+let g:loaded_perl_provider = 0
