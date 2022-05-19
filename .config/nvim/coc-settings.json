@@ -1,4 +1,5 @@
 {
+  "colors.filetypes": ["*"],
   "coc.preferences.formatOnSaveFiletypes": [
     "reason",
     "css",
@@ -17,27 +18,14 @@
   "explorer.icon.enableNerdfont": true,
   "explorer.root.customRules": {
     "vcs": {
-      "patterns": [
-        ".git",
-        ".hg",
-        ".projections.json"
-      ]
+      "patterns": [".git", ".hg", ".projections.json"]
     },
     "vcs-r": {
-      "patterns": [
-        ".git",
-        ".hg",
-        ".projections.json"
-      ],
+      "patterns": [".git", ".hg", ".projections.json"],
       "bottomUp": true
     }
   },
-  "explorer.root.strategies": [
-    "workspace",
-    "custom:vcs",
-    "custom:vcs-r"
-  ],
-  "prettier.disableSuccessMessage": true,
+  "explorer.root.strategies": ["workspace", "custom:vcs", "custom:vcs-r"],
   "solargraph.diagnostics": true,
   "solargraph.autoformat": false,
   "solargraph.formatting": true,
@@ -46,16 +34,7 @@
   "solargraph.folding": true,
   "solargraph.hover": true,
   "explorer.floating.border.enable": true,
-  "explorer.floating.border.chars": [
-    " ",
-    " ",
-    " ",
-    " ",
-    " ",
-    " ",
-    " ",
-    " "
-  ],
+  "explorer.floating.border.chars": [" ", " ", " ", " ", " ", " ", " ", " "],
   "yank.highlight.enable": false,
   "yank.priority": 10
 }

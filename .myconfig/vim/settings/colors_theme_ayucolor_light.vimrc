@@ -5,7 +5,17 @@ set termguicolors
 let ayucolor='light'
 colorscheme ayu
 
-# updates
-# ~/.vim/plugged/ayu-vim/colors/ayu.vim
+" ~/.vim/plugged/ayu-vim/colors/ayu.vim
+" updates
 " use alacritty bg color
-" let s:palette.bg = {'light': "#FFFFFF",  'mirage': "#262626"}
+" let s:palette.bg        = {'light': "#FFFFFF",  'mirage': "#262626"}
+" let s:palette.comment   = {'light': "#8BA0B5"} more dark version
+" let s:palette.constant  = {''light': "#934BDC"} increase saturation and darkness
+" let s:palette.operator  = {'light': "#934BDC"} change color
+" let s:palette.string    = {'light': "#79A100"} more dark version
+" let s:palette.function  = {'light': "#E3890D"} more dark version
+" let s:palette.special   = {'light': "#E1A756"} more dark version
+" let s:palette.tag       = {'light': "#0093DC"} more dark and saturated version
+" let s:palette.fg        = {'light': "#4A525C"} more dark font color
+
+" exe "hi! Search"        .s:fg_bg          .s:bg_tag         .s:fmt_none
