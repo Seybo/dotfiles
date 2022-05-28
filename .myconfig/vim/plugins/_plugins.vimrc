@@ -16,6 +16,7 @@ source $HOME/.myconfig/vim/plugins/autopairs.vimrc
 source $HOME/.myconfig/vim/plugins/bookmarks.vimrc
 source $HOME/.myconfig/vim/plugins/bundler.vimrc
 source $HOME/.myconfig/vim/plugins/bufkill.vimrc
+source $HOME/.myconfig/vim/plugins/copilot.vimrc
 source $HOME/.myconfig/vim/plugins/ctrlsf.vimrc
 " source $HOME/.myconfig/vim/plugins/commentary.vimrc
 source $HOME/.myconfig/vim/plugins/coc.vimrc
