@@ -33,6 +33,11 @@ case $color in
     configure_vim
     configure_p10k "253"
     ;;
+  gruvbox)
+    configure_alacritty
+    configure_vim
+    configure_p10k "253"
+    ;;
   *)
     echo "Colorscheme not found"
     exit 1

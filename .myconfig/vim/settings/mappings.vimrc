@@ -137,8 +137,8 @@ noremap  sv :vsp<cr> " split vertical
 " resizing
 nmap <right> :10wincmd ><cr>
 nmap <left>  :10wincmd <<cr>
-nmap <up>    :3wincmd -<cr>
-nmap <down>  :3wincmd +<cr>
+nmap <up>    :3wincmd +<cr>
+nmap <down>  :3wincmd -<cr>
 
 " move vertically by visual line with j and k
 nnoremap j gj

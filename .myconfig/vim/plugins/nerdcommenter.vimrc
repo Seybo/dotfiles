@@ -11,3 +11,5 @@ nmap <leader>cc :call nerdcommenter#Comment(0,"toggle")<cr>
 vmap <leader>cc :call nerdcommenter#Comment(0,"toggle")<cr>
 nmap <leader>ca <plug>NERDCommenterAltDelims
 vmap <leader>ca <plug>NERDCommenterAltDelims
+
+let g:NERDCustomDelimiters = { 'eruby.yaml': { 'left': '#', 'right': '' } }

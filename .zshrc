@@ -135,17 +135,9 @@ source ~/.myconfig/aliases.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_PREVIEW_PREVIEW_BAT_THEME='Nord'
 
-# tmux
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
- exec tmux
-fi
-
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init - zsh)"
-
-# tmuxinator
-source ~/.myconfig/tmuxinator.zsh
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
@@ -166,6 +158,7 @@ export RSPEC_RETRY_RETRY_COUNT=1
 # yarn version manager
 export YVM_DIR=/home/glaux/.yvm
 [ -r $YVM_DIR/yvm.sh ] && . $YVM_DIR/yvm.sh
+export PATH=$PATH:~/.yarn/bin
 
 # autojump
 [[ -s /home/glaux/.autojump/etc/profile.d/autojump.sh ]] && source /home/glaux/.autojump/etc/profile.d/autojump.sh
@@ -183,6 +176,14 @@ export DIRENV_LOG_FORMAT=
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# tmux
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  exec tmux
+fi
+if command -v tmux &> /dev/null; then
+  source ~/.myconfig/tmuxinator.zsh
+fi
 
 # git stash broken temp fix (should be fixed in the next zsh release)
 _git-stash () {
