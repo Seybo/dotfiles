@@ -12,44 +12,26 @@ set shortmess+=c
 " diagnostics appear/become resolved.
 set signcolumn=number
 
-" " Use tab for trigger completion with characters ahead and navigate.
-" " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" " other plugin before putting this into your config.
-" inoremap <silent><expr> <TAB>
-      " \ pumvisible() ? "\<C-n>" :
-      " \ <SID>check_back_space() ? "\<TAB>" :
-      " \ coc#refresh()
-" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-" function! s:check_back_space() abort
-  " let col = col('.') - 1
-  " return !col || getline('.')[col - 1]  =~# '\s'
-" endfunction
-
-" Use <c-space> to trigger completion.
-" inoremap <silent><expr> <c-space> coc#refresh()
-
-" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
-" position. Coc only does snippet and additional edit on confirm.
-" <cr> could be remapped by other vim plugin, try `:verbose imap <CR>`.
-" if exists('*complete_info')
-  " inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-" else
-  " inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-" endif
-
 " plugins that we add to g:cocglobalextensions will be automatically installed and updated
 let g:coc_global_extensions = [
-  \ 'coc-tsserver'
+  \ 'coc-tsserver',
+  \ 'coc-solargraph'
   \ ]
 
-if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
-  let g:coc_global_extensions += ['coc-prettier']
-endif
+" use <alt-h> for trigger completion
+inoremap <silent><expr> <a-h> coc#refresh()
+" navigate the list
+inoremap <expr> <a-j> pumvisible() ? "\<C-n>" : "\<a-j>"
+inoremap <expr> <a-k> pumvisible() ? "\<C-p>" : "\<a-k>"
+" select the current item
+inoremap <expr> <a-l> pumvisible() ? "\<C-y>" : "\<C-g>u\<a-l>"
 
-if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
-  let g:coc_global_extensions += ['coc-eslint']
-endif
+" if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
+"   let g:coc_global_extensions += ['coc-prettier']
+" endif
+" if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
+"   let g:coc_global_extensions += ['coc-eslint']
+" endif
 
 " Remap keys for gotos
 nmap <silent>gd <Plug>(coc-definition)
@@ -67,9 +49,9 @@ nmap <silent><Leader>coe :CocList extensions<CR>
 nmap <silent><Leader>cod :CocDisable<CR>
 nmap <silent><Leader>coh :call CocAction('doHover')<CR>
 
-
-" Use K to show documentation in preview window
-" nnoremap <silent>K :call <SID>show_documentation()<CR>
-
 nnoremap <leader>cof :call CocAction('format')<CR>
+
+" coc-yank
+nmap <silent><leader>y :<C-u>CocList yank<cr>
+
 autocmd! BufWritePre *.jsx :call CocAction('format')

@@ -6,4 +6,4 @@ colorscheme one
 set background=light
 let g:airline_theme='one'
 
-# ~/.vim/plugged/vim-one/colors/one.vim
+" ~/.vim/plugged/vim-one/colors/one.vim

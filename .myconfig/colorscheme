@@ -2,7 +2,7 @@
 
 color=$1
 vim_config=~/.myconfig/vim/settings
-p10k_config=~/.p10k.zsh
+# p10k_config=~/.p10k.zsh
 alacritty_config=~/.config/alacritty
 
 configure_alacritty() {
@@ -13,30 +13,30 @@ configure_vim() {
   cat ${vim_config}/colors_theme_${color}.vimrc ${vim_config}/colors_base.vimrc > ${vim_config}/colors.vimrc
 }
 
-configure_p10k() {
-  sed -i "s/.*typeset -g POWERLEVEL9K_BACKGROUND=.*/  typeset -g POWERLEVEL9K_BACKGROUND=$1/" ${p10k_config}
-}
+# configure_p10k() {
+#   sed -i "s/.*typeset -g POWERLEVEL9K_BACKGROUND=.*/  typeset -g POWERLEVEL9K_BACKGROUND=$1/" ${p10k_config}
+# }
 
 case $color in
   one_light)
     configure_alacritty
     configure_vim
-    configure_p10k "253"
+    # configure_p10k "253"
     ;;
   sonokai)
     configure_alacritty
     configure_vim
-    configure_p10k "236"
+    # configure_p10k "236"
     ;;
   ayucolor_light)
     configure_alacritty
     configure_vim
-    configure_p10k "253"
+    # configure_p10k "253"
     ;;
   gruvbox)
     configure_alacritty
     configure_vim
-    configure_p10k "253"
+    # configure_p10k "253"
     ;;
   *)
     echo "Colorscheme not found"

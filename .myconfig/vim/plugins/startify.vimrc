@@ -1,32 +1,26 @@
 Plug 'mhinz/vim-startify'
 
 let g:ascii = [
-  \'                                                                  ',                                                               
-  \'                                                                  ',                                                               
-  \'                                                                  ',                                                               
-  \'                                                                  ',                                                               
-  \'                                                                  ',                                                              
+  \'                                                                  ',
+  \'                                                                  ',
+  \'                                                                  ',
+  \'                                                                  ',
+  \'                                                                  ',
   \'  _|      _|  _|_|_|_|    _|_|    _|      _|  _|_|_|  _|      _|  ',
   \'  _|_|    _|  _|        _|    _|  _|      _|    _|    _|_|  _|_|  ',
   \'  _|  _|  _|  _|_|_|    _|    _|  _|      _|    _|    _|  _|  _|  ',
   \'  _|    _|_|  _|        _|    _|    _|  _|      _|    _|      _|  ',
   \'  _|      _|  _|_|_|_|    _|_|        _|      _|_|_|  _|      _|  ',
-  \'                                                                  ',                                                              
-  \'                                                                  ',                                                               
-  \'                                                                  ',                                                               
-  \'                                                                  ',                                                               
-  \'                                                                  ',                                                             
+  \'                                                                  ',
+  \'                                                                  ',
+  \'                                                                  ',
+  \'                                                                  ',
+  \'                                                                  ',
 \]
 
 
-" let g:startify_custom_header_time = startify#pad([
-"       \ '>>> Happy coding @' . $USER . '!',
-"       \])
 let g:startify_custom_header =
           \ 'startify#center(g:ascii)'
-
-" let g:startify_custom_footer =
-"           \ 'startify#pad(g:loaded)'
 
 let g:startify_skiplist = [
   \ 'COMMIT_EDITMSG',
@@ -69,33 +63,27 @@ let g:startify_session_delete_buffers = 1
 let g:startify_session_persistence = 1
 let g:startify_change_to_vcs_root = 1
 let g:startify_padding_left = 5
-let g:webdevicons_enable_startify = 1
+" let g:webdevicons_enable_startify = 1
 let g:startify_enable_special = 1
 let g:startify_files_number = 5
 let g:startify_update_oldfiles = 1
 let g:startify_change_to_dir = 1
-" let g:startify_enable_unsafe = 0
 
-hi! link StartifyHeader Function 
+hi! link StartifyHeader Function
 hi! link StartifyFile Directory
 hi! link StartifyPath LineNr
 hi! link StartifySlash StartifyPath
 hi! link StartifyBracket StartifyPath
 hi! link StartifyNumber StartifyPath
 
-" Hide status line
-" autocmd! FileType startify
-" autocmd  FileType startify set laststatus=0 noshowmode noruler
-"   \| autocmd BufLeave <buffer> set laststatus=2 noshowmode ruler
-
-function! StartifyEntryFormat()
-  return 'WebDevIconsGetFileTypeSymbol(absolute_path) ." ". entry_path'
-endfunction
+" function! StartifyEntryFormat()
+"   return 'WebDevIconsGetFileTypeSymbol(absolute_path) ." ". entry_path'
+" endfunction
 
 let g:startify_change_to_vcs_root = 1
 let g:startify_session_persistence = 1
 
-" sesstions management
+" sessions management
 let g:startify_session_dir = '~/.myconfig/vim/sessions/'
 map <F2> :SSave! 
 map <F3> :SLoad 

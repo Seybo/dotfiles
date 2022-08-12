@@ -201,6 +201,7 @@ nnoremap ts 2gt
 nnoremap td 3gt
 nnoremap tf 4gt
 nnoremap th 5gt
+nnoremap tb :tabn<cr>:bn<cr>
 
 " terminal
 nnoremap tt :term<cr>

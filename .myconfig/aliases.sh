@@ -47,11 +47,8 @@ alias gaf='gaa && gca && gpf'
 alias gurbm='grbm && gcm && gup && gc- && grbm' # first rebase is for unstashed changes notification
 alias grsh='git reset --soft HEAD~1'
 alias gsta='git stash save' # overwriting oh-my-zsh that uses git stash push
-alias gcms='gsta && gcm && gstp' # checkout master with stash
-alias gc-s='gsta && gc- && gstp' # checkout last branch with stash
-alias gstk='git stash --keep-index --include-untracked'
+alias gstt='git stash save temp'
 alias gstd='git stash drop'
-alias gau='git reset HEAD --' # unstage
 
 ####### dotfiles ########
 alias dpf='dfiles push --force-with-lease'
@@ -75,9 +72,7 @@ alias ber='bundle exec rspec'
 # alias forber='for i in `seq 50` ; do ber '
 alias bec='bundle exec'
 alias rdbm='rails db:migrate && RAILS_ENV=test rails db:reset'
-alias rdbr='rails db:rollback && RAILS_ENV=test rails db:reset'
-alias rdbr2='rails db:rollback STEP=2 && RAILS_ENV=test rails db:reset'
-alias rdbr3='rails db:rollback STEP=3 && RAILS_ENV=test rails db:reset'
+alias brdbm='bundle && rdbm'
 alias wai='whereami'
 alias rlc='rails log:clear'
 # vim shows some spring error if in one tab rails console is launched with spring and in another one a spec is running

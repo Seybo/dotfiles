@@ -26,6 +26,7 @@
     }
   },
   "explorer.root.strategies": ["workspace", "custom:vcs", "custom:vcs-r"],
+  "suggest.autoTrigger": "always",
   "solargraph.diagnostics": true,
   "solargraph.autoformat": false,
   "solargraph.formatting": true,

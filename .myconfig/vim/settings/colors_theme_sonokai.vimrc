@@ -11,4 +11,4 @@ let g:sonokai_diagnostic_virtual_text = 'colored'
 colorscheme sonokai
 let g:airline_theme = 'sonokai'
 
-# ~/.vim/plugged/sonokai/colors/sonokai.vim
+" ~/.vim/plugged/sonokai/colors/sonokai.vim

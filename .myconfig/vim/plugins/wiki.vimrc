@@ -23,9 +23,9 @@ let other = {}
 let other.path = '~/Dropbox/Documents/wiki/other/'
 let other.syntax = 'markdown'
 let other.ext = '.md'
-let c19 = {}
-let c19.path = '~/Dropbox/Documents/wiki/c19/'
-let c19.syntax = 'markdown'
-let c19.ext = '.md'
+let thoughts = {}
+let thoughts.path = '~/Dropbox/Documents/wiki/thoughts/'
+let thoughts.syntax = 'markdown'
+let thoughts.ext = '.md'
 
-let g:vimwiki_list = [dev, ubuntu, nvim, design, other, c19]
+let g:vimwiki_list = [dev, ubuntu, nvim, design, other, thoughts]

@@ -165,7 +165,7 @@ export PATH=$PATH:~/.yarn/bin
 autoload -U compinit && compinit -u
 
 # ruby
-export GEM_HOME="$HOME/.rbenv/versions/2.7.5/lib/ruby/gems/2.7.0"
+# export GEM_HOME="$HOME/.rbenv/versions/2.7.5/lib/ruby/gems/2.7.0"
 
 # python version manager
 eval "$(pyenv init -)"
