@@ -12,6 +12,7 @@ tsave() {
   tmux2html "$1" --history "$LINES" -o ~/tmux.html
 }
 alias tshow='xopen ~/tmux.html &> /dev/null &'
+alias mux=tmuxinator
 
 undupe_history() {
   nl "$1" | sort -k 2  -k 1,1nr| uniq -f 1 | sort -n | cut -f 2 > unduped_history
@@ -23,7 +24,7 @@ undupe_history() {
 alias szsh="source ~/.zshrc"
 alias k9="kill -9"
 alias t="tree"
-alias rboot="systemctl stop mssql-server && systemctl reboot -i"
+alias rboot="systemctl reboot -i"
 alias pwoff="sudo poweroff"
 alias rp="realpath"
 
@@ -77,8 +78,6 @@ alias wai='whereami'
 alias rlc='rails log:clear'
 # vim shows some spring error if in one tab rails console is launched with spring and in another one a spec is running
 alias rc='DISABLE_SPRING=true rails c'
-# alias redisrepair= 'sudo /etc/init.d/redis_6379 stop && sudo rm /var/redis/6379/dump.rdb && sudo rm /var/run/redis_6379.pid && sudo /etc/init.d/redis_6379 start'
-
 
 ####### elixir ########
 alias iex='rlwrap -a iex'
@@ -108,13 +107,10 @@ alias alf='wmctrl -r '0:1:zsh' -b toggle,fullscreen'
 
 
 ####### system ########
+alias search='find / -type f -iname'
 alias xopen='xdg-open'
 alias syslog="vim /var/log/syslog"
 alias syslogclear="sudo sh -c 'cat /dev/null > /var/log/syslog'\n: 1557288145:0;sudo sh -c 'cat /dev/null > /var/log/syslog'"
-# keyboard off/on
-# alias kf='xinput set-int-prop 16 "Device Enabled" 8 0'
-# alias kn='xinput set-int-prop 16 "Device Enabled" 8 1'
-# alias sshot2='flameshot gui -d 2000'
 alias lc='colorls'
 alias lca='colorls -a'
 alias lcr='colorls -lA --sd'

@@ -12,11 +12,26 @@ set shortmess+=c
 " diagnostics appear/become resolved.
 set signcolumn=number
 
-" plugins that we add to g:cocglobalextensions will be automatically installed and updated
+" plugins to be automatically installed and updated
 let g:coc_global_extensions = [
+  \ 'coc-css',
+  \ 'coc-emoji',
+  \ 'coc-eslint',
+  \ 'coc-explorer',
+  \ 'coc-fzf-preview',
+  \ 'coc-graphql',
+  \ 'coc-highlight',
+  \ 'coc-html',
+  \ 'coc-json',
+  \ 'coc-markdownlint',
+  \ 'coc-marketplace',
+  \ 'coc-neosnippet',
+  \ 'coc-solargraph',
   \ 'coc-tsserver',
-  \ 'coc-solargraph'
+  \ 'coc-yaml',
+  \ 'coc-yank',
   \ ]
+
 
 " use <alt-h> for trigger completion
 inoremap <silent><expr> <a-h> coc#refresh()
