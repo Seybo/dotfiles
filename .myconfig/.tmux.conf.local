@@ -71,10 +71,6 @@ bind C-c command-prompt -p "Command:" \
    "run \"tmux list-panes -a -F '##{session_name}:##{window_index}.##{pane_index}' \
    | xargs -I PANE tmux send-keys -t PANE '%1' Enter\""
 
-# Scroll 3 lines at a time instead of default 5; don't extend dragged selections.
-bind -T copy-mode-vi WheelUpPane select-pane\; send-keys -t{mouse} -X clear-selection\; send-keys -t{mouse} -X -N 3 scroll-up
-bind -T copy-mode-vi WheelDownPane select-pane\; send-keys -t{mouse} -X clear-selection\; send-keys -t{mouse} -X -N 3 scroll-down
-
 # Fast toggle between current and last-used window (normally prefix-l).
 # bind m last-layout
 

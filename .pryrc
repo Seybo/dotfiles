@@ -1,18 +1,14 @@
-# seybo START
-# fzf in pry
-# breaks vi-mode :(
-# require 'rb-readline'
-# require 'readline'
-# if defined?(RbReadline)
-#   def RbReadline.rl_reverse_search_history(sign, key)
-#     rl_insert_text  `cat ~/.pry_history | fzf --tac |  tr '\n' ' '`
-#   end
-# end
-
 if defined?(::Bundler)
   current_gemset = ENV['GEM_HOME']
   $LOAD_PATH.concat(Dir.glob("#{current_gemset}/gems/*/lib")) if current_gemset
 end
+
+# fzf in pry
+# breaks vi-mode :(
+# require 'rb-readline'
+# def RbReadline.rl_reverse_search_history(sign, key)
+#   rl_insert_text  `cat ~/.pry_history | fzf --tac |  tr '\n' ' '`
+# end
 
 require 'pry-stack_explorer'
 # seybo END

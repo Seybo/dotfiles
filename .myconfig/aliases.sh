@@ -41,6 +41,7 @@ alias gpf='git push --force-with-lease'
 alias gca='git commit -n --amend --no-edit'
 alias gcae='git commit -n --amend'
 alias gitc='git commit -n -v -m "'
+alias grc='GIT_EDITOR=true git rebase --continue'
 alias gitct='gitc temp"'
 alias gbD='git branch -D'
 alias gc-='git checkout -'
@@ -95,10 +96,7 @@ alias jst="TZ=UTC BABEL_ENV=jest yarn jest"
 
 ####### apps ########
 alias v='nvim'
-alias vi='nvim'
-alias vim='nvim'
 alias rr='ranger'
-alias gls='glances'
 alias gsm='gnome-system-monitor'
 alias colorscheme='~/.myconfig/colorscheme'
 
@@ -107,15 +105,15 @@ alias alf='wmctrl -r '0:1:zsh' -b toggle,fullscreen'
 
 
 ####### system ########
-alias search='find / -type f -iname'
+alias search='sudo find / -type f -iname'
 alias xopen='xdg-open'
-alias syslog="vim /var/log/syslog"
+alias syslog='vim /var/log/syslog'
 alias syslogclear="sudo sh -c 'cat /dev/null > /var/log/syslog'\n: 1557288145:0;sudo sh -c 'cat /dev/null > /var/log/syslog'"
-alias lc='colorls'
-alias lca='colorls -a'
-alias lcr='colorls -lA --sd'
-alias lcr='colorls -lA --sd'
-alias lcd='colorls -d'
+alias ls='ls -al'
+
+alias exa='exa --long --header --no-user --icons --all'
+alias exae='exa --long --header --no-user --icons --all --sort=ext'
+alias exam='exa --long --header --no-user --icons --all --sort=mod'
 
 alias aptu='sudo apt update'
 alias apti='sudo apt install'
