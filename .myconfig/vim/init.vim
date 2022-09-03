@@ -1,13 +1,14 @@
-source ~/.myconfig/vim/settings/settings_basic.vimrc
+source $HOME/.myconfig/vim/global_before.vimrc
 call plug#begin('~/.vim/plugged')
-source ~/.myconfig/vim/plugins/_plugins_basic.vimrc
-source ~/.myconfig/vim/plugins/_plugins_extra.vimrc
+source $HOME/.myconfig/vim/plugins_basic.vimrc
+" a separate file for those plugins that can be disabled (for debugging purposes for example) 
+source $HOME/.myconfig/vim/plugins_extra.vimrc
 call plug#end()
-source ~/.myconfig/vim/settings/settings_extra.vimrc
-source ~/.myconfig/vim/settings/mappings_basic.vimrc
-source ~/.myconfig/vim/settings/colors.vimrc
-source ~/.myconfig/vim/settings/global_after.vimrc
+source $HOME/.myconfig/vim/settings.vimrc
+source $HOME/.myconfig/vim/mappings.vimrc
+source $HOME/.myconfig/vim/colors.vimrc
+source $HOME/.myconfig/vim/global_after.vimrc
 
 " Links:
-" ~/.config/nvim/ftplugin
-" ~/.config/nvim/indent
+" $HOME/.config/nvim/ftplugin
+" $HOME/.config/nvim/indent

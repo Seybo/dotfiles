@@ -1,16 +1,16 @@
 #!/bin/sh
 
 color=$1
-vim_config=~/.myconfig/vim/settings
-# p10k_config=~/.p10k.zsh
-alacritty_config=~/.config/alacritty
+colors_config=$HOME/.myconfig/vim/colors
+# p10k_config=$HOME/.p10k.zsh
+alacritty_config=$HOME/.config/alacritty
 
 configure_alacritty() {
   cat ${alacritty_config}/alacritty_base.yml ${alacritty_config}/alacritty_theme_${color}.yml > ${alacritty_config}/alacritty.yml
 }
 
 configure_vim() {
-  cat ${vim_config}/colors_theme_${color}.vimrc ${vim_config}/colors_base.vimrc > ${vim_config}/colors.vimrc
+  cat ${colors_config}/colors_theme_${color}.vimrc ${colors_config}/colors_base.vimrc > $HOME/.myconfig/vim/colors.vimrc
 }
 
 # configure_p10k() {
