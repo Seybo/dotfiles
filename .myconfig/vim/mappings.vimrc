@@ -155,6 +155,16 @@ nnoremap <leader>rw :%s/<C-r><C-w>/
 " TODO: doesnt work
 vnoremap <leader>rw y:%s/
 
+" searching
+" it is very often to jump between _
+nmap su f_l
+nmap Su F_
+nmap cu ct_
+nmap s[ f(
+nmap S[ F(
+nmap s] f)
+nmap S] F)
+
 " copy filename
 " full path
 map <silent><leader>fpf :let @+ = expand("%:p")<cr>
@@ -179,10 +189,6 @@ vmap <silent><leader>. :t'><cr>
 " set foldmethod for markdown files for example
 nmap <leader>fi :setlocal foldmethod=indent<cr>
 nmap <leader>fe :setlocal foldmethod=expr<cr>
-
-" TODO: Move somewhere
-" search by filename the word under cursor
-" nmap <Leader>fq viw<Leader>y :CocCommand fzf-preview.ProjectFiles<cr>
 
 " spell languages
 nnoremap <silent><leader>le :set spelllang=en_us<cr>

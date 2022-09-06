@@ -113,10 +113,14 @@ augroup END
 """"""""""" Tabline End """"""""""""
 """"""""""""""""""""""""""""""""""""
 
-let g:ruby_host_prog = '~/.rbenv/versions/2.7.5/bin/neovim-ruby-host'
+" neovim stuff
+" to remove checkhealth warning: "Neovim::Ext" cpan module is not installed
+let g:loaded_perl_provider = 0
+let g:ruby_host_prog = '~/.rbenv/versions/2.7.6/bin/neovim-ruby-host'
 let g:python3_host_prog = '/usr/bin/python3'
 " python 3 should be enough
 " let g:python_host_prog = '/usr/bin/python2'
+
 augroup RestoreCursorShapeOnExit
   autocmd!
   autocmd VimLeave * set guicursor=a:hor20-blinkwait400-blinkoff400-blinkon400
