@@ -45,6 +45,7 @@ source $HOME/.myconfig/vim/plugins/quick_scope.vimrc
 source $HOME/.myconfig/vim/plugins/rails.vimrc
 " source $HOME/.myconfig/vim/plugins/rooter.vimrc
 source $HOME/.myconfig/vim/plugins/rubocop.vimrc
+" source $HOME/.myconfig/vim/plugins/scriptease.vimrc
 source $HOME/.myconfig/vim/plugins/signature.vimrc
 " source $HOME/.myconfig/vim/plugins/slim.vimrc
 source $HOME/.myconfig/vim/plugins/sneak.vimrc
