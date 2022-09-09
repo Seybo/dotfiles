@@ -36,4 +36,4 @@ set ignorecase
 set smartcase
 
 " syntax highlighting is the major performance hit. Just don't do it on huge files like gql schema
-autocmd BufWinEnter * if line2byte(line("$") + 1) > 100000 | syntax clear | endif
+autocmd BufWinEnter * if line2byte(line("$") + 1) > 200000 | syntax clear | endif

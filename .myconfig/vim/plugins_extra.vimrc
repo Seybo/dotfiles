@@ -25,6 +25,7 @@ source $HOME/.myconfig/vim/plugins/bundler.vimrc
 source $HOME/.myconfig/vim/plugins/bufkill.vimrc
 source $HOME/.myconfig/vim/plugins/copilot.vimrc
 source $HOME/.myconfig/vim/plugins/ctrlsf.vimrc
+source $HOME/.myconfig/vim/plugins/dadbod.vimrc
 source $HOME/.myconfig/vim/plugins/devicons.vimrc
 " source $HOME/.myconfig/vim/plugins/dispatch.vimrc
 source $HOME/.myconfig/vim/plugins/editorconfig.vimrc

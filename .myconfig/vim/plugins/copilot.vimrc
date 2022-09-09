@@ -1,8 +1,8 @@
 Plug 'github/copilot.vim'
 
-" apply suggestion with <C-y>
-imap <silent><script><expr> <C-y> copilot#Accept("\<cr>")
-imap <c-j> <Plug>(copilot-next)
+" apply suggestion with <C-i>
+imap <silent><script><expr> <C-i> copilot#Accept("\<cr>")
+inoremap <c-j> <Plug>(copilot-next)
 
 let g:copilot_no_tab_map = v:true
 
