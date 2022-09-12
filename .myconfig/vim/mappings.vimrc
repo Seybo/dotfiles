@@ -152,18 +152,32 @@ nnoremap gp `[v`]
 
 " replace word under cursor
 nnoremap <leader>rw :%s/<C-r><C-w>/
-" TODO: doesnt work
-vnoremap <leader>rw y:%s/
+" replace selection
+vnoremap <leader>rw "sy:%s/<C-r>=substitute(@s, '\n', '', 'g')<cr>/
 
 " searching
 " it is very often to jump between _
 nmap su f_l
 nmap Su F_
 nmap cu ct_
+nmap c2u c2t_
+nmap c3u c3t_
+nmap vu vt_
+nmap v2u v2t_
+nmap v3u v3t_
+" and between brackets. Let's try using the opening squere one as the (
 nmap s[ f(
 nmap S[ F(
-nmap s] f)
-nmap S] F)
+nmap vi[ vi(
+nmap ci[ ci(
+nmap di[ di(
+" and between spaces
+nmap c<space> ct 
+nmap c2<space> c2t 
+nmap c3<space> c3t 
+nmap v<space> vt 
+nmap v2<space> v2t 
+nmap v3<space> v3t 
 
 " copy filename
 " full path
