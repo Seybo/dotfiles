@@ -172,12 +172,18 @@ nmap vi[ vi(
 nmap ci[ ci(
 nmap di[ di(
 " and between spaces
+nmap s<space> ft 
+nmap s2<space> f2t 
+nmap s3<space> f3t 
 nmap c<space> ct 
 nmap c2<space> c2t 
 nmap c3<space> c3t 
 nmap v<space> vt 
 nmap v2<space> v2t 
 nmap v3<space> v3t 
+nmap d<space> dt 
+nmap d2<space> d2t 
+nmap d3<space> d3t 
 
 " copy filename
 " full path
