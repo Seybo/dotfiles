@@ -165,6 +165,9 @@ nmap c3u c3t_
 nmap vu vt_
 nmap v2u v2t_
 nmap v3u v3t_
+nmap du dt_
+nmap d2u d2t_
+nmap d3u d3t_
 " and between brackets. Let's try using the opening squere one as the (
 nmap s[ f(
 nmap S[ F(

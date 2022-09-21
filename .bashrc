@@ -119,3 +119,5 @@ fi
 
 export YVM_DIR=/home/glaux/.yvm
 [ -r $YVM_DIR/yvm.sh ] && . $YVM_DIR/yvm.sh
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

@@ -101,13 +101,14 @@ function MyTabLabel(n)
   return fnamemodify(label, ":t") 
 endfunction
 
+" set in the themes files
 " same color as my white scheme
-augroup TabColors
-  autocmd!
-  autocmd ColorScheme * hi TabLineFill guifg=gray99
-  autocmd ColorScheme * hi TabLine guifg=gray99 guibg=gray10
-  autocmd ColorScheme * hi TabLineSel guibg=MediumTurquoise guifg=gray99
-augroup END
+" augroup TabColors
+"   autocmd!
+"   autocmd ColorScheme * hi TabLineFill guifg=gray99
+"   autocmd ColorScheme * hi TabLine guifg=gray99 guibg=gray10
+"   autocmd ColorScheme * hi TabLineSel guibg=MediumTurquoise guifg=gray99
+" augroup END
 
 """"""""""""""""""""""""""""""""""""
 """"""""""" Tabline End """"""""""""

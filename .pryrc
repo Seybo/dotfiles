@@ -42,19 +42,10 @@ Pry.editor = 'vi'
 #   _pry_.run_command Pry.history.to_a.last
 # end
 
-unless defined?(Pry::Prompt)
-  Pry.config.prompt =  Pry::NAV_PROMPT
-end
+Pry.color = true
 
-# === COLORS ===
-if defined?(PryTheme)
-  Pry.color = true
-  # seybo START
-  # Pry.config.theme = "railscasts"
-  # seybo END
-  Pry.config.prompt = PryRails::RAILS_PROMPT if defined?(PryRails::RAILS_PROMPT)
-  Pry.config.prompt ||= Pry.prompt
-end
+Pry.config.prompt = Pry::Prompt[:rails] unless Pry::Prompt[:rails].nil?
+Pry.config.prompt ||= Pry.prompt
 
 # Shortcut for calling pry_debug
 def pry_debug
@@ -179,6 +170,7 @@ def more_help
   puts '=' * 80
   puts 'Debugging Shortcuts'
   puts
+
   display_shortcuts
 end
 

@@ -23,3 +23,4 @@ hi BookmarkLine guibg=#343F4C guifg=#BBE67E
 " to disable line text color change for the line with error (the sign in the gutter is enough)
 hi CocErrorHighlight guifg=none
 " use :help coc-highlights
+hi Normal guibg=none ctermbg=none

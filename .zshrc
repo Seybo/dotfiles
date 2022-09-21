@@ -150,7 +150,7 @@ _fzf_compgen_dir() {
 # enable fzf keybindings for Zsh:
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 # enable fuzzy auto-completion for Zsh:
-# source /usr/share/doc/fzf/examples/completion.zsh
+source /usr/share/doc/fzf/examples/completion.zsh
 
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"

@@ -5,6 +5,10 @@ set termguicolors
 let ayucolor='light'
 colorscheme ayu
 
+hi TabLineFill guifg=gray99
+hi TabLine guifg=gray99 guibg=gray10
+hi TabLineSel guibg=MediumTurquoise guifg=gray99
+
 " ~/.vim/plugged/ayu-vim/colors/ayu.vim
 " updates
 " use alacritty bg color
