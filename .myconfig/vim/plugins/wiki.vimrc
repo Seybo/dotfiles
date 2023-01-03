@@ -29,3 +29,5 @@ let thoughts.syntax = 'markdown'
 let thoughts.ext = '.md'
 
 let g:vimwiki_list = [dev, ubuntu, nvim, design, other, thoughts]
+let g:vimwiki_global_ext = 0
+

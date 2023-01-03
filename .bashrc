@@ -117,7 +117,4 @@ if ! shopt -oq posix; then
 fi
 . "$HOME/.cargo/env"
 
-export YVM_DIR=/home/glaux/.yvm
-[ -r $YVM_DIR/yvm.sh ] && . $YVM_DIR/yvm.sh
-
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

@@ -9,24 +9,15 @@
     "typescript",
     "typescriptreact"
   ],
-  "codeLens.enable": true,
+  "codeLens.enable": false,
   "diagnostic.errorSign": "•",
   "diagnostic.warningSign": "•",
   "diagnostic.infoSign": "•",
   "diagnostic.virtualText": false,
   "eslint.autoFixOnSave": true,
   "explorer.file.showHiddenFiles": true,
+  "explorer.file.reveal.whenOpen": true,
   "explorer.icon.enableNerdfont": true,
-  "explorer.root.customRules": {
-    "vcs": {
-      "patterns": [".git", ".hg", ".projections.json"]
-    },
-    "vcs-r": {
-      "patterns": [".git", ".hg", ".projections.json"],
-      "bottomUp": true
-    }
-  },
-  "explorer.root.strategies": ["workspace", "custom:vcs", "custom:vcs-r"],
   "suggest.autoTrigger": "always",
   "solargraph.autoformat": true,
   "solargraph.definitions": true,

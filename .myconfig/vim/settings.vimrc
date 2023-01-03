@@ -8,11 +8,11 @@ endif
 " disable Ex mode
 map Q <Nop>
 
-augroup neovim_terminal
-  autocmd!
-  " Disables number lines on terminal buffers
-  autocmd TermOpen * :set nonumber norelativenumber
-augroup END
+" Disables number lines on terminal buffers
+" augroup neovim_terminal
+"   autocmd!
+"   autocmd TermOpen * :set nonumber norelativenumber
+" augroup END
 
 """"""""""""""""""""""""""""""""""""
 """""""" Statusline Start """"""""""

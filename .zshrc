@@ -167,10 +167,6 @@ eval $(thefuck --alias)
 # dotfiles
 alias dfiles="/usr/bin/git --git-dir=$HOME/.dfiles/ --work-tree=$HOME"
 
-# yarn version manager
-export YVM_DIR=/home/glaux/.yvm
-[ -r $YVM_DIR/yvm.sh ] && . $YVM_DIR/yvm.sh
-
 # autojump (installed with apt)
 . /usr/share/autojump/autojump.sh
 
@@ -181,6 +177,7 @@ export DIRENV_LOG_FORMAT=
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# if it is not in the end bindings like scrolling the terminal output stop working for some reason
 if [ -z "$TMUX" ]; then
   exec tmux new-session -A -s workspace
 fi

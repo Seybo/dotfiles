@@ -100,6 +100,7 @@ alias luavim='vim -u ~/.myconfig/luavim/init.lua'
 alias rr='ranger'
 alias gsm='gnome-system-monitor'
 alias colorscheme='~/.myconfig/colorscheme'
+alias postman='~/etc/postman/Postman'
 
 # alacritty doesn't go fullscreen with F11
 alias alf='wmctrl -r '0:1:zsh' -b toggle,fullscreen'
