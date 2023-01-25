@@ -104,6 +104,9 @@ Pry.commands.alias_command '?', 'show-source -d'
 # Use awesome_print (or amazing_print)
 begin
   require 'awesome_print'
+  AwesomePrint.defaults = {
+    indent: -2,
+  }
   AwesomePrint.pry!
 rescue LoadError => err
   begin
