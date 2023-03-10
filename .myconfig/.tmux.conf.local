@@ -53,15 +53,21 @@ set -g @tpm_plugins '           \
    tmux-plugins/tmux-sensible   \
    tmux-plugins/tmux-open       \
    tmux-plugins/tmux-copycat    \
-   tmux-plugins/tmux-urlview    \
    tmux-plugins/tmux-yank       \
+   tmux-plugins/tmux-logging    \
 '
 # not used rn:
+# tmux-plugins/tmux-urlview    \
 # tmux-plugins/tmux-cpu        \
 # jbnicolai/tmux-fpp           \
 # tmux-plugins/tmux-resurrect  \
 # jimeh/tmux-themepack         \
 # set -g @themepack 'powerline/double/magenta'
+
+# logs path for tmux-logging plugin
+# Toggle (start/stop) logging in the current pane: prefix + shift + p
+# Save complete pane history: prefix + alt + shift + p
+set -g @logging-path '/mnt/dev/nosync/tmux_logs'
 
 # handy rails request search: prefix+C-r
 set -g @copycat_search_C-r '^Processing[[:space:]]by[[:space:]][^[:space:]]*'
@@ -117,8 +123,8 @@ set -g status-position top
 bind t set -g status off
 bind T set -g status on
 
-# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
-run -b '~/.tmux/plugins/tpm/tpm'
-
 # generated manually in vim by plugin tmuxline (works with airline) and command :TmuxlineSnapshot
 source-file ~/.myconfig/tmuxline_colorscheme.conf
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run -b '~/.tmux/plugins/tpm/tpm'
