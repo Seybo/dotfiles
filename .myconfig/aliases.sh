@@ -27,6 +27,7 @@ alias t="tree"
 alias rboot="systemctl reboot -i"
 alias pwoff="sudo poweroff"
 alias rp="realpath"
+alias espr="espanso restart"
 
 # wifi
 alias wfl="nmcli d wifi list"
@@ -101,6 +102,12 @@ alias rr='ranger'
 alias gsm='gnome-system-monitor'
 alias colorscheme='~/.myconfig/colorscheme'
 alias postman='~/etc/postman/Postman'
+alias peek='GDK_BACKEND=x11 peek'
+# alias nvim_mood='cd ~/.config && mv nvim nvim_main && mv nvim_mood nvim'
+alias nvim_ide_to_my='cd ~/.config && mv nvim nvim_ide && mv nvim_my nvim'
+alias nvim_my_to_ide='cd ~/.config && mv nvim nvim_my && mv nvim_ide nvim'
+alias nvim_alex_to_my='cd ~/.config && mv nvim nvim_alex && mv nvim_my nvim'
+alias nvim_my_to_alex='cd ~/.config && mv nvim nvim_my && mv nvim_alex nvim'
 
 # alacritty doesn't go fullscreen with F11
 alias alf='wmctrl -r '0:1:zsh' -b toggle,fullscreen'

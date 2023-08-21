@@ -177,6 +177,9 @@ export DIRENV_LOG_FORMAT=
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# rust
+export PATH="$HOME/.cargo/bin:$PATH"
+
 # if it is not in the end bindings like scrolling the terminal output stop working for some reason
 if [ -z "$TMUX" ]; then
   exec tmux new-session -A -s workspace

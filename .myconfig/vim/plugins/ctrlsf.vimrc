@@ -20,7 +20,7 @@ nmap <silent><leader>s3 <Plug>CtrlSFPrompt "QUESTION: mikhail"<cr>
 nmap <silent><leader>s4 <Plug>CtrlSFPrompt "TMP_COMMENT: mikhail"<cr>
 nmap <silent><leader>s5 <Plug>CtrlSFPrompt ": mikhail"<cr>
 nmap <silent><leader>s6 <Plug>CtrlSFPrompt ".    "<cr>
-nmap <silent><leader>s8 <Plug>CtrlSFPrompt "binding.pry"<cr>
+nmap <silent><leader>s8 <Plug>CtrlSFPrompt "  binding.pry"<cr>
 nmap <silent><leader>s9 <Plug>CtrlSFPrompt "debugger; // eslint-disable-line"<cr>
 nmap <silent><leader>s0 <Plug>CtrlSFPrompt "console.log("<cr>
 
