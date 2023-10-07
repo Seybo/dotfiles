@@ -103,15 +103,15 @@ scrolling:
 #
 font:
   normal:
-    family: Source Code Pro for Powerline
+    family: SauceCodePro Nerd Font Mono
     style: Medium
 
   bold:
-    family: Source Code Pro for Powerline
+    family: SauceCodePro Nerd Font Mono
     style: Bold
 
   italic:
-    family: Source Code Pro for Powerline
+    family: SauceCodePro Nerd Font Mono
     style: MediumItalic
 
   # Bold italic font face

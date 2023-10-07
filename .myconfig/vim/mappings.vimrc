@@ -95,13 +95,6 @@ nmap <Leader>P o<ESC>"+p
 vmap Yz "zy
 nmap Yz "zP
 
-" delete without yanking
-" nnoremap <leader>d "_d
-" vnoremap <leader>d "_d
-
-" replace currently selected text with default register without yanking it
-vnoremap p "_dP
-
 " adding empty lines
 nnoremap <C-j> :set paste<cr>m`o<Esc>``:set nopaste<cr>
 nnoremap <C-k> :set paste<cr>m`O<Esc>``:set nopaste<cr>

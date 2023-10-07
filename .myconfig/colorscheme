@@ -9,33 +9,38 @@ configure_alacritty() {
   cat ${alacritty_config}/alacritty_base.yml ${alacritty_config}/alacritty_theme_${color}.yml > ${alacritty_config}/alacritty.yml
 }
 
-configure_vim() {
-  cat ${colors_config}/colors_theme_${color}.vimrc ${colors_config}/colors_base.vimrc > $HOME/.myconfig/vim/colors.vimrc
-}
+# configure_vim() {
+#   cat ${colors_config}/colors_theme_${color}.vimrc ${colors_config}/colors_base.vimrc > $HOME/.myconfig/vim/colors.vimrc
+# }
 
 # configure_p10k() {
 #   sed -i "s/.*typeset -g POWERLEVEL9K_BACKGROUND=.*/  typeset -g POWERLEVEL9K_BACKGROUND=$1/" ${p10k_config}
 # }
 
 case $color in
+  rose_pine_dawn)
+    configure_alacritty
+    # configure_vim
+    # configure_p10k "253"
+    ;;
   one_light)
     configure_alacritty
-    configure_vim
+    # configure_vim
     # configure_p10k "253"
     ;;
   sonokai)
     configure_alacritty
-    configure_vim
+    # configure_vim
     # configure_p10k "236"
     ;;
   ayucolor_light)
     configure_alacritty
-    configure_vim
+    # configure_vim
     # configure_p10k "253"
     ;;
   gruvbox)
     configure_alacritty
-    configure_vim
+    # configure_vim
     # configure_p10k "253"
     ;;
   *)

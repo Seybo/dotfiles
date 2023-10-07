@@ -20,9 +20,9 @@ map Q <Nop>
 set laststatus=2
 set statusline=
 set statusline+=%m
-set statusline+=\ 
+set statusline+=\
 set statusline+=%{b:gitbranch}
-" set statusline+=%{FugitiveStatusline()} 
+" set statusline+=%{FugitiveStatusline()}
 set statusline+=%=
 set statusline+=%y
 set statusline+=·
@@ -63,43 +63,54 @@ set signcolumn=yes
 """"""""""" Tabline Start """"""""""
 """"""""""""""""""""""""""""""""""""
 
-" show only filenames in tablen
-set tabline=%!MyTabLine()
+function! MyTabLine()
+    let s = ""
 
-function MyTabLine()
-  let s = ''
-  for i in range(tabpagenr('$'))
-    " select the highlighting
-    if i + 1 == tabpagenr()
-      let s .= '%#TabLineSel#'
-    else
-      let s .= '%#TabLine#'
+    for i in range(1, tabpagenr('$'))
+        let filename = MyTabLabel(i)
+        let filename_without_ext = MyTabLabelWithoutExt(i)
+
+        " Check if filename_without_ext is longer than 30 characters
+        if strlen(filename_without_ext) > 30
+            " Shorten the filename to the last 30 characters and prefix with ".."
+            let filename_without_ext = '..' . strpart(filename_without_ext, strlen(filename_without_ext) - 30)
+        endif
+
+        if i == tabpagenr()
+            let s .= "%#TabLineSel#"
+        else
+            let s .= "%#TabLine#"
+        endif
+
+        let s .= "%" . i . "T"
+        let s .= " " . filename_without_ext . " "
+    endfor
+
+    let s .= "%#TabLineFill#%T"
+
+    if tabpagenr('$') > 1
+        let s .= "%=%#TabLine#%999Xclose"
     endif
 
-    " set the tab page number (for mouse clicks)
-    let s .= '%' . (i + 1) . 'T' 
-
-    " the label is made by MyTabLabel()
-    let s .= ' %{MyTabLabel(' . (i + 1) . ')} '
-  endfor
-
-  " after the last tab fill with TabLineFill and reset tab page nr
-  let s .= '%#TabLineFill#%T'
-
-  " right-align the label to close the current tab page
-  if tabpagenr('$') > 1 
-    let s .= '%=%#TabLine#%999Xclose'
-  endif
-
-  return s
+    return s
 endfunction
 
-function MyTabLabel(n)
-  let buflist = tabpagebuflist(a:n)
-  let winnr = tabpagewinnr(a:n)
-  let label =  bufname(buflist[winnr - 1]) 
-  return fnamemodify(label, ":t") 
+" function to extract only the filename without the path and extension
+function! MyTabLabel(tabnum)
+    let full_path = bufname(tabpagebuflist(a:tabnum)[0])
+    let filename = fnamemodify(full_path, ":t")
+    return fnamemodify(filename, ":r")
 endfunction
+
+" Define the MyTabLabelWithoutExt function to extract filename without extension
+function! MyTabLabelWithoutExt(tabnum)
+    let full_path = bufname(tabpagebuflist(a:tabnum)[0])
+    let filename = fnamemodify(full_path, ":t:r")
+    return filename
+endfunction
+
+" Show shortened filenames in the tabline
+set tabline=%!MyTabLine()
 
 " set in the themes files
 " same color as my white scheme
