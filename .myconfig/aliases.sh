@@ -96,8 +96,9 @@ alias jst="TZ=UTC BABEL_ENV=jest yarn jest"
 
 
 ####### apps ########
-alias v='lvim'
-alias lvim='vim -u ~/.config/nvim/init_lua.lua'
+alias v='vim -u ~/.config/nvim/init_lua.lua'
+alias vim='vim -u ~/.config/nvim/init_lua.lua'
+alias oldvim='vim -u ~/.config/nvim/init.vim'
 
 alias rr='ranger'
 alias gsm='gnome-system-monitor'
