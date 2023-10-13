@@ -118,6 +118,8 @@ function M.setup()
                 mode_section,
             },
             lualine_b = {
+                -- show icon before filename
+                { "filetype", icon_only = true, separator = "", padding = { right = 0, left = 1 } },
                 filename_section,
             },
             lualine_c = {},
