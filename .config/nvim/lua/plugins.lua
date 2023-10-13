@@ -358,6 +358,22 @@ local plugins = {
     },
 
     {
+        "nanozuki/tabby.nvim",
+        version = "*",
+        config = require("plugins.tabby").setup,
+        -- event = "VeryLazy",
+        -- config = require("plugins.surround").setup,
+    },
+
+    {
+        "subnut/nvim-ghost.nvim",
+        lazy = false,
+        config = function()
+            vim.g.nvim_ghost_super_quiet = 1
+        end,
+    },
+
+    {
         "norcalli/nvim-colorizer.lua",
         version = "*",
         lazy = true,
@@ -373,6 +389,7 @@ local plugins = {
         event = { "BufReadPost", "BufNewFile" },
         config = require("plugins.neoclip").setup,
     },
+
 
 
 
