@@ -11,8 +11,12 @@ function M.setup()
             background = "#fafaf7",
         },
         highlight_groups = {
+            -- spectre
             SpectreFile = { fg = "love" },
             SpectreSearch = { bg = "highlight_med", fg = "foam" },
+            -- diffview
+            DiffAdd = { fg = "love" },
+            DiffviewFilePanelFileName = { fg = "foam" },
         },
     })
     -- plugin.setup({

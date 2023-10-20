@@ -259,12 +259,12 @@ local plugins = {
         },
     },
 
-    {
-        "sindrets/diffview.nvim",
-        version = "*",
-        dependencies = { "nvim-lua/plenary.nvim" },
-        config = require("plugins.diffview").setup,
-    },
+    -- { -- not using it for now
+    --     "sindrets/diffview.nvim",
+    --     version = "*",
+    --     dependencies = { "nvim-lua/plenary.nvim" },
+    --     config = require("plugins.diffview").setup,
+    -- },
 
 
     -- TODO_MM: disabled for now as it often fails on rspecs
@@ -390,8 +390,9 @@ local plugins = {
         config = require("plugins.neoclip").setup,
     },
 
-
-
+    {
+        "windwp/nvim-projectconfig",
+    },
 
     -- database
     {
@@ -403,7 +404,7 @@ local plugins = {
         config = require("plugins.dadbod").setup,
     },
 
-    -- my plugins
+    -- my plugins/forks
 
     {
         dir = "/mnt/dev/my/vim_plugins/stackmap.nvim",

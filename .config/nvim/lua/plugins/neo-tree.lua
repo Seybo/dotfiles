@@ -2,7 +2,11 @@ local M = {}
 
 function M.setup()
     local plugin = require "neo-tree"
+    local commands = require "neo-tree.command"
 
+    local function close()
+        commands.execute({ action = "close" })
+    end
 
     local function copy_path(state, fmt)
         local fs = require "utils.fs"
@@ -71,33 +75,42 @@ function M.setup()
             },
             mappings = {
                 ["<CR>"] = "open",
-                ["l"] = "open",
-                ["oh"] = "open_split",
-                ["ov"] = "open_vsplit",
-                ["h"] = "close_node",
-                ["H"] = "close_all_nodes",
-                ["p"] = { "toggle_preview", config = { use_float = true } },
-                ["P"] = "focus_preview",
-                ["R"] = "refresh",
-                ["?"] = "show_help",
-                [">"] = "next_source",
-                ["<"] = "prev_source",
-                ["fa"] = {
+                ["l"]    = "open",
+                ["q"]    = "close_window",
+                ["o"]    = { "show_help", nowait = false, config = { title = "Order by", prefix_key = "o" } },
+                ["oc"]   = { "order_by_created", nowait = false },
+                ["od"]   = { "order_by_diagnostics", nowait = false },
+                ["om"]   = { "order_by_modified", nowait = false },
+                ["on"]   = { "order_by_name", nowait = false },
+                ["os"]   = { "order_by_size", nowait = false },
+                ["ot"]   = { "order_by_type", nowait = false },
+                ["oh"]   = "open_split",
+                ["ov"]   = "open_vsplit",
+                ["h"]    = "close_node",
+                ["H"]    = "close_all_nodes",
+                ["p"]    = { "toggle_preview", config = { use_float = true } },
+                ["P"]    = "focus_preview",
+                ["R"]    = "refresh",
+                ["/"]    = "fuzzy_finder",
+                ["?"]    = "show_help",
+                [">"]    = "next_source",
+                ["<"]    = "prev_source",
+                ["fa"]   = {
                     "add",
                     config = {
                         show_path = "none", -- "none", "relative", "absolute"
                     },
                 },
-                ["fA"] = "add_directory",
-                ["fd"] = "delete",
-                ["fr"] = "rename",
-                ["fy"] = "copy_to_clipboard",
-                ["fc"] = "cut_to_clipboard",
-                ["fp"] = "paste_from_clipboard",
-                ["fla"] = function(state) copy_path(state, "absolute") end,
-                ["flr"] = function(state) copy_path(state, "relative") end,
-                ["flf"] = function(state) copy_path(state, "filename") end,
-                ["fln"] = function(state) copy_path(state, "filestem") end,
+                ["fA"]   = "add_directory",
+                ["fd"]   = "delete",
+                ["fr"]   = "rename",
+                ["fy"]   = "copy_to_clipboard",
+                ["fc"]   = "cut_to_clipboard",
+                ["fp"]   = "paste_from_clipboard",
+                ["fla"]  = function(state) copy_path(state, "absolute") end,
+                ["flr"]  = function(state) copy_path(state, "relative") end,
+                ["flf"]  = function(state) copy_path(state, "filename") end,
+                ["fln"]  = function(state) copy_path(state, "filestem") end,
             },
         },
         git_status = {
@@ -114,13 +127,10 @@ function M.setup()
             },
         },
         event_handlers = {
-            { -- auto close on file open
+            {
                 event = "file_opened",
-                handler = function()
-                    require("neo-tree.command").execute({ action = "close" })
-                end,
+                handler = close,
             },
-
         },
     }
 
