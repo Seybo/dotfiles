@@ -404,6 +404,35 @@ local plugins = {
         config = require("plugins.dadbod").setup,
     },
 
+    -- Debugger
+
+    -- {
+    --     "mfussenegger/nvim-dap",
+    --     dependencies = {
+    --         -- "rcarriga/nvim-dap-ui",
+    --         -- "microsoft/vscode-js-debug" is installed via Mason
+    --         -- "mxsdev/nvim-dap-vscode-js",
+    --     },
+    --     config = require("plugins.dap").setup,
+    -- },
+
+    --
+    -- {
+    --     "Pocco81/DAPInstall.nvim",
+    --     branch = "dev",
+    -- },
+    --
+    -- {
+    --     "nvim-telescope/telescope-dap.nvim",
+    -- },
+    --
+    -- {
+    --     "suketa/nvim-dap-ruby",
+    -- },
+
+    -- TODO_MM:
+    -- Plug 'theHamsta/nvim-dap-virtual-text' -- cannot see virtual text if Treesitter for a language is not installed
+
     -- my plugins/forks
 
     {

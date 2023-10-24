@@ -88,49 +88,53 @@ function M.setup()
         })
     end
 
-    local map = require "utils.map"
+    local function live_grep()
+        builtin.live_grep({
+            initial_mode = "insert",
+        })
+    end
 
-    map.call { "<leader>tg", "telescope tags", builtin.help_tags, mode = { "n" } }
-    map.call { "<leader>bl", "telescope buffers", builtin.buffers, mode = { "n" } }
-    map.call { "<leader>ld", "telescope diagnostics", builtin.diagnostics, mode = { "n" } }
-    map.call { "<leader>sb", "telescope fuzzy search in current buffer", current_buffer_fuzzy_find, mode = { "n" } }
-    map.call { "<leader>ff", "telescope find files", find_files, mode = { "n" } }
-    map.call { "<leader>ss", "telescope live grep (word)", builtin.grep_string, mode = { "n" } }
-    map.call { "<leader>ss", "telescope live grep (selection)", live_grep_visual, mode = { "v" } }
-    map.call { "<leader>sm", "telescope live grep (manual)", builtin.live_grep, mode = { "n" } }
-    map.call { "<leader>km", "telescope keymaps", builtin.keymaps, mode = { "n" } }
-    map.call { "<leader>fh", "telescope previously opened files", oldfiles, mode = { "n" } }
-    map.call { "<leader>gc", "telescope git commits", builtin.git_commits, mode = { "n" } }
-    map.call { "<leader>gt", "telescope git stash", builtin.git_stash, mode = { "n" } }
-    map.call { "<leader>gs", "telescope git status", builtin.git_status, mode = { "n" } }
+    map { "<leader>tg", "telescope tags", builtin.help_tags, mode = { "n" } }
+    map { "<leader>bl", "telescope buffers", builtin.buffers, mode = { "n" } }
+    map { "<leader>ld", "telescope diagnostics", builtin.diagnostics, mode = { "n" } }
+    map { "<leader>sb", "telescope fuzzy search in current buffer", current_buffer_fuzzy_find, mode = { "n" } }
+    map { "<leader>ff", "telescope find files", find_files, mode = { "n" } }
+    map { "<leader>ss", "telescope live grep (word)", builtin.grep_string, mode = { "n" } }
+    map { "<leader>ss", "telescope live grep (selection)", live_grep_visual, mode = { "v" } }
+    map { "<leader>sm", "telescope live grep (manual)", live_grep, mode = { "n" } }
+    map { "<leader>km", "telescope keymaps", builtin.keymaps, mode = { "n" } }
+    map { "<leader>fh", "telescope previously opened files", oldfiles, mode = { "n" } }
+    map { "<leader>gc", "telescope git commits", builtin.git_commits, mode = { "n" } }
+    map { "<leader>gt", "telescope git stash", builtin.git_stash, mode = { "n" } }
+    map { "<leader>gs", "telescope git status", builtin.git_status, mode = { "n" } }
     -- todos are set in luasnip.lua
-    map.call { "<leader>s1", "telescope TODO (START_MM)", ":TodoTelescope keywords=START_MM initial_mode=normal<CR>", mode = {
+    map { "<leader>s1", "telescope TODO (START_MM)", ":TodoTelescope keywords=START_MM initial_mode=normal<CR>", mode = {
         "n" } }
-    map.call { "<leader>s2", "telescope TODO (TODO_MM)", ":TodoTelescope keywords=TODO_MM initial_mode=normal<CR>", mode = {
+    map { "<leader>s2", "telescope TODO (TODO_MM)", ":TodoTelescope keywords=TODO_MM initial_mode=normal<CR>", mode = {
         "n" } }
-    map.call { "<leader>s3", "telescope TODO (QUESTION_MM)",
+    map { "<leader>s3", "telescope TODO (QUESTION_MM)",
         ":TodoTelescope keywords=QUESTION_MM initial_mode=normal<CR>", mode = { "n" } }
-    map.call { "<leader>s4", "telescope TODO (COMMENT_MM)", ":TodoTelescope keywords=COMMENT_MM initial_mode=normal<CR>", mode = {
+    map { "<leader>s4", "telescope TODO (COMMENT_MM)", ":TodoTelescope keywords=COMMENT_MM initial_mode=normal<CR>", mode = {
         "n" } }
-    map.call {
+    map {
         "<leader>s5",
         "telescope TODO (all _MM)",
         ":lua require('telescope.builtin').grep_string({ search = \"_MM:\", initial_mode=\"normal\"})<CR>",
         mode = { "n" },
     }
-    map.call {
+    map {
         "<leader>s6",
         "telescope TODO (all _MM)",
         ":lua require('telescope.builtin').grep_string({ search = \": mikhail\"})<CR>",
         mode = { "n" },
     }
-    map.call {
+    map {
         "<leader>s8",
         "telescope binding.pry",
         ":lua require('telescope.builtin').grep_string({ search = \" binding.pry\"})<CR>",
         mode = { "n" },
     }
-    map.call {
+    map {
         "<leader>s9",
         "telescope debugger",
         ":lua require('telescope.builtin').grep_string({ search = \"debugger; // eslint-disable-line\"})<CR>",

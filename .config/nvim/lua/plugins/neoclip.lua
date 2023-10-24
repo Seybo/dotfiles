@@ -2,7 +2,6 @@ local M = {}
 
 function M.setup()
     local plugin = require "neoclip"
-    local map = require "utils.map"
 
     plugin.setup({
         keys = {
@@ -36,7 +35,7 @@ function M.setup()
         })
     end
 
-    map.call { "<C-m>c", "Clipboard manager", clipboard, mode = { "n", "v" } }
+    map { "<C-m>c", "Clipboard manager", clipboard, mode = { "n", "v" } }
 end
 
 return M

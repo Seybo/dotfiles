@@ -1,6 +1,5 @@
 local M = {}
 
-
 function M.setup()
     local plugin = require "cmp"
     local lsnip = require "luasnip"

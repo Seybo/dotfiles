@@ -1,11 +1,9 @@
-local map = require "utils.map"
-
 -- TODO_MM: sort out, categorize and comment all mappings
 
-map.call { "*", "Don't jump on *", "<Cmd>keepjumps normal! mi*`i<CR>", mode = "n" }
-map.call {
+map { "*", "Don't jump on * (search word under cursor)", "<Cmd>keepjumps normal! mi*`i<CR>", mode = "n" }
+map {
     "*",
-    "Highlight selected text",
+    "Don't jump on * (search selection)",
     [["*y:silent! let searchTerm = '\V'.substitute(escape(@*, '\/'), "\n", '\\n', "g") <bar> let @/ = searchTerm <bar> echo '/'.@/ <bar> call histadd("search", searchTerm) <bar> set hls<cr>]],
     mode = "v",
 }

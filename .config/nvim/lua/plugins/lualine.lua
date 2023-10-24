@@ -65,6 +65,16 @@ function M.setup()
         "encoding",
     }
 
+    local diff_section = {
+        colored = false,
+        "diff",
+    }
+
+    local diagnostics_section = {
+        colored = false,
+        "diagnostics",
+    }
+
     local filetype_section = {
         "filetype",
         colored = false,
@@ -122,7 +132,10 @@ function M.setup()
                 { "filetype", icon_only = true, separator = "", padding = { right = 0, left = 1 } },
                 filename_section,
             },
-            lualine_c = {},
+            lualine_c = {
+                diff_section,
+                diagnostics_section,
+            },
             lualine_x = {},
             lualine_y = {
                 searchcount_section,

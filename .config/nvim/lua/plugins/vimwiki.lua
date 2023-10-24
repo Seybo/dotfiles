@@ -1,8 +1,6 @@
 local M = {}
 
 function M.setup()
-    local map = require "utils.map"
-
     vim.g.vimwiki_list = {
         {
             path   = "~/Dropbox/@docs/wiki/dev/",
@@ -37,8 +35,8 @@ function M.setup()
     }
     vim.g.vimwiki_global_ext = 0
 
-    map.call { "<Leader>vww", "Search toggle", ":VimwikiUISelect<CR>", mode = { "n" } }
-    map.call { "<Leader>vwi", "Search toggle", ":VimwikiIndex<CR>", mode = { "n" } }
+    map { "<Leader>vww", "Search toggle", ":VimwikiUISelect<CR>", mode = { "n" } }
+    map { "<Leader>vwi", "Search toggle", ":VimwikiIndex<CR>", mode = { "n" } }
 end
 
 return M

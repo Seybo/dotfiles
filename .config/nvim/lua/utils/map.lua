@@ -2,7 +2,7 @@ local M = {}
 
 local default_options = { noremap = true, silent = true }
 
-function M.call(mapping)
+_G.map = function(mapping)
     -- NB!: it is important to remove items in reverse order to avoid shifting
     local cmd = table.remove(mapping, 3)
     local desc = table.remove(mapping, 2)
@@ -17,5 +17,3 @@ function M.call(mapping)
 
     vim.keymap.set(mode, key, cmd, options)
 end
-
-return M

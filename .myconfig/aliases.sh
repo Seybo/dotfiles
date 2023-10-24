@@ -98,8 +98,9 @@ alias jst="TZ=UTC BABEL_ENV=jest yarn jest"
 
 
 ####### apps ########
-alias v='vim -u ~/.config/nvim/init_lua.lua'
-alias vim='vim -u ~/.config/nvim/init_lua.lua'
+
+alias v='NVIM_LAUNCH_DIR=$(pwd) vim -u ~/.config/nvim/init_lua.lua'
+alias vim='NVIM_LAUNCH_DIR=$(pwd) vim -u ~/.config/nvim/init_lua.lua'
 alias oldvim='vim -u ~/.config/nvim/init.vim'
 
 alias rr='ranger'

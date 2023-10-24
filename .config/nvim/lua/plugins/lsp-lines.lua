@@ -7,8 +7,7 @@ function M.setup()
     -- dont show by default
     vim.diagnostic.config({ virtual_lines = false })
 
-    local map = require "utils.map"
-    map.call { "<Leader>ls", "LSP Lines (Diagnostic)", plugin.toggle, mode = { "n" } }
+    map { "<Leader>ls", "LSP Lines (Diagnostic)", plugin.toggle, mode = { "n" } }
 end
 
 return M

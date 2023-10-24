@@ -69,8 +69,6 @@ function M.setup()
             s("tdd (TODO_MM:)", {
                 t("// TODO_MM: "),
                 i(1, ""),
-                t({ "", "" }), -- linebreak
-                t("// ⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻"),
             }),
             s("tdr (REVERT_MM:)", {
                 t("// REVERT_MM: "),
@@ -96,6 +94,13 @@ function M.setup()
             s("clg (console.log)", {
                 t("console.log(`TODO_MM: ${"),
                 i(1, "message"),
+                t("}`)"),
+            }),
+            s("clg2 (console.log)", {
+                t("console.log(`TODO_MM "),
+                i(1, "message"),
+                t(": ${"),
+                i(2, "message"),
                 t("}`)"),
             }),
         },

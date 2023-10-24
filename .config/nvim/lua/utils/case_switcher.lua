@@ -22,6 +22,4 @@ local function switch_case()
     end
 end
 
-local map = require "utils.map"
-
-map.call { "crc", "Convert case", switch_case, mode = { "n" } }
+map { "crc", "Convert case", switch_case, mode = { "n" } }

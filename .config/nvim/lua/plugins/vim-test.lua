@@ -14,16 +14,14 @@ function M.setup()
     vim.g["test#custom_strategies"] = { no_focus_switch = NoFocusSwitch }
     vim.g["test#strategy"] = "no_focus_switch"
 
-    local map = require "utils.map"
-
-    map.call { "<leader>tss", "Test single", vim.cmd.TestNearest, mode = { "n" } }
-    map.call { "<leader>tsr", "Test single (reopen terminal)", "<C-w>jii:TestNearest<CR>", mode = { "n" } }
-    map.call { "<leader>tff", "Test file", vim.cmd.TestFile, mode = { "n" } }
-    map.call { "<leader>tfr", "Test file (reopen terminal)", "<C-w>jii:TestFile<CR>", mode = { "n" } }
-    map.call { "<leader>tll", "Test last", vim.cmd.TestLast, mode = { "n" } }
-    map.call { "<leader>tlr", "Test last (reopen terminal)", "<C-w>jii:TestLast<CR>", mode = { "n" } }
+    map { "<leader>tss", "Test single", vim.cmd.TestNearest, mode = { "n" } }
+    map { "<leader>tsr", "Test single (reopen terminal)", "<C-w>jii:TestNearest<CR>", mode = { "n" } }
+    map { "<leader>tff", "Test file", vim.cmd.TestFile, mode = { "n" } }
+    map { "<leader>tfr", "Test file (reopen terminal)", "<C-w>jii:TestFile<CR>", mode = { "n" } }
+    map { "<leader>tll", "Test last", vim.cmd.TestLast, mode = { "n" } }
+    map { "<leader>tlr", "Test last (reopen terminal)", "<C-w>jii:TestLast<CR>", mode = { "n" } }
     -- close opened test window
-    map.call { "<leader>tx", "Test (close terminal)", "<C-w>jii<CR>", mode = { "n" } }
+    map { "<leader>tx", "Test (close terminal)", "<C-w>jii<CR>", mode = { "n" } }
 end
 
 return M

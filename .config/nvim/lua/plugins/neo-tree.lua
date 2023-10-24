@@ -131,6 +131,16 @@ function M.setup()
                 event = "file_opened",
                 handler = close,
             },
+            {
+                -- TODO_MM: hack to return to the initial pwd after browsing fs outside of the project
+                -- it expects the NVIM_LAUNCH_DIR env var to be set on vim startup like this:
+                -- NVIM_LAUNCH_DIR=$(pwd) vim
+                event = "neo_tree_window_after_close",
+                handler = function(_args)
+                    local starting_directory = vim.fn.getenv("NVIM_LAUNCH_DIR")
+                    vim.api.nvim_command("cd " .. starting_directory)
+                end,
+            },
         },
     }
 
@@ -142,12 +152,18 @@ function M.setup()
         vim.cmd "Neotree source=git_status position=float toggle=true reveal=true"
     end
 
-    local map = require "utils.map"
+    local function open_sessions()
+        vim.cmd "Neotree ~/.local/share/nvim/sessions toggle=true reveal=true"
+    end
 
-    map.call { "<C-f><C-f>", "Neo-tree All Files tree", open_file_tree, mode = { "n" } }
-    map.call { "<C-f><C-g>", "Neo-tree Git changed Files tree", open_git_tree, mode = { "n" } }
-    map.call { "<C-f><C-s>", "Neo-tree (session files)", ":Neotree ~/.local/share/nvim/sessions<CR>", mode = { "n" } }
-    map.call { "<C-f><C-v>", "Neo-tree (oldvim config)", ":Neotree ~/.myconfig/vim<CR>", mode = { "n" } }
+    local function open_vim_config()
+        vim.cmd "Neotree ~/.myconfig/vim toggle=true reveal=true"
+    end
+
+    map { "<C-f><C-f>", "Neo-tree All Files tree", open_file_tree, mode = { "n" } }
+    map { "<C-f><C-g>", "Neo-tree Git changed Files tree", open_git_tree, mode = { "n" } }
+    map { "<C-f><C-s>", "Neo-tree (session files)", open_sessions, mode = { "n" } }
+    map { "<C-f><C-v>", "Neo-tree (oldvim config)", open_vim_config, mode = { "n" } }
 end
 
 return M

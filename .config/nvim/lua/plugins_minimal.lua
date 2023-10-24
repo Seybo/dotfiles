@@ -17,36 +17,16 @@ local lazy = require "lazy"
 
 local plugins = {
     {
-        -- plugin here
+        "mfussenegger/nvim-dap",
+    },
+    {
+        "suketa/nvim-dap-ruby",
     },
 }
 
 local options = {
     defaults = {
         lazy = false,
-    },
-
-    performance = {
-        cache = {
-            enabled = true,
-        },
-
-        rtp = {
-            disabled_plugins = {
-                "gzip",
-                -- "netrwPlugin",
-                "rplugin",
-                "tarPlugin",
-                "tohtml",
-                "tutor",
-                "zipPlugin",
-            },
-        },
-    },
-
-    ui = {
-        size = { width = 0.9, height = 0.9 },
-        border = { "┏", "━", "┓", "┃", "┛", "━", "┗", "┃" },
     },
 
     checker = {
