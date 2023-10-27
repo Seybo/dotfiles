@@ -70,7 +70,29 @@ vim.keymap.set("n", "<space>f", function() vim.lsp.buf.format { async = true } e
 
 -- -- [[ Terminal ]] -- --
 
-vim.keymap.set("n", "tt", ":term<CR>", { silent = true }) -- launch terminal
+local function open_or_switch_to_terminal()
+    local term_tab_index = -1
+
+    -- loop through tabs to find terminal
+    for i = 1, vim.fn.tabpagenr("$") do
+        if vim.fn.tabpagewinnr(i, "$") == 1 and
+            vim.fn.getbufvar(vim.fn.tabpagebuflist(i)[1], "&buftype") == "terminal" then
+            term_tab_index = i
+            break
+        end
+    end
+
+    -- if terminal tab found, switch to it
+    if term_tab_index > -1 then
+        vim.cmd("tabn " .. term_tab_index)
+    else
+        vim.cmd("tablast")
+        vim.cmd("tabnew")
+        vim.cmd("term")
+    end
+end
+
+vim.keymap.set("n", "tt", open_or_switch_to_terminal, { silent = true }) -- launch terminal
 vim.keymap.set("t", "jk", "<C-\\><C-n>", { silent = true })
 
 -- -- [[ Tabs ]] -- --

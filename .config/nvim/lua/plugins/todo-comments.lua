@@ -9,11 +9,15 @@ function M.setup()
         -- keywords recognized as todo comments
         keywords = {
             START_MM = { icon = " ", color = "hint" },
-            TODO_MM = { icon = " ", color = "warning" },
+            TODO_MM = {
+                icon = " ",
+                color = "warning",
+                alt = { "BOOKMARK_MM" },
+            },
             REVERT_MM = {
                 icon = " ",
                 color = "error",
-                alt = { "COMMENT_MM" }, -- a set of other keywords that all map to this FIX keywords
+                alt = { "COMMENT_MM" },
             },
             QUESTION_MM = { icon = " ", color = "info" },
         },

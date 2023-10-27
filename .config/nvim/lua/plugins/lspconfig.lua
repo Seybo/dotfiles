@@ -19,11 +19,19 @@ function M.setup()
             "tsserver",
             "vimls",
             "yamlls",
+            "eslint",
         },
     }
 
     -- js
     lsp_cfg.tsserver.setup {}
+    lsp_cfg.eslint.setup {
+        settings = {
+            eslint = {
+                autoformat = true,
+            },
+        },
+    }
 
     -- lua
     neodev.setup {}

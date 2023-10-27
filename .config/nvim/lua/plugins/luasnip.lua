@@ -34,6 +34,12 @@ function M.setup()
                 t({ "", "" }), -- linebreak
                 t("# ⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻"),
             }),
+            s("tdb (BOOKMARK_MM:)", {
+                t("# BOOKMARK_MM: "),
+                i(1, ""),
+                t({ "", "" }), -- linebreak
+                t("# ⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻"),
+            }),
             s("tdr (REVERT_MM:)", {
                 t("# REVERT_MM: "),
                 i(1, ""),
@@ -70,6 +76,10 @@ function M.setup()
                 t("// TODO_MM: "),
                 i(1, ""),
             }),
+            s("tdb (BOOKMARK_MM:)", {
+                t("// BOOKMARK_MM: "),
+                i(1, ""),
+            }),
             s("tdr (REVERT_MM:)", {
                 t("// REVERT_MM: "),
                 i(1, ""),
@@ -103,6 +113,36 @@ function M.setup()
                 i(2, "message"),
                 t("}`)"),
             }),
+            s("tds (START_MM:)", {
+                t("// START_MM: "),
+                i(1, ""),
+                t({ "", "" }), -- linebreak
+                t("// ⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻"),
+            }),
+            s("tdd (TODO_MM:)", {
+                t("// TODO_MM: "),
+                i(1, ""),
+            }),
+            s("tdb (BOOKMARK_MM:)", {
+                t("// BOOKMARK_MM: "),
+                i(1, ""),
+            }),
+            s("tdr (REVERT_MM:)", {
+                t("// REVERT_MM: "),
+                i(1, ""),
+            }),
+            s("tdc (COMMENT_MM:)", {
+                t("// COMMENT_MM: "),
+                i(1, ""),
+                t({ "", "" }), -- linebreak
+                t("// ⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻"),
+            }),
+            s("tdq (QUESTION_MM:)", {
+                t("// QUESTION_MM: "),
+                i(1, ""),
+                t({ "", "" }), -- linebreak
+                t("// ⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻"),
+            }),
         },
         all = {
             s("print_var3", {
@@ -116,6 +156,9 @@ function M.setup()
             }),
         },
     })
+
+    map { "<C-j>", "Luasnip jump to next input", function() plugin.jump(1) end, mode = { "i", "s" } }
+    map { "<C-k>", "Luasnip jump to prev input", function() plugin.jump(-1) end, mode = { "i", "s" } }
 end
 
 return M

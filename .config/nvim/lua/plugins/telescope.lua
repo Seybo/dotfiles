@@ -107,39 +107,32 @@ function M.setup()
     map { "<leader>gc", "telescope git commits", builtin.git_commits, mode = { "n" } }
     map { "<leader>gt", "telescope git stash", builtin.git_stash, mode = { "n" } }
     map { "<leader>gs", "telescope git status", builtin.git_status, mode = { "n" } }
-    -- todos are set in luasnip.lua
-    map { "<leader>s1", "telescope TODO (START_MM)", ":TodoTelescope keywords=START_MM initial_mode=normal<CR>", mode = {
-        "n" } }
-    map { "<leader>s2", "telescope TODO (TODO_MM)", ":TodoTelescope keywords=TODO_MM initial_mode=normal<CR>", mode = {
-        "n" } }
-    map { "<leader>s3", "telescope TODO (QUESTION_MM)",
-        ":TodoTelescope keywords=QUESTION_MM initial_mode=normal<CR>", mode = { "n" } }
-    map { "<leader>s4", "telescope TODO (COMMENT_MM)", ":TodoTelescope keywords=COMMENT_MM initial_mode=normal<CR>", mode = {
-        "n" } }
-    map {
-        "<leader>s5",
-        "telescope TODO (all _MM)",
-        ":lua require('telescope.builtin').grep_string({ search = \"_MM:\", initial_mode=\"normal\"})<CR>",
-        mode = { "n" },
+
+    -- TODOs are set in luasnip.lua
+    local ts_grep = ":lua require('telescope.builtin').grep_string({ search = "
+    local ts_keys = ":TodoTelescope keywords="
+    local todo_desc = "telescope TODO "
+
+    local todo_mappings = {
+        { "<leader>s1", " (START_MM)",                ts_keys .. "START_MM initial_mode=normal<CR>" },
+        { "<leader>s2", todo_desc .. "(TODO_MM)",     ts_keys .. "TODO_MM initial_mode=normal<CR>" },
+        { "<leader>s3", todo_desc .. "(QUESTION_MM)", ts_keys .. "QUESTION_MM initial_mode=normal<CR>" },
+        { "<leader>s4", todo_desc .. "(COMMENT_MM)",  ts_keys .. "COMMENT_MM initial_mode=normal<CR>" },
+        { "<leader>s5", todo_desc .. "(all _MM)",     ts_grep .. "\"_MM:\", initial_mode=\"normal\"})<CR>" },
+        { "<leader>s6", todo_desc .. "(all _MM)",     ts_grep .. "\": mikhail\"})<CR>" },
+        { "<leader>s7", todo_desc .. "(BOOKMARK_MM)", ts_keys .. "BOOKMARK_MM initial_mode=normal<CR>" },
+        { "<leader>s8", "telescope binding.pry",      ts_grep .. "\" binding.pry\"})<CR>" },
+        { "<leader>s9", "telescope debugger",         ts_grep .. "\"debugger; // eslint-disable-line\"})<CR>" },
     }
-    map {
-        "<leader>s6",
-        "telescope TODO (all _MM)",
-        ":lua require('telescope.builtin').grep_string({ search = \": mikhail\"})<CR>",
-        mode = { "n" },
-    }
-    map {
-        "<leader>s8",
-        "telescope binding.pry",
-        ":lua require('telescope.builtin').grep_string({ search = \" binding.pry\"})<CR>",
-        mode = { "n" },
-    }
-    map {
-        "<leader>s9",
-        "telescope debugger",
-        ":lua require('telescope.builtin').grep_string({ search = \"debugger; // eslint-disable-line\"})<CR>",
-        mode = { "n" },
-    }
+
+    for _, mapping in ipairs(todo_mappings) do
+        map {
+            mapping[1], -- key
+            mapping[2], -- description
+            mapping[3], -- command
+            mode = { "n" },
+        }
+    end
 end
 
 return M
