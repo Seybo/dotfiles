@@ -66,6 +66,9 @@ vim.opt.relativenumber = false
 vim.opt.signcolumn = "yes:1"
 vim.opt.cursorline = false
 
+-- time before writing swap files to disk. Affects lsp diagnostics floating windows showup time
+vim.o.updatetime = 1000
+
 -- to remove checkhealth warning: "Neovim::Ext" cpan module is not installed
 vim.g.loaded_perl_provider = 0
 -- vim.g.ruby_host_prog = "~/.rbenv/versions/2.7.6/bin/neovim-ruby-host"

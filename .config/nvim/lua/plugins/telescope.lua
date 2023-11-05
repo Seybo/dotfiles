@@ -5,6 +5,7 @@ function M.setup()
     local builtin = require "telescope.builtin"
     local actions = require "telescope.actions"
     local layout = require "telescope.actions.layout"
+    local previewers = require "telescope.previewers"
 
     plugin.setup {
         defaults = {
@@ -104,8 +105,8 @@ function M.setup()
     map { "<leader>sm", "telescope live grep (manual)", live_grep, mode = { "n" } }
     map { "<leader>km", "telescope keymaps", builtin.keymaps, mode = { "n" } }
     map { "<leader>fh", "telescope previously opened files", oldfiles, mode = { "n" } }
-    map { "<leader>gc", "telescope git commits", builtin.git_commits, mode = { "n" } }
-    map { "<leader>gt", "telescope git stash", builtin.git_stash, mode = { "n" } }
+    map { "<leader>gl", "telescope git log", builtin.git_commits, mode = { "n" } }
+    map { "<leader>gh", "telescope git stash", builtin.git_stash, mode = { "n" } }
     map { "<leader>gs", "telescope git status", builtin.git_status, mode = { "n" } }
 
     -- TODOs are set in luasnip.lua

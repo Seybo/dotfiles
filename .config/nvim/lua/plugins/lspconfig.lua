@@ -54,8 +54,7 @@ function M.setup()
     -- ruby
     -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#solargraph
     lsp_cfg.solargraph.setup {
-        -- otherwise it uses wrong solargraph nd gemset
-        cmd = { os.getenv("HOME") .. "/.rbenv/shims/solargraph", "stdio" },
+        cmd = { "rbenv", "exec", "solargraph", "stdio" },
         root_dir = lsp_cfg.util.root_pattern("Gemfile", ".git", "."),
         init_options = {
             autoformat = true,
@@ -63,7 +62,7 @@ function M.setup()
         },
         settings = {
             solargraph = {
-                -- useBundler = true,
+                useBundler = true,
                 autoformat = true,
                 completion = true,
                 diagnostic = true,
@@ -79,8 +78,7 @@ function M.setup()
     }
     -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#rubocop
     lsp_cfg.rubocop.setup {
-        cmd = { "bundle", "exec", "rubocop" },
-        -- root_pattern = { "Gemfile", ".git" },
+        cmd = { "rbenv", "exec", "bundle", "exec", "rubocop", "--lsp" },
     }
 end
 

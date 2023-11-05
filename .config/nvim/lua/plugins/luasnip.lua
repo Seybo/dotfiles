@@ -66,6 +66,13 @@ function M.setup()
                 i(1, "message"),
                 t("}`)"),
             }),
+            s("clg2 (console.log)", {
+                t("console.log(`TODO_MM "),
+                i(1, "message"),
+                t(": ${"),
+                i(2, "message"),
+                t("}`)"),
+            }),
             s("tds (START_MM:)", {
                 t("// START_MM: "),
                 i(1, ""),

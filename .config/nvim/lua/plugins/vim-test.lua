@@ -13,6 +13,11 @@ function M.setup()
 
     vim.g["test#custom_strategies"] = { no_focus_switch = NoFocusSwitch }
     vim.g["test#strategy"] = "no_focus_switch"
+    -- vim.g["test#javascript#runner"] = "jest"
+    -- vim.g["test#javascript#jest#executable"] = "yarn test"
+    -- vim.g["test#javascript#jest#file_pattern"] = ".*\\.test\\.jsx$"
+    -- vim.g["test#project_root"] = "/mnt/dev/shaka/popmenu"
+
 
     map { "<leader>tss", "Test single", vim.cmd.TestNearest, mode = { "n" } }
     map { "<leader>tsr", "Test single (reopen terminal)", "<C-w>jii:TestNearest<CR>", mode = { "n" } }

@@ -83,13 +83,6 @@ local plugins = {
     },
 
     {
-        "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-        branch = "main",
-        event = "BufEnter",
-        config = require("plugins.lsp-lines").setup,
-    },
-
-    {
         "folke/neodev.nvim",
         version = "*",
     },
@@ -295,6 +288,57 @@ local plugins = {
         end,
     },
 
+    -- {
+    --     "ludovicchabant/vim-gutentags",
+    --     version = "*",
+    --     config = function()
+    --         -- TODO_MM: does it work? Move to its config
+    --         -- vim.cmd("set tags+=tags,.git/tags")
+    --         -- vim.cmd([[command! -nargs=0 GutentagsClearCache call system('rm ' . g:gutentags_cache_di. '/*')]])
+    --         vim.g.gutentags_enabled = true
+    --         vim.g.gutentags_resolve_symlinks = true
+    --         vim.g.gutentags_ctags_tagfile = "tags"
+    --         vim.g.gutentags_project_root = { ".git" }
+    --         -- vim.g.gutentags_ctags_extra_args = { "--fields=+l" }
+    --         vim.g.gutentags_add_default_project_roots = 0
+    --         vim.g.gutentags_ctags_executable = "/usr/bin/ctags"
+    --         vim.g.gutentags_ctags_extra_args_ruby = { "--ignore-unsupported-options", "--recursive" }
+    --         vim.g.gutentags_generate_on_new = true
+    --         vim.g.gutentags_generate_on_missing = true
+    --         vim.g.gutentags_generate_on_write = true
+    --         vim.g.gutentags_ctags_exclude = {
+    --             "*.git",
+    --             "*.svg",
+    --             "*/spec/*",
+    --             "build",
+    --             "dist",
+    --             "bin",
+    --             "node_modules",
+    --             "cache",
+    --             "compiled",
+    --             "docs",
+    --             "bundle",
+    --             "vendor",
+    --             "*.md",
+    --             "*-lock.json",
+    --             "*.lock",
+    --             "*bundle*.js",
+    --             "*build*.js",
+    --             ".*rc*",
+    --             "*.json",
+    --             "*.min.*",
+    --             "*.map",
+    --             "*.bak",
+    --             "*.zip",
+    --             "*.pyc",
+    --             "*.tmp",
+    --             "*.cache",
+    --             "tags*",
+    --         }
+    --         -- vim.g.gutentags_trace = 1
+    --     end,
+    -- },
+
     -- navigation
 
     { -- improves next/prev buffers to be scoped to window
@@ -339,15 +383,15 @@ local plugins = {
         init = require("plugins.vimwiki").setup,
     },
 
-    {
-        "folke/which-key.nvim",
-        event = "VeryLazy",
-        init = function()
-            vim.o.timeout = true
-            vim.o.timeoutlen = 300
-        end,
-        config = require("plugins.which-key").setup,
-    },
+    -- {
+    --     "folke/which-key.nvim",
+    --     event = "VeryLazy",
+    --     init = function()
+    --         vim.o.timeout = true
+    --         vim.o.timeoutlen = 300
+    --     end,
+    --     config = require("plugins.which-key").setup,
+    -- },
 
     -- misc
     {

@@ -58,6 +58,24 @@ local autocmds = {
             end,
         },
     },
+
+    { -- lsp diagnostics popup window auto-open
+        { "CursorHold" },
+        {
+            pattern = "*",
+            callback = function()
+                local opts = {
+                    focusable = false,
+                    close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+                    border = "rounded",
+                    source = "always",
+                    prefix = "🔔 ",
+                    scope = "cursor",
+                }
+                vim.diagnostic.open_float(nil, opts)
+            end,
+        } },
+
     { -- disable line numbers in teminal windows
         { "TermOpen" },
         {
