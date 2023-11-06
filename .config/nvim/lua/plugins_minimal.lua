@@ -17,10 +17,10 @@ local lazy = require "lazy"
 
 local plugins = {
     {
-        "mfussenegger/nvim-dap",
-    },
-    {
-        "suketa/nvim-dap-ruby",
+        "tpope/vim-rails",
+        version = "*",
+        event = { "BufReadPre", "BufNewFile" },
+        config = require("plugins.vim-rails").setup,
     },
 }
 

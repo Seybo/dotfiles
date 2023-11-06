@@ -40,10 +40,10 @@ local plugins = {
     --     config = require("colorschemes.rose-pine").setup,
     -- },
 
-    {
-        "rktjmp/lush.nvim",
-        branch = "main",
-    },
+    -- {
+    --     "rktjmp/lush.nvim",
+    --     branch = "main",
+    -- },
 
     { -- smooth scrolling
         "karb94/neoscroll.nvim",
@@ -272,72 +272,55 @@ local plugins = {
         "ludovicchabant/vim-gutentags",
         version = "*",
         config = function()
-            -- TODO_MM: does it work? Move to its config
-            vim.cmd("set tags+=tags,.git/tags")
-            vim.g.gutentags_enabled = 1
-            vim.g.gutentags_generate_on_missing = 1
-            vim.g.gutentags_generate_on_write = 1
-            vim.g.gutentags_resolve_symlinks = 1
-            vim.g.gutentags_ctags_tagfile = ".git/tags"
+            -- vim.cmd("set tags+=tags,.git/tags")
+            vim.cmd([[command! -nargs=0 GutentagsClearCache call system('rm ' . g:gutentags_cache_di. '/*')]])
+            vim.g.gutentags_enabled = true
+            vim.g.gutentags_resolve_symlinks = true
+            vim.g.gutentags_ctags_tagfile = "tags"
             vim.g.gutentags_project_root = { ".git" }
-            vim.g.gutentags_ctags_extra_args = { "--fields=+l" }
             vim.g.gutentags_add_default_project_roots = 0
             vim.g.gutentags_ctags_executable = "/usr/bin/ctags"
             vim.g.gutentags_ctags_extra_args_ruby = { "--ignore-unsupported-options", "--recursive" }
+            vim.g.gutentags_generate_on_new = true
+            vim.g.gutentags_generate_on_missing = true
+            vim.g.gutentags_generate_on_write = true
+            vim.g.gutentags_ctags_exclude = {
+                "*.git",
+                "*.svg",
+                "*.node-renderer-bundles",
+                "*/spec/*",
+                "build",
+                "dist",
+                "bin",
+                "node_modules",
+                "cache",
+                "compiled",
+                "coverage",
+                "docs",
+                "bundle",
+                "vendor",
+                "public",
+                "*.md",
+                "*-lock.json",
+                "*.lock",
+                "*bundle*.js*",
+                "*build*.js*",
+                "*spec.rb",
+                "*test*.js*",
+                ".*rc*",
+                "*.json",
+                "*.min.*",
+                "*.map",
+                "*.bak",
+                "*.zip",
+                "*.pyc",
+                "*.tmp",
+                "*.cache",
+                "tags*",
+            }
             -- vim.g.gutentags_trace = 1
         end,
     },
-
-    -- {
-    --     "ludovicchabant/vim-gutentags",
-    --     version = "*",
-    --     config = function()
-    --         -- TODO_MM: does it work? Move to its config
-    --         -- vim.cmd("set tags+=tags,.git/tags")
-    --         -- vim.cmd([[command! -nargs=0 GutentagsClearCache call system('rm ' . g:gutentags_cache_di. '/*')]])
-    --         vim.g.gutentags_enabled = true
-    --         vim.g.gutentags_resolve_symlinks = true
-    --         vim.g.gutentags_ctags_tagfile = "tags"
-    --         vim.g.gutentags_project_root = { ".git" }
-    --         -- vim.g.gutentags_ctags_extra_args = { "--fields=+l" }
-    --         vim.g.gutentags_add_default_project_roots = 0
-    --         vim.g.gutentags_ctags_executable = "/usr/bin/ctags"
-    --         vim.g.gutentags_ctags_extra_args_ruby = { "--ignore-unsupported-options", "--recursive" }
-    --         vim.g.gutentags_generate_on_new = true
-    --         vim.g.gutentags_generate_on_missing = true
-    --         vim.g.gutentags_generate_on_write = true
-    --         vim.g.gutentags_ctags_exclude = {
-    --             "*.git",
-    --             "*.svg",
-    --             "*/spec/*",
-    --             "build",
-    --             "dist",
-    --             "bin",
-    --             "node_modules",
-    --             "cache",
-    --             "compiled",
-    --             "docs",
-    --             "bundle",
-    --             "vendor",
-    --             "*.md",
-    --             "*-lock.json",
-    --             "*.lock",
-    --             "*bundle*.js",
-    --             "*build*.js",
-    --             ".*rc*",
-    --             "*.json",
-    --             "*.min.*",
-    --             "*.map",
-    --             "*.bak",
-    --             "*.zip",
-    --             "*.pyc",
-    --             "*.tmp",
-    --             "*.cache",
-    --             "tags*",
-    --         }
-    --         -- vim.g.gutentags_trace = 1
-    --     end,
-    -- },
 
     -- navigation
 

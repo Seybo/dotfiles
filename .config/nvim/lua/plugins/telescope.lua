@@ -5,7 +5,6 @@ function M.setup()
     local builtin = require "telescope.builtin"
     local actions = require "telescope.actions"
     local layout = require "telescope.actions.layout"
-    local previewers = require "telescope.previewers"
 
     plugin.setup {
         defaults = {
