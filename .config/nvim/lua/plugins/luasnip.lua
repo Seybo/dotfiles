@@ -9,7 +9,7 @@ function M.setup()
 
     plugin.add_snippets(nil, {
         ruby = {
-            s("bp (binding.pry)", {
+            s("bpp (binding.pry)", {
                 t("binding.pry if @foo.nil? # REVERT_MM:"),
             }),
             s("bpi (binding.pry if ...)", {
@@ -58,7 +58,7 @@ function M.setup()
             }),
         },
         javascript = {
-            s("bp (debugger)", {
+            s("bpp (debugger)", {
                 t("debugger; // eslint-disable-line REVERT_MM:"),
             }),
             s("clg (console.log)", {
@@ -105,7 +105,7 @@ function M.setup()
             }),
         },
         javascriptreact = {
-            s("bp (debugger)", {
+            s("bpp (debugger)", {
                 t("debugger; // eslint-disable-line REVERT_MM:"),
             }),
             s("clg (console.log)", {

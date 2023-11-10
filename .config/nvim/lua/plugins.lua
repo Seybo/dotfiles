@@ -366,15 +366,15 @@ local plugins = {
         init = require("plugins.vimwiki").setup,
     },
 
-    -- {
-    --     "folke/which-key.nvim",
-    --     event = "VeryLazy",
-    --     init = function()
-    --         vim.o.timeout = true
-    --         vim.o.timeoutlen = 300
-    --     end,
-    --     config = require("plugins.which-key").setup,
-    -- },
+    {
+        "folke/which-key.nvim",
+        event = "VeryLazy",
+        init = function()
+            vim.o.timeout = true
+            vim.o.timeoutlen = 300
+        end,
+        config = require("plugins.which-key").setup,
+    },
 
     -- misc
     {
