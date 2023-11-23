@@ -6,6 +6,7 @@ function M.setup()
     local t = plugin.text_node
     local i = plugin.insert_node
     local r = require("luasnip.extras").rep
+    local fmta = require("luasnip.extras.fmt").fmta
 
     plugin.add_snippets(nil, {
         ruby = {
@@ -16,11 +17,6 @@ function M.setup()
                 t("binding.pry if @foo.nil? && "),
                 i(1, "condition"),
                 t(" # REVERT_MM:"),
-            }),
-            s("clg (MM.log_info)", {
-                t("MM.log_info \""),
-                i(1, "message"),
-                t("\" # REVERT_MM:"),
             }),
             s("tds (START_MM:)", {
                 t("# START_MM: "),
@@ -56,6 +52,24 @@ function M.setup()
                 t({ "", "" }), -- linebreak
                 t("# ⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻"),
             }),
+            s("mmln (MM.log_new)", {
+                t("MM.log_new"),
+            }),
+            s("mmli (MM.log_info)", {
+                t("MM.log_info \""),
+                i(1, "message"),
+                t("\" # REVERT_MM:"),
+            }),
+            s("mmlg (MM.using_mm_logger)", {
+                t("MM.using_mm_logger do"),
+            }),
+            s("mmll (MM.using_mm_logger(with_label: )", {
+                t("MM.using_mm_logger(with_label: '"),
+                i(1, "message"),
+                t("') do # REVERT_MM:"),
+            }),
+
+            -- MM.using_mm_logger do
         },
         javascript = {
             s("bpp (debugger)", {

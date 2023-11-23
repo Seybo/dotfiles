@@ -211,10 +211,10 @@ local plugins = {
     },
 
     {
-        "rlane/pounce.nvim",
+        "ggandor/leap.nvim",
         version = "*",
         event = "BufEnter",
-        config = require("plugins.pounce").setup,
+        config = require("plugins.leap").setup,
     },
 
     {

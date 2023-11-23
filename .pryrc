@@ -102,22 +102,22 @@ Pry.config.commands.alias_command 'hr', 'hist -r', desc: 'hist -r <command numbe
 Pry.commands.alias_command '?', 'show-source -d'
 
 # Use awesome_print (or amazing_print)
-begin
-  require 'awesome_print'
-  AwesomePrint.defaults = {
-    indent: -2,
-  }
-  AwesomePrint.pry!
-rescue LoadError => err
-  begin
-    puts "no awesome_print :( #{err}"
-    puts 'trying amazing_print'
-    require 'amazing_print'
-    AmazingPrint.pry!
-  rescue LoadError => err2
-    puts "no awesome_print :( #{err2}"
-  end
-end
+# begin
+#  require 'awesome_print'
+#  AwesomePrint.defaults = {
+#    indent: -2,
+#  }
+#  AwesomePrint.pry!
+# rescue LoadError => err
+#   begin
+#     puts "no awesome_print :( #{err}"
+#     puts 'trying amazing_print'
+#     require 'amazing_print'
+#     AmazingPrint.pry!
+#   rescue LoadError => err2
+#     puts "no awesome_print :( #{err2}"
+#   end
+# end
 
 # seybo START
 # Hit Enter to repeat last command

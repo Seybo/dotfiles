@@ -7,8 +7,8 @@ function M.setup()
         vim.cmd("update")
         vim.cmd("bel 15 new")
         vim.fn.termopen(cmd)
-        vim.cmd("wincmd p")                     -- switch back to the last window
-        vim.api.nvim_feedkeys("``", "n", false) -- for some reason it jumps to the beginning of buffer
+        vim.cmd("wincmd p") -- switch back to the last window
+        -- vim.api.nvim_feedkeys("``", "n", false) -- for some reason it jumps to the beginning of buffer
     end
 
     vim.g["test#custom_strategies"] = { no_focus_switch = NoFocusSwitch }
