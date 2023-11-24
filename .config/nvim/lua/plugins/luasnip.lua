@@ -63,6 +63,11 @@ function M.setup()
             s("mmlg (MM.using_mm_logger)", {
                 t("MM.using_mm_logger do"),
             }),
+            s("mmlt (MM.log_info)", {
+                t("MM.using_mm_logger(:with_time) \""),
+                i(1, "message"),
+                t("\" # REVERT_MM:"),
+            }),
             s("mmll (MM.using_mm_logger(with_label: )", {
                 t("MM.using_mm_logger(with_label: '"),
                 i(1, "message"),

@@ -90,6 +90,7 @@ local function open_or_switch_to_terminal()
         vim.cmd("tabnew")
         vim.cmd("term")
     end
+    vim.cmd("startinsert")
 end
 
 vim.keymap.set("n", "tt", open_or_switch_to_terminal, { silent = true }) -- launch terminal
