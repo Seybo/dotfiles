@@ -146,7 +146,7 @@ local plugins = {
     {
         "L3MON4D3/LuaSnip",
         version = "*",
-        event = "InsertEnter",
+        event = "BufEnter",
         config = require("plugins.luasnip").setup,
     },
 
@@ -392,13 +392,13 @@ local plugins = {
         -- config = require("plugins.surround").setup,
     },
 
-    {
-        "subnut/nvim-ghost.nvim",
-        lazy = false,
-        config = function()
-            vim.g.nvim_ghost_super_quiet = 1
-        end,
-    },
+    -- {
+    --     "subnut/nvim-ghost.nvim",
+    --     lazy = false,
+    --     config = function()
+    --         vim.g.nvim_ghost_super_quiet = 1
+    --     end,
+    -- },
 
     {
         "norcalli/nvim-colorizer.lua",

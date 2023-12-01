@@ -83,6 +83,14 @@ local autocmds = {
             command = "setlocal norelativenumber nonumber",
         },
     },
+
+    {
+        { "BufRead" },
+        {
+            pattern = ".pryrc",
+            command = "set filetype=ruby",
+        },
+    },
 }
 
 -- START: ad-hoc fold methods
