@@ -1,5 +1,4 @@
 -- TODO_MM: sort out, categorize and comment all mappings
-
 map { "*", "Don't jump on * (search word under cursor)", "<Cmd>keepjumps normal! mi*`i<CR>", mode = "n" }
 map {
     "*",
