@@ -1,11 +1,11 @@
 local M = {}
 
 function M.setup()
-  local plugin = require "indent_blankline"
+    local plugin = require "ibl"
 
-  plugin.setup {
-    char = "⋅",
-  }
+    plugin.setup {
+        indent = { char = "⋅" },
+    }
 end
 
 return M
