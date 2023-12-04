@@ -388,8 +388,19 @@ local plugins = {
         "nanozuki/tabby.nvim",
         version = "*",
         config = require("plugins.tabby").setup,
-        -- event = "VeryLazy",
-        -- config = require("plugins.surround").setup,
+    },
+
+    {
+        "jakewvincent/mkdnflow.nvim",
+        version = "*",
+        config = require("plugins.mkdnflow").setup,
+    },
+
+    {
+        "ellisonleao/glow.nvim",
+        version = "*",
+        config = true,
+        cmd = "Glow",
     },
 
     -- {
