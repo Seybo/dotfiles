@@ -7,7 +7,6 @@ function M.setup()
         highlight = {
             enable = true,
             use_languagetree = true,
-            disable = { "yaml" }, -- TODO_MM: doesnt work for some reason
         },
         indent = {
             enable = true,
@@ -25,14 +24,14 @@ function M.setup()
             "javascript",
             "json",
             "lua",
-            "markdown",
-            "markdown_inline",
+            -- "markdown",
+            -- "markdown_inline",
             "nix",
             "ruby",
             "scss",
             "sql",
             "typescript",
-            "yaml",
+            -- "yaml",
         },
         textobjects = {
             select = {
