@@ -19,14 +19,14 @@ function M.setup()
     -- vim.g["test#project_root"] = "/mnt/dev/shaka/popmenu"
 
 
-    map { "<leader>tss", "Test single", vim.cmd.TestNearest, mode = { "n" } }
-    map { "<leader>tsr", "Test single (reopen terminal)", "<C-w>jii:TestNearest<CR>", mode = { "n" } }
-    map { "<leader>tff", "Test file", vim.cmd.TestFile, mode = { "n" } }
-    map { "<leader>tfr", "Test file (reopen terminal)", "<C-w>jii:TestFile<CR>", mode = { "n" } }
-    map { "<leader>tll", "Test last", vim.cmd.TestLast, mode = { "n" } }
-    map { "<leader>tlr", "Test last (reopen terminal)", "<C-w>jii:TestLast<CR>", mode = { "n" } }
+    map { "tss", "Test single", vim.cmd.TestNearest, mode = { "n" } }
+    map { "tsr", "Test single (reopen terminal)", "<C-w>jii:TestNearest<CR>", mode = { "n" } }
+    map { "tff", "Test file", vim.cmd.TestFile, mode = { "n" } }
+    map { "tfr", "Test file (reopen terminal)", "<C-w>jii:TestFile<CR>", mode = { "n" } }
+    map { "tdd", "Test last", vim.cmd.TestLast, mode = { "n" } }
+    map { "tdr", "Test last (reopen terminal)", "<C-w>jii:TestLast<CR>", mode = { "n" } }
     -- close opened test window
-    map { "<leader>tx", "Test (close terminal)", "<C-w>jii<CR>", mode = { "n" } }
+    map { "tx", "Test (close terminal)", "<C-w>jii<CR>", mode = { "n" } }
 end
 
 return M

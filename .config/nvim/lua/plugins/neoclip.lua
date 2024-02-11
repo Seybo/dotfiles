@@ -35,7 +35,7 @@ function M.setup()
         })
     end
 
-    map { "<C-m>c", "Clipboard manager", clipboard, mode = { "n", "v" } }
+    map { "<C-m><C-m>", "Clipboard manager", clipboard, mode = { "n", "v" } }
 end
 
 return M

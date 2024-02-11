@@ -21,11 +21,15 @@ function M.setup()
             },
             mappings = {
                 i = {
-                    ["<M-p>"] = layout.toggle_preview,
+                    ["<A-p>"] = layout.toggle_preview,
+                    ["<C-j>"] = actions.move_selection_next,
+                    ["<C-k>"] = actions.move_selection_previous,
                 },
                 n = {
                     ["qq"] = actions.close,
-                    ["<M-p>"] = layout.toggle_preview,
+                    ["<A-p>"] = layout.toggle_preview,
+                    ["<C-j>"] = actions.move_selection_next,
+                    ["<C-k>"] = actions.move_selection_previous,
                 },
             },
             prompt_prefix = "🔎 ",
@@ -94,19 +98,19 @@ function M.setup()
         })
     end
 
-    map { "<leader>tg", "telescope tags", builtin.help_tags, mode = { "n" } }
-    map { "<leader>bl", "telescope buffers", builtin.buffers, mode = { "n" } }
-    map { "<leader>ld", "telescope diagnostics", builtin.diagnostics, mode = { "n" } }
-    map { "<leader>sb", "telescope fuzzy search in current buffer", current_buffer_fuzzy_find, mode = { "n" } }
-    map { "<leader>ff", "telescope find files", find_files, mode = { "n" } }
-    map { "<leader>ss", "telescope live grep (word)", builtin.grep_string, mode = { "n" } }
-    map { "<leader>ss", "telescope live grep (selection)", live_grep_visual, mode = { "v" } }
-    map { "<leader>sm", "telescope live grep (manual)", live_grep, mode = { "n" } }
-    map { "<leader>km", "telescope keymaps", builtin.keymaps, mode = { "n" } }
-    map { "<leader>fh", "telescope previously opened files", oldfiles, mode = { "n" } }
-    map { "<leader>gl", "telescope git log", builtin.git_commits, mode = { "n" } }
-    map { "<leader>gh", "telescope git stash", builtin.git_stash, mode = { "n" } }
-    map { "<leader>gs", "telescope git status", builtin.git_status, mode = { "n" } }
+    map { "<A-f>t", "telescope tags", builtin.help_tags, mode = { "n" } }
+    map { "<A-f>b", "telescope buffers", builtin.buffers, mode = { "n" } }
+    map { "<A-f>d", "telescope diagnostics", builtin.diagnostics, mode = { "n" } }
+    map { "<A-f><A-f>", "telescope find files", find_files, mode = { "n" } }
+    map { "<A-f>sb", "telescope fuzzy search in current buffer", current_buffer_fuzzy_find, mode = { "n" } }
+    map { "<A-f>ss", "telescope live grep (word)", builtin.grep_string, mode = { "n" } }
+    map { "<A-f>ss", "telescope live grep (selection)", live_grep_visual, mode = { "v" } }
+    map { "<A-f>sm", "telescope live grep (manual)", live_grep, mode = { "n" } }
+    map { "<A-f>k", "telescope keymaps", builtin.keymaps, mode = { "n" } }
+    map { "<A-f>h", "telescope previously opened files", oldfiles, mode = { "n" } }
+    map { "<A-f>gl", "telescope git log", builtin.git_commits, mode = { "n" } }
+    map { "<A-f>ga", "telescope git stash", builtin.git_stash, mode = { "n" } }
+    map { "<A-f>gk", "telescope git status", builtin.git_status, mode = { "n" } }
 
     -- TODOs are set in luasnip.lua
     local ts_grep = ":lua require('telescope.builtin').grep_string({ search = "
@@ -114,15 +118,14 @@ function M.setup()
     local todo_desc = "telescope TODO "
 
     local todo_mappings = {
-        { "<leader>s1", " (START_MM)",                ts_keys .. "START_MM initial_mode=normal<CR>" },
-        { "<leader>s2", todo_desc .. "(TODO_MM)",     ts_keys .. "TODO_MM initial_mode=normal<CR>" },
-        { "<leader>s3", todo_desc .. "(QUESTION_MM)", ts_keys .. "QUESTION_MM initial_mode=normal<CR>" },
-        { "<leader>s4", todo_desc .. "(COMMENT_MM)",  ts_keys .. "COMMENT_MM initial_mode=normal<CR>" },
-        { "<leader>s5", todo_desc .. "(all _MM)",     ts_grep .. "\"_MM:\", initial_mode=\"normal\"})<CR>" },
-        { "<leader>s6", todo_desc .. "(all _MM)",     ts_grep .. "\": mikhail\"})<CR>" },
-        { "<leader>s7", todo_desc .. "(BOOKMARK_MM)", ts_keys .. "BOOKMARK_MM initial_mode=normal<CR>" },
-        { "<leader>s8", "telescope binding.pry",      ts_grep .. "\" binding.pry\"})<CR>" },
-        { "<leader>s9", "telescope debugger",         ts_grep .. "\"debugger; // eslint-disable-line\"})<CR>" },
+        { "<A-m>s", " (START_MM)",                ts_keys .. "START_MM initial_mode=normal<CR>" },
+        { "<A-m>t", todo_desc .. "(TODO_MM)",     ts_keys .. "TODO_MM initial_mode=normal<CR>" },
+        { "<A-m>q", todo_desc .. "(QUESTION_MM)", ts_keys .. "QUESTION_MM initial_mode=normal<CR>" },
+        { "<A-m>c", todo_desc .. "(COMMENT_MM)",  ts_keys .. "COMMENT_MM initial_mode=normal<CR>" },
+        { "<A-m>a", todo_desc .. "(all _MM)",     ts_grep .. "\"_MM:\", initial_mode=\"normal\"})<CR>" },
+        { "<A-m>b", todo_desc .. "(BOOKMARK_MM)", ts_keys .. "BOOKMARK_MM initial_mode=normal<CR>" },
+        { "<A-m>p", "telescope binding.pry",      ts_grep .. "\" binding.pry\"})<CR>" },
+        { "<A-m>d", "telescope debugger",         ts_grep .. "\"debugger; // eslint-disable-line\"})<CR>" },
     }
 
     for _, mapping in ipairs(todo_mappings) do

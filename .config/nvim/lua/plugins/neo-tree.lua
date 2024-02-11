@@ -168,7 +168,7 @@ function M.setup()
         vim.cmd "Neotree ~/.myconfig/vim toggle=true reveal=true"
     end
 
-    map { "<C-f>f", "Neo-tree All Files tree", open_file_tree, mode = { "n" } }
+    map { "<C-f><C-f>", "Neo-tree All Files tree", open_file_tree, mode = { "n" } }
     map { "<C-f>gh", "Neo-tree Git Index Files tree", open_git_tree_index, mode = { "n" } }
     map { "<C-f>gm", "Neo-tree Git Changed Files tree", open_git_tree_all_changes, mode = { "n" } }
     map { "<C-f>s", "Neo-tree (session files)", open_sessions, mode = { "n" } }

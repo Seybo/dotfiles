@@ -21,15 +21,15 @@ function M.setup()
         plugin.resume_last_search()
     end
 
-    map { "<Leader>st", "Search toggle", toggle, mode = { "n" } }
-    map { "<Leader>sr", "Search toggle", "<cmd>lua require('spectre').resume_last_search()<CR>", mode = { "n" } }
-    map { "<Leader>sw",
+    map { "<A-s>t", "Search toggle", toggle, mode = { "n" } }
+    map { "<A-s>r", "Search toggle", "<cmd>lua require('spectre').resume_last_search()<CR>", mode = { "n" } }
+    map { "<A-s>w",
         "Search word under cursor",
         "<cmd>lua require('spectre').open_visual({select_word=true})<CR>",
         mode = { "n" },
     }
-    map { "<Leader>sw", "Search selection", "<cmd>lua require('spectre').open_visual()<CR>", mode = { "v" } }
-    map { "<Leader>sf", "Search on current file",
+    map { "<A-s>w", "Search selection", "<cmd>lua require('spectre').open_visual()<CR>", mode = { "v" } }
+    map { "<A-s>f", "Search on current file",
         "<cmd>lua require('spectre').open_file_search({select_word=true})<CR>", mode = {
         "v" } }
 end

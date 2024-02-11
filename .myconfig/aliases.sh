@@ -53,6 +53,7 @@ alias grsh='git reset --soft HEAD~1'
 alias gsta='git stash save' # overwriting oh-my-zsh that uses git stash push
 alias gstt='git stash save temp'
 alias gstd='git stash drop'
+alias gtt='git show --stat'
 
 ####### dotfiles ########
 alias dpf='dfiles push --force-with-lease'
@@ -99,9 +100,9 @@ alias jst="TZ=UTC BABEL_ENV=jest yarn jest"
 
 ####### apps ########
 
-alias v='NVIM_LAUNCH_DIR=$(pwd) vim -u ~/.config/nvim/init_lua.lua'
-alias vim='NVIM_LAUNCH_DIR=$(pwd) vim -u ~/.config/nvim/init_lua.lua'
-alias oldvim='vim -u ~/.config/nvim/init.vim'
+alias v='NVIM_LAUNCH_DIR=$(pwd) vim'
+alias vim='NVIM_LAUNCH_DIR=$(pwd) vim'
+alias oldvim='vim -u ~/.config/nvim/init_lua.lua'
 
 alias rr='ranger'
 alias gsm='gnome-system-monitor'

@@ -53,7 +53,7 @@ function M.setup()
             end,
         },
         mapping = {
-            ["<C-n>"] = plugin.mapping(function(fallback)
+            ["<C-j>"] = plugin.mapping(function(fallback)
                 if plugin.visible() then
                     plugin.select_next_item()
                     -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
@@ -66,7 +66,7 @@ function M.setup()
                     fallback()
                 end
             end, { "i", "s" }),
-            ["<C-p>"] = plugin.mapping(function(fallback)
+            ["<C-k>"] = plugin.mapping(function(fallback)
                 if plugin.visible() then
                     plugin.select_prev_item()
                 elseif lsnip.jumpable(-1) then

@@ -2,14 +2,14 @@ local M = {}
 
 function M.setup()
     map { "ra", "", "ra", mode = "n" } -- revert the original binding replaced with :A
-    map { "<Leader>ra", "Rails Alternative file", ":A<CR>", mode = "n" }
-    map { "<Leader>rs", "Rails Alternative file", ":R<CR>", mode = "n" }
-    map { "<Leader>gf",
-        "TODO:",
+    map { "<A-r>a", "Rails Alternative file", ":A<CR>", mode = "n" }
+    map { "<A-r>s", "Rails Alternative file", ":R<CR>", mode = "n" }
+    map { "<A-g><A-f>",
+        "TODO_MM:",
         'viw"sy:Efixtures <C-r>=tolower(substitute(substitute(@s, \'\\n\', \'\', \'g\'), \'/\', \'\\\\/\', \'g\'))<cr>_factories<cr>',
         mode = "n" }
-    map { "<Leader>gf",
-        "TODO:",
+    map { "<A-g><A-f>",
+        "TODO_MM:",
         '"sy:Efixtures <C-r>=tolower(substitute(substitute(@s, \'\\n\', \'\', \'g\'), \'/\', \'\\\\/\', \'g\'))<cr>',
         mode = "v" }
 end

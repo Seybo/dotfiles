@@ -11,30 +11,30 @@ function M.setup()
         -- LHS of toggle mappings in NORMAL mode
         toggler = {
             -- Line-comment toggle keymap
-            line = "<Leader>cc",
+            line = "<A-c><A-c>",
             -- Block-comment toggle keymap
-            block = "<Leader>cb",
+            block = "<A-c><A-b>",
         },
         -- LHS of operator-pending mappings in NORMAL and VISUAL mode
         opleader = {
             -- Line-comment keymap
-            line = "<Leader>cc",
+            line = "<A-c><A-c>",
             -- Block-comment keymap
-            block = "<Leader>cb",
+            block = "<A-c><A-b>",
         },
         -- LHS of extra mappings
         extra = {
             -- Add comment on the line above
-            above = "<Leader>ck",
+            -- above = "<Leader>ck",
             -- Add comment on the line below
-            below = "<Leader>cj",
+            -- below = "<Leader>cj",
             -- Add comment at the end of line
-            eol = "<Leader>cl",
+            -- eol = "<Leader>cl",
         },
         -- Enable keybindings
         mappings = {
             basic = true,
-            extra = true,
+            extra = false,
         },
         ---Function to call before (un)comment
         pre_hook = nil,

@@ -35,8 +35,7 @@ function M.setup()
     }
     vim.g.vimwiki_global_ext = 0
 
-    map { "<Leader>vww", "Search toggle", ":VimwikiUISelect<CR>", mode = { "n" } }
-    map { "<Leader>vwi", "Search toggle", ":VimwikiIndex<CR>", mode = { "n" } }
+    map { "<A-v>w", "Search toggle", ":VimwikiUISelect<CR>", mode = { "n" } }
 end
 
 return M
