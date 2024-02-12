@@ -29,10 +29,10 @@ set-option -g repeat-time 300
 # set -g status-keys vi
 # set -g mode-keys vi
 
-# replace prefix-key with spacebar
+# remove the second prefix and set the only prefix to F4
 set -gu prefix2
-unbind C-a
-set-option -g prefix C-Space
+unbind C-B
+set -g prefix F4
 
 # copy-mode
 unbind [
@@ -44,6 +44,8 @@ bind i copy-mode
 # bind -T copy-mode-vi 'y' send -X copy-pipe-and-cancel "xclip -in -selection clipboard"
 # swap panes
 # bind n swap-pane -U
+bind m select-pane -m
+bind M switch-client -t'{marked}'
 
 # START: sort-out plugins
 # List of plugins
@@ -77,26 +79,25 @@ bind C-c command-prompt -p "Command:" \
    "run \"tmux list-panes -a -F '##{session_name}:##{window_index}.##{pane_index}' \
    | xargs -I PANE tmux send-keys -t PANE '%1' Enter\""
 
-# Fast toggle between current and last-used window (normally prefix-l).
-# bind m last-layout
-
-# Highlight active window.
-# set-option -w -g window-status-current-bg red
-
-# Dynamically update iTerm tab and window titles.
-# set-option -g set-titles on
-
 # Copy text selected by mouse
 bind -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "xclip -selection clipboard -i"
 # Move windows
-bind -n C-S-Left swap-window -t -1
-bind -n C-S-Right swap-window -t +1
+bind -r S-Left swap-window -d -t -1
+bind -r S-Right swap-window -d -t +1
+bind -r Tab next-window       # select next window
+bind -r BTab last-window      # move to last active window
 
 # switch to the upper pane and maximize it
 bind K select-pane -t 1 \; resize-pane -Z
 bind H select-pane -t 1 \; resize-pane -Z
 bind J select-pane -t 2 \; resize-pane -Z
 bind L select-pane -t 2 \; resize-pane -Z
+
+# keys above are overriding resize keys below so they need to be redefined
+bind -r Left resize-pane -L 4
+bind -r Down resize-pane -D 2
+bind -r Up resize-pane -U 2
+bind -r Right resize-pane -R 4
 
 # But don't change tmux's own window titles.
 set-option -w -g automatic-rename off
@@ -109,12 +110,14 @@ set-option -w -g automatic-rename off
 
 # Open new page in the same folder
 bind c new-window -c "#{pane_current_path}"
-bind '"' split-window -c "#{pane_current_path}"
-bind % split-window -h -c "#{pane_current_path}"
+bind - split-window -c "#{pane_current_path}"
+bind + split-window -h -c "#{pane_current_path}"
 
 # Neovim truecolor support
 set-option -sa terminal-overrides ',xterm-256color:RGB'
 set-option -ga terminal-overrides ',xterm-256color:Tc'
+
+bind Space switch-client -l  # move to last session
 
 # status line
 # move to top

@@ -9,8 +9,8 @@ map {
 
 vim.keymap.set("i", "jj", "<Esc>", { silent = true })
 vim.keymap.set({ "n", "v" }, "<Leader>", "<Nop>", { silent = true })
-vim.keymap.set({ "n", "v", "t" }, "Q", ":qa!<CR>", { silent = true }) -- exit vim
-vim.keymap.set("n", "qw", ":q<CR>", { silent = true })                -- close window
+vim.keymap.set({ "n", "v", "t" }, "Q", ":qa<CR>", { silent = true }) -- exit vim
+vim.keymap.set("n", "qw", ":q<CR>", { silent = true })               -- close window
 vim.keymap.set("n", "<A-w>", ":w<CR>", { silent = true })
 
 -- Copy & paste to system clipboard
