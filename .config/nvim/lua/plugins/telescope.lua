@@ -22,14 +22,10 @@ function M.setup()
             mappings = {
                 i = {
                     ["<A-p>"] = layout.toggle_preview,
-                    ["<C-j>"] = actions.move_selection_next,
-                    ["<C-k>"] = actions.move_selection_previous,
                 },
                 n = {
                     ["qq"] = actions.close,
                     ["<A-p>"] = layout.toggle_preview,
-                    ["<C-j>"] = actions.move_selection_next,
-                    ["<C-k>"] = actions.move_selection_previous,
                 },
             },
             prompt_prefix = "🔎 ",

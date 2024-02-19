@@ -11,7 +11,7 @@ vim.keymap.set("i", "jj", "<Esc>", { silent = true })
 vim.keymap.set({ "n", "v" }, "<Leader>", "<Nop>", { silent = true })
 vim.keymap.set({ "n", "v", "t" }, "Q", ":qa<CR>", { silent = true }) -- exit vim
 vim.keymap.set("n", "qw", ":q<CR>", { silent = true })               -- close window
-vim.keymap.set("n", "<A-w>", ":w<CR>", { silent = true })
+vim.keymap.set("n", "<C-s>", ":w<CR>", { silent = true })
 
 -- Copy & paste to system clipboard
 -- makes sense only if not used set clipboard=unnamedplus
@@ -38,7 +38,7 @@ vim.keymap.set("n", "<C-h>", "<<", { silent = true })
 vim.keymap.set("v", "<C-l>", ">gv", { silent = true })
 vim.keymap.set("v", "<C-h>", "<gv", { silent = true })
 -- Selection
-vim.keymap.set("n", "<A-a><A-a>", "ggVG<CR>", { silent = true }) -- select all
+vim.keymap.set("n", "<C-a><C-a>", "ggVG<CR>", { silent = true }) -- select all
 vim.keymap.set("n", "<CR>", ":noh<CR><CR>", { silent = true })   -- clean all selections
 vim.keymap.set("v", "<A-.>", ":t'><CR>", { silent = true })      -- duplicate selection
 -- Buffers. Also adds a scope to buffers browsing within window
@@ -207,10 +207,10 @@ vim.keymap.set("n", "<A-l>c", ToggleSpellCheck, { silent = true })
 
 -- -- [[ Misc ]] -- --
 
-vim.keymap.set("n", "<Leader>lna", ":set nornu", { silent = true }) -- absolute line numbers
-vim.keymap.set("n", "<Leader>lna", ":set rnu", { silent = true })   -- relative line numbers
-vim.keymap.set("n", "<A-r>r", ":%s/", { silent = true })            -- replace text
-vim.keymap.set("n", "<A-r>w", ":%s/<C-r><C-w>/", { silent = true }) -- replace word under cursor
+vim.keymap.set("n", "<Leader>lna", ":set nornu<CR>", { silent = true }) -- absolute line numbers
+vim.keymap.set("n", "<Leader>lnr", ":set rnu<CR>", { silent = true })   -- relative line numbers
+vim.keymap.set("n", "<A-r>r", ":%s/", { silent = true })                -- replace text
+vim.keymap.set("n", "<A-r>w", ":%s/<C-r><C-w>/", { silent = true })     -- replace word under cursor
 -- replace selection
 vim.keymap.set("v", "<A-r>w", "\"sy:%s/<C-r>=substitute(@s, '\\n', '', 'g')<cr>/", { silent = true })
 vim.keymap.set("n", "<A-b><A-b>", ":b#<CR>", { silent = true }) -- swetch between last two buffers

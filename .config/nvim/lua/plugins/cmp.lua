@@ -53,7 +53,7 @@ function M.setup()
             end,
         },
         mapping = {
-            ["<C-j>"] = plugin.mapping(function(fallback)
+            ["<Down>"] = plugin.mapping(function(fallback)
                 if plugin.visible() then
                     plugin.select_next_item()
                     -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
@@ -66,7 +66,7 @@ function M.setup()
                     fallback()
                 end
             end, { "i", "s" }),
-            ["<C-k>"] = plugin.mapping(function(fallback)
+            ["<Up>"] = plugin.mapping(function(fallback)
                 if plugin.visible() then
                     plugin.select_prev_item()
                 elseif lsnip.jumpable(-1) then
@@ -75,14 +75,14 @@ function M.setup()
                     fallback()
                 end
             end, { "i", "s" }),
-            ["<C-u>"] = plugin.mapping.scroll_docs(-4),
-            ["<C-d>"] = plugin.mapping.scroll_docs(4),
-            ["<C-Space>"] = plugin.mapping.complete(),
-            ["<C-e>"] = plugin.mapping.close(),
-            ["<C-l>"] = plugin.mapping.confirm({
+            ["<Right>"] = plugin.mapping.confirm({
                 behavior = plugin.ConfirmBehavior.Replace,
                 select = true,
             }),
+            ["<C-u>"] = plugin.mapping.scroll_docs(-4),
+            ["<C-d>"] = plugin.mapping.scroll_docs(4),
+            -- ["<C-Space>"] = plugin.mapping.complete(),
+            -- ["<C-e>"] = plugin.mapping.close(),
         },
     }
 

@@ -224,6 +224,13 @@ local plugins = {
         config = require("plugins.undotree").setup,
     },
 
+    {
+        "ggandor/flit.nvim",
+        version = "*",
+        event = "BufEnter",
+        config = require("plugins.flit").setup,
+    },
+
     -- comments
 
     {
