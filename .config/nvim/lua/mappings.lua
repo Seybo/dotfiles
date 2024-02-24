@@ -8,6 +8,7 @@ map {
 }
 
 vim.keymap.set("i", "jj", "<Esc>", { silent = true })
+vim.keymap.set("i", "JJ", "<Esc>", { silent = true })
 vim.keymap.set({ "n", "v" }, "<Leader>", "<Nop>", { silent = true })
 vim.keymap.set({ "n", "v", "t" }, "Q", ":qa<CR>", { silent = true }) -- exit vim
 vim.keymap.set("n", "qw", ":q<CR>", { silent = true })               -- close window
@@ -15,9 +16,9 @@ vim.keymap.set("n", "<C-s>", ":w<CR>", { silent = true })
 
 -- Copy & paste to system clipboard
 -- makes sense only if not used set clipboard=unnamedplus
-vim.keymap.set("v", "<A-y>", "\"+y<CR>", { silent = true })
-vim.keymap.set("v", "<A-d>", "\"+d<CR>", { silent = true })
-vim.keymap.set("v", "<A-p>", "\"+p<CR>", { silent = true })
+vim.keymap.set("v", "<A-y>", "\"+y", { silent = true })
+vim.keymap.set("v", "<A-d>", "\"+d", { silent = true })
+vim.keymap.set("v", "<A-p>", "\"+p", { silent = true })
 vim.keymap.set("n", "<A-d><A-d>", "\"+dd", { silent = true })
 vim.keymap.set("n", "<A-p>", "\"+p", { silent = true })
 
@@ -30,13 +31,11 @@ vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", { silent = true })
 vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", { silent = true })
 vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { silent = true })
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { silent = true })
-vim.keymap.set("n", "<C-j>", ":set paste<CR>m`o<Esc>``:set nopaste<CR>", { silent = true }) -- add line above
-vim.keymap.set("n", "<C-k>", ":set paste<CR>m`O<Esc>``:set nopaste<CR>", { silent = true }) -- add line below
 -- Indentation
-vim.keymap.set("n", "<C-l>", ">>", { silent = true })
-vim.keymap.set("n", "<C-h>", "<<", { silent = true })
-vim.keymap.set("v", "<C-l>", ">gv", { silent = true })
-vim.keymap.set("v", "<C-h>", "<gv", { silent = true })
+vim.keymap.set("n", "<A-l>", ">>", { silent = true })
+vim.keymap.set("n", "<A-h>", "<<", { silent = true })
+vim.keymap.set("v", "<A-l>", ">gv", { silent = true })
+vim.keymap.set("v", "<A-h>", "<gv", { silent = true })
 -- Selection
 vim.keymap.set("n", "<C-a><C-a>", "ggVG<CR>", { silent = true }) -- select all
 vim.keymap.set("n", "<CR>", ":noh<CR><CR>", { silent = true })   -- clean all selections
@@ -49,10 +48,17 @@ vim.keymap.set("n", "<A-o>", ":BufstopForward<CR>", { silent = true })
 vim.keymap.set("n", "qq", ":BD<CR>", { silent = true })
 -- vim-rails
 vim.keymap.set("n", "ra", ":A<CR>", { silent = true }) -- switch to spec
-
+-- go to beginning/end of line
+vim.keymap.set("n", "<End>", "$", { silent = true })
+vim.keymap.set("n", "<Home>", "0", { silent = true })
+vim.keymap.set("v", "<End>", "$", { silent = true })
+vim.keymap.set("v", "<Home>", "0", { silent = true })
+-- add empty line above/below
+vim.keymap.set("n", "<CR>j", ":<C-u>normal! o<CR>", { silent = true })
+vim.keymap.set("n", "<CR>k", ":<C-u>normal! O<CR>", { silent = true })
 -- -- [[ Files ]] -- --
 
-vim.keymap.set("n", "<A-f><A-r>", ":e!<CR>", { silent = true })
+vim.keymap.set("n", "<C-f><C-r>", ":e!<CR>", { silent = true })
 vim.keymap.set("n", "<Leader>fot", ":e ./_mydev/temp.md<CR>", { silent = true })
 -- filenames copying
 vim.keymap.set("n", "Fpa", ":let @+ = expand('%:p')<CR>", { silent = true }) -- absulute
@@ -89,7 +95,7 @@ local function open_or_switch_to_terminal()
     vim.cmd("startinsert")
 end
 
-vim.keymap.set("n", "tt", open_or_switch_to_terminal, { silent = true }) -- launch terminal
+vim.keymap.set("n", "<A-t><A-t>", open_or_switch_to_terminal, { silent = true }) -- launch terminal
 vim.keymap.set("t", "jj", "<C-\\><C-n>", { silent = true })
 
 -- -- [[ Git Status ]] -- --
@@ -115,18 +121,18 @@ local function open_or_switch_to_git_status()
     end
 end
 
-vim.keymap.set("n", "th", open_or_switch_to_git_status, { silent = true })
+vim.keymap.set("n", "<A-t><A-g>", open_or_switch_to_git_status, { silent = true })
 
 -- -- [[ Tabs ]] -- --
 
-vim.keymap.set("n", "to", ":tab new<CR>", { silent = true })
-vim.keymap.set("n", "tx", ":tab close<CR>", { silent = true })
-vim.keymap.set("n", "tp", ":tabp<CR>", { silent = true })
-vim.keymap.set("n", "tn", ":tabn<CR>", { silent = true })
-vim.keymap.set("n", "tj", "1gt", { silent = true })
-vim.keymap.set("n", "tk", "2gt", { silent = true })
-vim.keymap.set("n", "tl", "3gt", { silent = true })
-vim.keymap.set("n", "t;", "4gt", { silent = true })
+vim.keymap.set("n", "<A-t><A-c>", ":tab new<CR>", { silent = true })
+vim.keymap.set("n", "<A-t><A-x>", ":tab close<CR>", { silent = true })
+vim.keymap.set("n", "<PageDown>", ":tabn<CR>", { silent = true })
+vim.keymap.set("n", "<PageUp>", ":tabp<CR>", { silent = true })
+vim.keymap.set("n", "<A-t><A-a>", "1gt", { silent = true })
+vim.keymap.set("n", "<A-t><A-s>", "2gt", { silent = true })
+vim.keymap.set("n", "<A-t><A-d>", "3gt", { silent = true })
+vim.keymap.set("n", "<A-t><A-f>", "4gt", { silent = true })
 
 -- -- [[ Windows ]] -- --
 
@@ -152,46 +158,10 @@ vim.keymap.set("n", "<left>", ":5wincmd <<CR>", { silent = true })
 vim.keymap.set("n", "<up>", ":3wincmd +<CR>", { silent = true })
 vim.keymap.set("n", "<down>", ":3wincmd -<CR>", { silent = true })
 
--- -- [[ Jumps ]] -- --
-
--- Jumping between underscores
-vim.keymap.set("n", "su", "f_l", { silent = true })
-vim.keymap.set("n", "Su", "F_", { silent = true })
-vim.keymap.set("n", "cu", "ct_", { silent = true })
-vim.keymap.set("n", "c2u", "c2t_", { silent = true })
-vim.keymap.set("n", "c3u", "c3t_", { silent = true })
-vim.keymap.set("n", "vu", "vt_", { silent = true })
-vim.keymap.set("n", "v2u", "v2t_", { silent = true })
-vim.keymap.set("n", "v3u", "v3t_", { silent = true })
-vim.keymap.set("n", "du", "dt_", { silent = true })
-vim.keymap.set("n", "d2u", "d2t_", { silent = true })
-vim.keymap.set("n", "d3u", "d3t_", { silent = true })
-
--- Jumping between brackets    (using the opening squere bracket as "(")
-vim.keymap.set("n", "s[", "f(", { silent = true })
-vim.keymap.set("n", "S[", "F(", { silent = true })
-vim.keymap.set("n", "vi[", "vi(", { silent = true })
-vim.keymap.set("n", "ci[", "vi(", { silent = true })
-vim.keymap.set("n", "di[", "di(", { silent = true })
-
--- Jumping between spaces
-vim.keymap.set("n", "s<space>", "ft ", { silent = true })
-vim.keymap.set("n", "s2<space>", "f2t ", { silent = true })
-vim.keymap.set("n", "s3<space>", "f3t ", { silent = true })
-vim.keymap.set("n", "c<space>", "ct ", { silent = true })
-vim.keymap.set("n", "c2<space>", "c2t ", { silent = true })
-vim.keymap.set("n", "c3<space>", "c3t ", { silent = true })
-vim.keymap.set("n", "v<space>", "vt ", { silent = true })
-vim.keymap.set("n", "v2<space>", "v2t ", { silent = true })
-vim.keymap.set("n", "v3<space>", "v3t ", { silent = true })
-vim.keymap.set("n", "d<space>", "dt ", { silent = true })
-vim.keymap.set("n", "d2<space>", "d2t ", { silent = true })
-vim.keymap.set("n", "d3<space>", "d3t ", { silent = true })
-
 -- -- [[ Spellcheck ]] -- --
 
-vim.keymap.set("n", "<A-l>r", ":set spelllang=ru_yo<CR>", { silent = true }) -- RU
-vim.keymap.set("n", "<A-l>e", ":set spelllang=en_us<CR>", { silent = true }) -- EN
+vim.keymap.set("n", "<A-s><A-r>", ":set spelllang=ru_yo<CR>", { silent = true }) -- RU
+vim.keymap.set("n", "<A-s><A-e>", ":set spelllang=en_us<CR>", { silent = true }) -- EN
 local function ToggleSpellCheck()
     -- Toggle the 'spell' option
     vim.cmd("set spell!")
@@ -203,16 +173,16 @@ local function ToggleSpellCheck()
         print("Spellcheck OFF")
     end
 end
-vim.keymap.set("n", "<A-l>c", ToggleSpellCheck, { silent = true })
+vim.keymap.set("n", "<A-s><A-t>", ToggleSpellCheck, { silent = true })
 
 -- -- [[ Misc ]] -- --
 
-vim.keymap.set("n", "<Leader>lna", ":set nornu<CR>", { silent = true }) -- absolute line numbers
-vim.keymap.set("n", "<Leader>lnr", ":set rnu<CR>", { silent = true })   -- relative line numbers
-vim.keymap.set("n", "<A-r>r", ":%s/", { silent = true })                -- replace text
-vim.keymap.set("n", "<A-r>w", ":%s/<C-r><C-w>/", { silent = true })     -- replace word under cursor
+vim.keymap.set("n", "<A-n><A-n>", ":set nornu<CR>", { silent = true })  -- absolute line numbers
+vim.keymap.set("n", "<A-n><A-r>", ":set rnu<CR>", { silent = true })    -- relative line numbers
+vim.keymap.set("n", "<A-r><A-r>", ":%s/", { silent = true })            -- replace text
+vim.keymap.set("n", "<A-r><A-w>", ":%s/<C-r><C-w>/", { silent = true }) -- replace word under cursor
 -- replace selection
-vim.keymap.set("v", "<A-r>w", "\"sy:%s/<C-r>=substitute(@s, '\\n', '', 'g')<cr>/", { silent = true })
+vim.keymap.set("v", "<A-r><A-w>", "\"sy:%s/<C-r>=substitute(@s, '\\n', '', 'g')<cr>/", { silent = true })
 vim.keymap.set("n", "<A-b><A-b>", ":b#<CR>", { silent = true }) -- swetch between last two buffers
 -- make <F9> work in vim the same way as in ubuntu UI
 vim.keymap.set("n", "<F9>", ":call system('copyq toggle')<CR>", { silent = true })

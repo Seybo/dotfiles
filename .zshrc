@@ -147,6 +147,7 @@ _fzf_compgen_path() {
 _fzf_compgen_dir() {
   fd --type d --hidden --follow --exclude ".git" . "$1"
 }
+export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
 # enable fzf keybindings for Zsh:
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 # enable fuzzy auto-completion for Zsh:
@@ -179,6 +180,11 @@ export DIRENV_LOG_FORMAT=
 
 # rust
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# opening files with fzf
+fop() {  # fop stands for FZF Open
+  fzf | xargs -I {} vim {}
+}
 
 # if it is not in the end bindings like scrolling the terminal output stop working for some reason
 if [ -z "$TMUX" ]; then

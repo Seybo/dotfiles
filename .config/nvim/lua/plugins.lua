@@ -398,11 +398,11 @@ local plugins = {
         config = require("plugins.tabby").setup,
     },
 
-    {
-        "jakewvincent/mkdnflow.nvim",
-        version = "*",
-        config = require("plugins.mkdnflow").setup,
-    },
+    -- {
+    --     "jakewvincent/mkdnflow.nvim",
+    --     version = "*",
+    --     config = require("plugins.mkdnflow").setup,
+    -- },
 
     {
         "ellisonleao/glow.nvim",
