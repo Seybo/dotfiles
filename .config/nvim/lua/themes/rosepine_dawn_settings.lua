@@ -19,9 +19,6 @@ function M.setup()
             DiffviewFilePanelFileName = { fg = "foam" },
         },
     })
-    -- plugin.setup({
-    --     variant = "moon",
-    -- })
 end
 
 return M

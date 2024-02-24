@@ -1,50 +1,35 @@
 #!/bin/sh
 
-color=$1
-colors_config=$HOME/.myconfig/vim/colors
+theme_name=$1
+vim_config=$HOME/.config/nvim/lua
 # p10k_config=$HOME/.p10k.zsh
 alacritty_config=$HOME/.config/alacritty
 
 configure_alacritty() {
-  cat ${alacritty_config}/alacritty_base.yml ${alacritty_config}/alacritty_theme_${color}.yml > ${alacritty_config}/alacritty.yml
+  cat ${alacritty_config}/alacritty_${theme_name}.toml > ${alacritty_config}/alacritty.toml
 }
 
-# configure_vim() {
-#   cat ${colors_config}/colors_theme_${color}.vimrc ${colors_config}/colors_base.vimrc > $HOME/.myconfig/vim/colors.vimrc
-# }
+configure_vim() {
+  cat ${vim_config}/themes/${theme_name}_init.lua > ${vim_config}/theme.lua
+}
 
 # configure_p10k() {
 #   sed -i "s/.*typeset -g POWERLEVEL9K_BACKGROUND=.*/  typeset -g POWERLEVEL9K_BACKGROUND=$1/" ${p10k_config}
 # }
 
-case $color in
-  rose_pine_dawn)
+case $theme_name in
+  rosepine_dawn)
     configure_alacritty
-    # configure_vim
+    configure_vim
     # configure_p10k "253"
     ;;
-  one_light)
+  tokyonight_moon)
     configure_alacritty
-    # configure_vim
-    # configure_p10k "253"
-    ;;
-  sonokai)
-    configure_alacritty
-    # configure_vim
-    # configure_p10k "236"
-    ;;
-  ayucolor_light)
-    configure_alacritty
-    # configure_vim
-    # configure_p10k "253"
-    ;;
-  gruvbox)
-    configure_alacritty
-    # configure_vim
+    configure_vim
     # configure_p10k "253"
     ;;
   *)
-    echo "Colorscheme not found"
+    echo "Theme not found"
     exit 1
     ;;
 esac

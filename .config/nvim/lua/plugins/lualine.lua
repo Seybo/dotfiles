@@ -20,7 +20,7 @@ end
 function M.setup()
     local plugin = require "lualine"
     local linemode = require "lualine.utils.mode"
-    local color_theme = require "rose-pine.palette"
+    -- local color_theme = require "rose-pine.palette"
 
     local mode_section = {
         function()
@@ -103,8 +103,8 @@ function M.setup()
 
     local theme = {
         normal = {
-            a = { fg = color_theme.pine, bg = color_theme.base, gui = "bold" },
-            b = { fg = color_theme.foam, bg = color_theme.base },
+            -- a = { fg = color_theme.pine, bg = color_theme.base, gui = "bold" },
+            -- b = { fg = color_theme.foam, bg = color_theme.base },
         },
     }
 

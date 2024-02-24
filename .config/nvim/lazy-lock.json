@@ -45,6 +45,7 @@
   "tabby.nvim": { "branch": "main", "commit": "5f6ea3fc74e4edc23d69a4326bac8b46972d0cef" },
   "telescope.nvim": { "branch": "0.1.x", "commit": "d90956833d7c27e73c621a61f20b29fdb7122709" },
   "todo-comments.nvim": { "branch": "main", "commit": "8febc60a76feefd8203077ef78b6a262ea1a41f9" },
+  "tokyonight.nvim": { "branch": "main", "commit": "67c6050e1ca41260c919236a098ba278472c7520" },
   "undotree": { "branch": "master", "commit": "9dbbf3b7d19dda0d22ceca461818e4739ad8154d" },
   "vim-bufkill": { "branch": "master", "commit": "3113181d0c1bfb8719f3ddcd2e2f35a8d763d1e5" },
   "vim-dadbod": { "branch": "master", "commit": "936e78f44113eac54948474e222293dd70eaef9e" },

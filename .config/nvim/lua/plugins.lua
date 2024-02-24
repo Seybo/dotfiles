@@ -17,12 +17,12 @@ local lazy = require "lazy"
 
 local plugins = {
     -- themes: enable one that is used
-    -- {
-    --     "folke/tokyonight.nvim",
-    --     version = "*",
-    --     priority = 1000,
-    --     config = require("colorschemes.tokyonight-day").setup,
-    -- },
+    {
+        "folke/tokyonight.nvim",
+        version = "*",
+        priority = 1000,
+        config = require("theme").setup,
+    },
     -- {
     --     "marko-cerovac/material.nvim",
     --     version = "*",
@@ -492,7 +492,7 @@ local plugins = {
         dir = "/mnt/dev/my/vim_plugins/rose-pine.nvim",
         version = "*",
         priority = 1000,
-        config = require("colorschemes.rose-pine").setup,
+        config = require("theme").setup,
     },
 }
 
