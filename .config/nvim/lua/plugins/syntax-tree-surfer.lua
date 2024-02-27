@@ -78,3 +78,16 @@ function M.setup()
 end
 
 return M
+
+-- keymaps
+-- vx - select master node
+-- vn - select current node
+-- J - select next sibling node
+-- K - select prev sibling node
+-- H - select parent node
+-- L - select child node
+-- vd - swap current node with next sibling
+-- vu - swap current node with prev sibling
+-- vD - swap current node with next sibling and move cursor to the new node
+-- vU - swap current node with prev sibling and move cursor to the new node
+-- . - repeat the last swap command

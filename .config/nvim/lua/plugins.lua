@@ -403,6 +403,16 @@ local plugins = {
     --     version = "*",
     --     config = require("plugins.mkdnflow").setup,
     -- },
+    {
+        "jghauser/follow-md-links.nvim",
+        version = "*",
+    },
+
+    {
+        "lukas-reineke/headlines.nvim",
+        dependencies = "nvim-treesitter/nvim-treesitter",
+        config = true,
+    },
 
     {
         "ellisonleao/glow.nvim",
