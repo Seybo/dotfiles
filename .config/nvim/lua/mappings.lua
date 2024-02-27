@@ -56,8 +56,12 @@ vim.keymap.set("v", "<Home>", "0", { silent = true })
 -- add empty line above/below
 vim.keymap.set("n", "<CR>j", ":<C-u>normal! o<CR>", { silent = true })
 vim.keymap.set("n", "<CR>k", ":<C-u>normal! O<CR>", { silent = true })
--- -- [[ Files ]] -- --
+-- Cut to underscores
+vim.keymap.set("n", "cu", "ct_", { silent = true })
+vim.keymap.set("n", "c2u", "c2t_", { silent = true })
+vim.keymap.set("n", "c3u", "c3t_", { silent = true })
 
+-- -- [[ Files ]] -- --
 vim.keymap.set("n", "<C-f><C-r>", ":e!<CR>", { silent = true })
 vim.keymap.set("n", "<Leader>fot", ":e ./_mydev/temp.md<CR>", { silent = true })
 -- filenames copying
@@ -183,7 +187,7 @@ vim.keymap.set("n", "<A-r><A-r>", ":%s/", { silent = true })            -- repla
 vim.keymap.set("n", "<A-r><A-w>", ":%s/<C-r><C-w>/", { silent = true }) -- replace word under cursor
 -- replace selection
 vim.keymap.set("v", "<A-r><A-w>", "\"sy:%s/<C-r>=substitute(@s, '\\n', '', 'g')<cr>/", { silent = true })
-vim.keymap.set("n", "<A-b><A-b>", ":b#<CR>", { silent = true }) -- swetch between last two buffers
+vim.keymap.set("n", "<A-f><A-f>", ":b#<CR>", { silent = true }) -- swetch between last two buffers
 -- make <F9> work in vim the same way as in ubuntu UI
 vim.keymap.set("n", "<F9>", ":call system('copyq toggle')<CR>", { silent = true })
 -- <C-o> is a temp switch to normal mode for insert

@@ -9,6 +9,7 @@ require "theme"
 require "autocommands"
 
 require "colorizer".setup() -- TODO_MM: for some reason it doesnt work in the plugin config
+vim.o.path = vim.o.path .. ",_mydev/**"
 -- [[ Tips ]]
 -- You can use :source $VIMRUNTIME/syntax/hitest.vim to see all highlighting groups.
 -- You can use :lua print(vim.inspect(require('ayu.colors'))) command to check all available colors.

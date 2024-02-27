@@ -28,17 +28,14 @@ function M.setup()
         end,
     })
 
-    vim.keymap.set("n", "<A-p><A-l>", function()
+    vim.keymap.set("n", "<A-s>l", function()
         possession.list()
     end)
-    vim.keymap.set("n", "<A-p><A-n>", function()
+    vim.keymap.set("n", "<A-s>n", function()
         possession.new()
     end)
-    vim.keymap.set("n", "<A-p><A-u>", function()
+    vim.keymap.set("n", "<A-s>u", function()
         possession.update()
-    end)
-    vim.keymap.set("n", "<A-p><A-d>", function()
-        possession.delete()
     end)
 end
 
